@@ -6,6 +6,7 @@ import {
   getSubtotalInCents,
   getTotalUnits,
   resolveCartItems,
+  validateCartForCheckout,
 } from '@/utils/cart'
 
 const fixture: Record<string, Coffee> = {
@@ -73,5 +74,23 @@ describe('cart utils', () => {
   it('charges delivery only when there is a subtotal', () => {
     expect(getDeliveryFeeInCents(0)).toBe(0)
     expect(getDeliveryFeeInCents(100)).toBe(DELIVERY_FEE_IN_CENTS)
+  })
+})
+
+describe('validateCartForCheckout', () => {
+  it('rejects an empty cart', () => {
+    expect(validateCartForCheckout([], lookup)).toEqual({ ok: false, reason: 'empty' })
+  })
+
+  it('rejects products missing from the catalog', () => {
+    expect(validateCartForCheckout([{ coffeeId: 'ghost', quantity: 1 }], lookup)).toEqual({
+      ok: false,
+      reason: 'missing-products',
+      missingCoffeeIds: ['ghost'],
+    })
+  })
+
+  it('accepts a valid cart', () => {
+    expect(validateCartForCheckout([{ coffeeId: 'a', quantity: 1 }], lookup)).toEqual({ ok: true })
   })
 })

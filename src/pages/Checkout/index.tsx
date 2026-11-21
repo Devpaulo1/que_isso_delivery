@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
@@ -15,6 +16,7 @@ import {
   type CheckoutFormData,
   type CheckoutFormInput,
 } from '@/schemas/checkoutSchema'
+import { validateCartForCheckout } from '@/utils/cart'
 
 const PageTitle = styled.h1`
   margin-top: ${({ theme }) => theme.space[8]};
@@ -61,6 +63,23 @@ const ItemList = styled.ul`
   list-style: none;
 `
 
+const Alert = styled.div`
+  margin-bottom: ${({ theme }) => theme.space[6]};
+  padding: ${({ theme }) => theme.space[4]};
+  border-left: 4px solid ${({ theme }) => theme.colors.error};
+  border-radius: ${({ theme }) => theme.radii.sm};
+  background: ${({ theme }) => theme.colors.errorSurface};
+  color: ${({ theme }) => theme.colors.title};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+
+  button {
+    margin-top: ${({ theme }) => theme.space[2]};
+    color: ${({ theme }) => theme.colors.error};
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
+    text-decoration: underline;
+  }
+`
+
 const ConfirmButton = styled.button`
   width: 100%;
   min-height: 2.875rem;
@@ -91,7 +110,10 @@ export function Checkout() {
     incrementItem,
     decrementItem,
     removeItem,
+    items,
+    missingCoffeeIds,
   } = useCart()
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const methods = useForm<CheckoutFormInput, unknown, CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
@@ -101,7 +123,23 @@ export function Checkout() {
 
   const isEmpty = resolvedItems.length === 0
 
+  function removeUnavailableItems() {
+    missingCoffeeIds.forEach(removeItem)
+    setSubmitError(null)
+  }
+
   function onSubmit() {
+    // Guarda final: o formulário já foi validado pelo Zod; agora o carrinho (RN-10).
+    const check = validateCartForCheckout(items)
+    if (!check.ok) {
+      setSubmitError(
+        check.reason === 'empty'
+          ? 'Adicione pelo menos um café antes de confirmar o pedido.'
+          : 'Há itens indisponíveis no carrinho. Remova-os para continuar.',
+      )
+      return
+    }
+    setSubmitError(null)
     navigate(ROUTES.success)
   }
 
@@ -119,6 +157,18 @@ export function Checkout() {
           <Column>
             <h2>Cafés selecionados</h2>
             <OrderCard aria-label="Itens do pedido">
+              {missingCoffeeIds.length > 0 ? (
+                <Alert role="alert">
+                  {missingCoffeeIds.length === 1
+                    ? 'Um item do carrinho não está mais disponível no catálogo.'
+                    : `${missingCoffeeIds.length} itens do carrinho não estão mais disponíveis no catálogo.`}
+                  <br />
+                  <button type="button" onClick={removeUnavailableItems}>
+                    Remover itens indisponíveis
+                  </button>
+                </Alert>
+              ) : null}
+              {submitError ? <Alert role="alert">{submitError}</Alert> : null}
               {isEmpty ? (
                 <EmptyCart />
               ) : (
@@ -139,7 +189,10 @@ export function Checkout() {
                     deliveryFeeInCents={deliveryFeeInCents}
                     totalInCents={totalInCents}
                   >
-                    <ConfirmButton type="submit" disabled={methods.formState.isSubmitting}>
+                    <ConfirmButton
+                      type="submit"
+                      disabled={methods.formState.isSubmitting || missingCoffeeIds.length > 0}
+                    >
                       Confirmar pedido
                     </ConfirmButton>
                   </CartSummary>

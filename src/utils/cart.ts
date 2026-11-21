@@ -77,3 +77,24 @@ export function getCartTotals(
     totalInCents: subtotalInCents + deliveryFeeInCents,
   }
 }
+
+export type CheckoutCartValidation =
+  | { ok: true }
+  | { ok: false; reason: 'empty' }
+  | { ok: false; reason: 'missing-products'; missingCoffeeIds: string[] }
+
+/**
+ * Guarda de integridade antes de confirmar (RF-11, RN-10):
+ * carrinho não pode estar vazio nem referenciar produtos inexistentes.
+ */
+export function validateCartForCheckout(
+  items: readonly CartItem[],
+  lookup: CoffeeLookup = findCoffeeById,
+): CheckoutCartValidation {
+  if (items.length === 0) return { ok: false, reason: 'empty' }
+  const { missingCoffeeIds } = resolveCartItems(items, lookup)
+  if (missingCoffeeIds.length > 0) {
+    return { ok: false, reason: 'missing-products', missingCoffeeIds }
+  }
+  return { ok: true }
+}
