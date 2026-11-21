@@ -250,8 +250,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/reducers/cartReducer.ts`.
 - **Critério de pronto:** ações acumulam, incrementam, decrementam, removem e limpam corretamente.
 - **Teste/evidência:** testes unitários de cada ação e casos de borda.
-- **Commit:** `feat: implement immutable cart reducer`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: implementar reducer imutavel do carrinho`.
+- **Evidência:** cartReducer.test: todas as ações e casos de borda (novos testes ok)
+- **Status:** ✅ Concluída.
 
 ### T-024 — Criar CartProvider e useCart
 - **Objetivo:** disponibilizar estado e operações globalmente.
@@ -511,6 +512,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-020 | Concluída | CoffeeCard.test + currency helpers; renderização e interação ok | `feat: criar card de produto` |
 | 2026-11-21 | T-021 | Concluída | CoffeeCatalog.test + layout responsivo com grid mínimo de 17.25rem | `feat: renderizar catalogo de cafes na home` |
 | 2026-11-21 | T-022 | Concluída | Home.test + AppRoutes.test; hero com PNG local e grade responsiva | `feat: finalizar pagina home responsiva` |
+| 2026-11-21 | T-023 | Concluída | cartReducer.test: todas as ações e casos de borda (novos testes ok) | `feat: implementar reducer imutavel do carrinho` |
 
 ## Definition of Done global
 
