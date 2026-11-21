@@ -155,7 +155,7 @@ Os IDs abaixo são contratos estáveis. Mudanças devem ser refletidas no TECH_S
 
 - **RN-01 — Quantidades:** operações de adição aceitam somente inteiros positivos. No carrinho, decrementar de 1 remove o item.
 - **RN-02 — Produto único:** cada produto aparece no máximo uma vez no carrinho; nova adição acumula quantidade.
-- **RN-03 — Cálculo:** `subtotal = soma(preçoUnitárioEmCentavos × quantidade)`. `total = subtotal + taxaEntrega`. A taxa inicial proposta é fixa e fictícia: **R$ 5,00 (500 centavos)**. Deve existir em uma única constante configurável. A decisão poderá ser alterada antes da implementação.
+- **RN-03 — Cálculo:** `subtotal = soma(preçoUnitárioEmCentavos × quantidade)`. `total = subtotal + taxaEntrega`. A taxa é fixa e fictícia: **R$ 5,00 (500 centavos)** (DP-02 aprovada), definida em uma única constante configurável.
 - **RN-04 — Dinheiro:** valores são representados internamente em centavos inteiros e formatados para BRL com duas casas decimais.
 - **RN-05 — Pagamento:** seleção é informativa; nenhuma transação é iniciada.
 - **RN-06 — Persistência:** carrinho sobrevive a refresh. Pedido confirmado é um snapshot independente do carrinho, criado antes da limpeza.
@@ -238,13 +238,13 @@ Entrega obrigatória:
 
 | ID | Tema | Proposta atual | Estado |
 |---|---|---|---|
-| DP-01 | Nome da marca | QuE IssO, salvo decisão por marca autoral | A validar |
-| DP-02 | Taxa de entrega | R$ 5,00 fixa (500 centavos) | A validar |
-| DP-03 | Decremento para zero | Remover item ao decrementar de 1 | A validar |
-| DP-04 | Estilização | styled-components, conforme desafio; alternativa exige justificativa | A validar |
-| DP-05 | Logo e identidade | Criar com IA e documentar | Pendente |
-| DP-06 | Catálogo e imagens | Dados locais tipados; definir fonte/licença dos assets | Pendente |
-| DP-07 | Figma | Inspecionar telas, componentes e estados quando acesso estiver disponível | Pendente |
+| DP-01 | Nome da marca | QuE IssO (nome mantido; logo autoral) | Aprovado |
+| DP-02 | Taxa de entrega | R$ 5,00 fixa (500 centavos) em `src/config/constants.ts` | Aprovado |
+| DP-03 | Decremento para zero | Remover item ao decrementar de 1 | Aprovado |
+| DP-04 | Estilização | styled-components com ThemeProvider | Aprovado |
+| DP-05 | Logo e identidade | Logo SVG gerada com IA (Claude) e documentada no README | Aprovado |
+| DP-06 | Catálogo e imagens | Dados locais tipados; ilustrações SVG originais criadas no projeto (sem licença de terceiros) | Aprovado |
+| DP-07 | Figma | Figma não acessível ao agente nesta sessão; layout segue a descrição textual da spec (amarelo/roxo, Baloo 2/Roboto, Home → Checkout → Success). Medidas exatas não foram inspecionadas | Mantido como limitação documentada |
 
 ## 13. Referências
 

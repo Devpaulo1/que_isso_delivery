@@ -477,13 +477,13 @@ Antes de definir scripts, verificar dependências instaladas e garantir que os c
 | RF-15 | tokens/breakpoints + testes responsivos manuais/e2e |
 | RF-16 | Assets locais, favicon e documentação de branding |
 
-## 18. Decisões técnicas pendentes
+## 18. Decisões técnicas (resolvidas em T-003)
 
-- Aprovar styled-components ou registrar justificativa de alternativa.
-- Definir comportamento final de consulta ViaCEP (automática ao completar ou botão “Buscar CEP”).
-- Definir fonte e licenças das imagens do catálogo.
-- Inspecionar Figma para validar dimensões, estados, breakpoints e componentes.
-- Confirmar taxa fictícia e regra de decremento conforme PRD.
+- styled-components aprovado (DP-04).
+- Consulta ViaCEP **automática** quando o CEP atinge 8 dígitos, com botão "Buscar CEP" para nova tentativa; em falha, os campos permanecem editáveis para preenchimento manual.
+- Imagens do catálogo: ilustrações SVG originais em `src/assets/img/` (DP-06).
+- Figma não inspecionado (DP-07): breakpoints definidos em tokens (`sm 576px`, `md 768px`, `lg 1120px`) e validados manualmente.
+- Taxa fixa de 500 centavos e remoção ao decrementar de 1 confirmadas (DP-02, DP-03).
 
 ## 19. Registro de revisão técnica (T-002)
 
