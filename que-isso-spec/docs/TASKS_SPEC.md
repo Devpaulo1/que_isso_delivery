@@ -536,6 +536,18 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Evidência:** AGENTS.md único com seção 13 de uso de IA; referências atualizadas em README, specs e assets
 - **Status:** ✅ Concluída.
 
+## Fase 11 — Sinalização de localização
+
+### T-059 — Exibir selo de São Paulo no Header após consulta de CEP
+- **Objetivo:** mostrar, ao lado do seletor de idioma, o badge do Figma quando o CEP consultado no checkout for de São Paulo/SP.
+- **Requisitos:** RF-08, RF-14, RF-15; SVG fornecido pelo estudante.
+- **Arquivos:** `src/components/DeliveryLocationBadge/**`, `src/contexts/DeliveryLocationContext/**`, `src/hooks/useDeliveryLocation.ts`, `src/utils/deliveryLocation.ts`, `src/components/Header/**`, `src/components/DeliveryAddressForm/**`, `src/App.tsx`, `src/i18n/locales/{pt,en,es}.ts`, `src/tests/helpers/render.tsx`.
+- **Critério de pronto:** com CEP de São Paulo/SP, o selo aparece no Header; com outra cidade/UF, não aparece; o texto do SVG é adaptado para "São Paulo, SP"; sem novas dependências; identidade QuE IssO preservada.
+- **Teste/evidência:** lint, typecheck, build e suíte completa (33 arquivos, 270 testes) ok; cobertura 96,56% statements / 90,43% branches / 97,06% functions / 97,62% lines.
+- **Commit:** `feat: exibir selo de Sao Paulo no header apos consulta de cep`.
+- **Evidência:** `DeliveryLocationBadge.test.tsx`, `deliveryLocation.test.ts`, `Header.test.tsx` e `DeliveryAddressForm.test.tsx`
+- **Status:** ✅ Concluída.
+
 ## Registro de execução
 
 | Data | Task ID | Resultado | Testes/evidência | Commit |
@@ -589,6 +601,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-048 | Concluída | TECH_SPEC §20 com matriz RF/RN/RNF, pendências e divergências; PRD atualizado | `docs: finalizar rastreabilidade das specs` |
 | 2026-11-21 | T-057 | Concluída | Header.test troca pt/en/es e persiste idioma; lint, typecheck, build e 263 testes ok | `feat: adicionar seletor de idioma com i18next` |
 | 2026-11-21 | T-058 | Concluída | AGENTS.md único com seção 13 de uso de IA; referências atualizadas em README, specs e assets | `docs: substituir registro de IA por AGENTS.md` |
+| 2026-11-21 | T-059 | Concluída | selo São Paulo/SP ao lado do idioma; lint, typecheck, build e 270 testes ok | `feat: exibir selo de Sao Paulo no header apos consulta de cep` |
 
 ## Definition of Done global
 

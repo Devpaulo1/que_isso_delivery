@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next'
-import { useRef } from 'react'
-import { Controller, useFormContext } from 'react-hook-form'
+import { useEffect, useRef } from 'react'
+import { Controller, useFormContext, useWatch } from 'react-hook-form'
 import styled from 'styled-components'
 import { TextField } from '@/components/FormField'
 import { MapPinIcon } from '@/components/icons'
 import { useCepLookup, type CepLookupState } from '@/hooks/useCepLookup'
+import { useDeliveryLocation } from '@/hooks/useDeliveryLocation'
 import type { CheckoutFormInput } from '@/schemas/checkoutSchema'
 import type { CepAddress } from '@/services/cep/viaCep'
 import { formatPostalCode, isCompletePostalCode, normalizePostalCode } from '@/utils/postalCode'
@@ -111,8 +112,16 @@ export function DeliveryAddressForm() {
     formState: { errors },
   } = useFormContext<CheckoutFormInput>()
   const { state, lookup } = useCepLookup()
+  const { setLocation } = useDeliveryLocation()
   const { t } = useTranslation()
   const lastLookedUp = useRef<string | null>(null)
+  const city = useWatch({ control, name: 'city' })
+  const stateField = useWatch({ control, name: 'state' })
+
+  // O selo do Header acompanha cidade/UF consultados (ou digitados manualmente).
+  useEffect(() => {
+    setLocation(city && stateField ? { city, state: stateField } : null)
+  }, [city, stateField, setLocation])
 
   async function runLookup(rawCep: string) {
     const cep = normalizePostalCode(rawCep)

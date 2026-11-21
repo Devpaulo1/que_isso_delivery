@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { DeliveryAddressForm } from '@/components/DeliveryAddressForm'
+import { Header } from '@/components/Header'
 import {
   checkoutDefaultValues,
   checkoutSchema,
@@ -63,6 +64,20 @@ describe('DeliveryAddressForm', () => {
     expect(screen.getByText(/endereço encontrado/i)).toBeInTheDocument()
     expect(fetchSpy).toHaveBeenCalledTimes(1)
     expect(field('Número')).toHaveFocus()
+  })
+
+  it('mostra o selo de São Paulo no Header quando o CEP consultado é de SP', async () => {
+    const user = userEvent.setup()
+    mockViaCep(sePraca)
+    renderWithProviders(
+      <>
+        <Header />
+        <Harness onSubmit={vi.fn()} />
+      </>,
+    )
+
+    await user.type(field('CEP'), '01001000')
+    expect(await screen.findByRole('img', { name: 'Entrega em São Paulo, SP' })).toBeInTheDocument()
   })
 
   it('never overwrites number and complement', async () => {

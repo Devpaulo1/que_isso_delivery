@@ -5,11 +5,14 @@ import logoDark from '@/assets/Log/logo-dark.svg'
 import logoLight from '@/assets/Log/logo-light.svg'
 import { CartBadge } from '@/components/CartBadge'
 import { CartIcon } from '@/components/icons'
+import { DeliveryLocationBadge } from '@/components/DeliveryLocationBadge'
 import { LanguageSelector } from '@/components/LanguageSelector'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { useCart } from '@/hooks/useCart'
+import { useDeliveryLocation } from '@/hooks/useDeliveryLocation'
 import { useTheme } from '@/hooks/useTheme'
 import { ROUTES } from '@/routes/paths'
+import { isSaoPauloSp } from '@/utils/deliveryLocation'
 
 const HeaderBar = styled.header`
   position: sticky;
@@ -64,7 +67,11 @@ const Brand = styled(Link)`
 const Actions = styled.nav`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.space[3]};
+  gap: ${({ theme }) => theme.space[2]};
+
+  ${({ theme }) => theme.media.sm} {
+    gap: ${({ theme }) => theme.space[3]};
+  }
 `
 
 const CartLink = styled(Link)`
@@ -87,7 +94,9 @@ const CartLink = styled(Link)`
 export function Header() {
   const { themeName } = useTheme()
   const { totalUnits } = useCart()
+  const { location } = useDeliveryLocation()
   const { t } = useTranslation()
+  const showSaoPauloBadge = isSaoPauloSp(location)
   const cartLabel =
     totalUnits === 0 ? t('header.cartEmpty') : t('header.cartWithItems', { count: totalUnits })
 
@@ -103,6 +112,7 @@ export function Header() {
         </Brand>
 
         <Actions aria-label={t('header.actions')}>
+          {showSaoPauloBadge ? <DeliveryLocationBadge /> : null}
           <LanguageSelector />
           <ThemeToggle />
           <CartLink to={ROUTES.checkout} aria-label={cartLabel}>

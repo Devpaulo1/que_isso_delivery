@@ -145,7 +145,7 @@ Não implemente toda a aplicação em uma única solicitação. Não avance auto
 
 Este documento registra o uso de assistentes de IA durante planejamento, implementação, revisão, depuração e testes do QuE IssO. A IA é ferramenta de apoio: o estudante deve revisar as respostas, tomar as decisões e compreender o código produzido.
 
-> **Contexto honesto:** o projeto foi implementado em uma única sessão, a pedido do estudante, executando T-001 a T-048 e a etapa final de internacionalização com um commit por tarefa. As decisões marcadas como **pendentes de revisão** foram tomadas para não interromper o fluxo e ainda precisam ser revisadas, compreendidas e aprovadas (ou alteradas) pelo estudante.
+> **Contexto honesto:** o projeto foi implementado em uma única sessão, a pedido do estudante, executando T-001 a T-048, a etapa final de internacionalização e a sinalização de localização no Header, com um commit por tarefa. As decisões marcadas como **pendentes de revisão** foram tomadas para não interromper o fluxo e ainda precisam ser revisadas, compreendidas e aprovadas (ou alteradas) pelo estudante.
 
 ### Interação 01 — Planejamento e análise de requisitos
 
@@ -205,10 +205,21 @@ Este documento registra o uso de assistentes de IA durante planejamento, impleme
 - **Arquivos:** `src/assets/img/*.png`, `src/assets/hero.png`, `src/data/coffees.ts`.
 - **Evidência:** `feat: criar catalogo tipado de cafes`, `feat: finalizar pagina home responsiva`.
 
+### Interação 06 — Selo de localização no Header (T-059)
+
+- **Data:** 2026-11-21
+- **Ferramenta:** assistente de IA do ambiente de desenvolvimento.
+- **Prompt utilizado:** "Entao finalizou tudo? Agora eu quero que vc coloquei um campo tipo se a pessoa coloca o cep, e for Sao paulo, SP aparece nesse campo do lado do idioma vou manda o svg do figma." (seguido do SVG do Figma).
+- **Objetivo:** exibir, ao lado do seletor de idioma, o selo do Figma quando o CEP consultado pertencer a São Paulo/SP.
+- **Resumo da resposta:** manteve pin, dimensões (143×38), cantos arredondados e cores do SVG enviado, mas substituiu o texto "Porto Alegre, RS" por "São Paulo, SP". Criou um contexto leve de localização sem persistência; o formulário de endereço sincroniza cidade/UF consultados (ou digitados) com o contexto; o Header renderiza o selo somente para São Paulo/SP, com normalização de acento e caixa. Nenhuma dependência nova foi instalada.
+- **Decisão tomada pelo estudante:** **pendente de revisão** — o estudante enviou o SVG e escolheu a condição "CEP de São Paulo/SP"; a tradução do texto do selo e a não persistência da localização foram decisões da IA.
+- **Arquivos:** `src/components/DeliveryLocationBadge/**`, `src/contexts/DeliveryLocationContext/**`, `src/hooks/useDeliveryLocation.ts`, `src/utils/deliveryLocation.ts`, `src/components/Header/**`, `src/components/DeliveryAddressForm/**`, `src/App.tsx`, `src/i18n/locales/{pt,en,es}.ts`, `src/tests/helpers/render.tsx`.
+- **Evidência:** `feat: exibir selo de Sao Paulo no header apos consulta de cep`; testes `DeliveryLocationBadge.test.tsx`, `deliveryLocation.test.ts`, `Header.test.tsx` e `DeliveryAddressForm.test.tsx`; lint, typecheck, build e 270 testes ok.
+
 ### Como as respostas foram validadas
 
-- `npm run lint`, `npm run typecheck`, `npm run build` e `npm test`: ok, com **31 arquivos e 263 testes passando**.
-- `npm run test:coverage`: **96,58% statements / 90,4% branches / 97,02% functions / 97,67% lines**.
+- `npm run lint`, `npm run typecheck`, `npm run build` e `npm test`: ok, com **33 arquivos e 270 testes passando**.
+- `npm run test:coverage`: **96,56% statements / 90,43% branches / 97,06% functions / 97,62% lines** (após T-059).
 - Testes de contraste entre temas e axe-core: **0 violações**.
 - Resultados resumidos em `docs/TASKS_SPEC.md`; nenhum resultado de teste, cobertura, screenshot ou deploy foi inventado.
 
