@@ -467,7 +467,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Critério de pronto:** lint, typecheck, testes e build passam; sem erros conhecidos no console.
 - **Teste/evidência:** anexar saída real dos comandos.
 - **Commit:** `refactor: finalizar revisao de qualidade`.
-- **Evidência:** lint, typecheck, build e 263 testes ok; helpers de quantidade e storage simplificados
+- **Evidência:** lint, typecheck, build e 262 testes ok; helpers de quantidade e storage simplificados
 - **Status:** ✅ Concluída.
 
 ## Fase 8 — Documentação e entrega
@@ -478,8 +478,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `docs/AI_USAGE.md`.
 - **Critério de pronto:** cada registro contém prompt, objetivo, resumo da resposta, decisão humana e evidência.
 - **Teste/evidência:** revisão dos três registros.
-- **Commit:** `docs: record ai-assisted development`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `docs: registrar desenvolvimento assistido por IA`.
+- **Evidência:** AI_USAGE.md com cinco interações, prompts, decisões e evidências; autoria adaptada para Paulo
+- **Status:** ✅ Concluída.
 
 ### T-046 — Finalizar README e Branding com IA
 - **Objetivo:** documentar instalação, scripts, arquitetura, fluxo, marca e ferramenta de IA.
@@ -554,7 +555,8 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-041 | Concluída | ProductImage.test + build; header exibe "QuE IssO / Delivery"; grid e cards revisados | `style: refinar layouts responsivos` |
 | 2026-11-21 | T-042 | Concluída | a11y.test (axe-core) + themes.test: páginas e estados sem violações; contraste AA e foco verificados | `fix: melhorar acessibilidade da interface` |
 | 2026-11-21 | T-043 | Concluída | purchaseFlow.test cobre Home → Checkout → Success com refresh simulado; script test:coverage configurado | `test: cobrir fluxos principais de compra` |
-| 2026-11-21 | T-044 | Concluída | lint, typecheck, build e 263 testes ok; helpers de quantidade e storage simplificados | `refactor: finalizar revisao de qualidade` |
+| 2026-11-21 | T-044 | Concluída | lint, typecheck, build e 262 testes ok; helpers de quantidade e storage simplificados | `refactor: finalizar revisao de qualidade` |
+| 2026-11-21 | T-045 | Concluída | AI_USAGE.md com cinco interações, prompts, decisões e evidências; autoria adaptada para Paulo | `docs: registrar desenvolvimento assistido por IA` |
 
 ## Definition of Done global
 
