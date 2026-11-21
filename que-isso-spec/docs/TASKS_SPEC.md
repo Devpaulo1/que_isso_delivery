@@ -466,8 +466,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** conforme achados.
 - **Critério de pronto:** lint, typecheck, testes e build passam; sem erros conhecidos no console.
 - **Teste/evidência:** anexar saída real dos comandos.
-- **Commit:** `refactor: finalize quality review`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `refactor: finalizar revisao de qualidade`.
+- **Evidência:** lint, typecheck, build e 263 testes ok; helpers de quantidade e storage simplificados
+- **Status:** ✅ Concluída.
 
 ## Fase 8 — Documentação e entrega
 
@@ -553,6 +554,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-041 | Concluída | ProductImage.test + build; header exibe "QuE IssO / Delivery"; grid e cards revisados | `style: refinar layouts responsivos` |
 | 2026-11-21 | T-042 | Concluída | a11y.test (axe-core) + themes.test: páginas e estados sem violações; contraste AA e foco verificados | `fix: melhorar acessibilidade da interface` |
 | 2026-11-21 | T-043 | Concluída | purchaseFlow.test cobre Home → Checkout → Success com refresh simulado; script test:coverage configurado | `test: cobrir fluxos principais de compra` |
+| 2026-11-21 | T-044 | Concluída | lint, typecheck, build e 263 testes ok; helpers de quantidade e storage simplificados | `refactor: finalizar revisao de qualidade` |
 
 ## Definition of Done global
 

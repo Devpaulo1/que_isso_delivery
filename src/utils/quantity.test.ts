@@ -1,4 +1,4 @@
-import { clampQuantity, isValidQuantity, parseQuantityInput } from '@/utils/quantity'
+import { isValidQuantity, parseQuantityInput } from '@/utils/quantity'
 
 describe('quantity utils', () => {
   it.each([1, 2, 99])('accepts %s', (value) => {
@@ -20,12 +20,5 @@ describe('quantity utils', () => {
     ['100', null],
   ])('parses "%s" as %s', (text, expected) => {
     expect(parseQuantityInput(text)).toBe(expected)
-  })
-
-  it('clamps to limits', () => {
-    expect(clampQuantity(0)).toBe(1)
-    expect(clampQuantity(150)).toBe(99)
-    expect(clampQuantity(4.7)).toBe(4)
-    expect(clampQuantity(Number.NaN)).toBe(1)
   })
 })

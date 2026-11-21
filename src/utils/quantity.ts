@@ -23,11 +23,3 @@ export function parseQuantityInput(
   return isValidQuantity(parsed, min, max) ? parsed : null
 }
 
-export function clampQuantity(
-  value: number,
-  min: number = MIN_QUANTITY,
-  max: number = MAX_QUANTITY,
-): number {
-  if (!Number.isFinite(value)) return min
-  return Math.min(max, Math.max(min, Math.trunc(value)))
-}

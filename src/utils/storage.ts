@@ -44,10 +44,3 @@ export function writeStorage(key: string, value: unknown): boolean {
   }
 }
 
-export function removeStorage(key: string): void {
-  try {
-    getStorage()?.removeItem(key)
-  } catch {
-    // storage indisponível: nada a remover
-  }
-}
