@@ -548,6 +548,16 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Evidência:** `DeliveryLocationBadge.test.tsx`, `deliveryLocation.test.ts`, `Header.test.tsx` e `DeliveryAddressForm.test.tsx`
 - **Status:** ✅ Concluída.
 
+### T-060 — Exibir selo para qualquer estado e alinhar a busca de CEP
+- **Objetivo:** substituir a regra exclusiva de São Paulo/SP por uma localização genérica e corrigir o alinhamento vertical do botão "Buscar CEP" no formulário de endereço.
+- **Requisitos:** RF-08, RF-14, RF-15; uso do ViaCEP e do selo do Figma já integrado.
+- **Arquivos:** `src/utils/deliveryLocation.{ts,test.ts}`, `src/components/DeliveryLocationBadge/**`, `src/components/Header/**`, `src/components/DeliveryAddressForm/**`, `src/i18n/locales/{pt,en,es}.ts`.
+- **Critério de pronto:** com qualquer cidade/UF preenchida (consultada ou digitada), o selo aparece ao lado do idioma; o CEP `40301-155` produz `Salvador, BA`; São Paulo/SP continua funcionando; sem localização o selo não aparece; o botão fica alinhado ao input (diferença de 0 px no topo e na base); nenhuma dependência nova; identidade QuE IssO preservada.
+- **Teste/evidência:** lint, typecheck, build e suíte completa (33 arquivos, 273 testes) ok; cobertura 96,59% statements / 90,02% branches / 97,08% functions / 97,64% lines. No navegador, com ViaCEP real, `40301155` preencheu Salvador/BA e exibiu "Entrega em Salvador, BA"; alinhamento medido no DOM com `deltaTop = 0` e `deltaBottom = 0`.
+- **Commit:** `fix: exibir selo para qualquer estado e alinhar busca de cep`.
+- **Evidência:** `deliveryLocation.test.ts`, `DeliveryLocationBadge.test.tsx`, `Header.test.tsx` e `DeliveryAddressForm.test.tsx` (inclui caso Bahia).
+- **Status:** ✅ Concluída.
+
 ## Registro de execução
 
 | Data | Task ID | Resultado | Testes/evidência | Commit |
@@ -602,6 +612,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-057 | Concluída | Header.test troca pt/en/es e persiste idioma; lint, typecheck, build e 263 testes ok | `feat: adicionar seletor de idioma com i18next` |
 | 2026-11-21 | T-058 | Concluída | AGENTS.md único com seção 13 de uso de IA; referências atualizadas em README, specs e assets | `docs: substituir registro de IA por AGENTS.md` |
 | 2026-11-21 | T-059 | Concluída | selo São Paulo/SP ao lado do idioma; lint, typecheck, build e 270 testes ok | `feat: exibir selo de Sao Paulo no header apos consulta de cep` |
+| 2026-11-21 | T-060 | Concluída | selo para qualquer cidade/UF (CEP 40301-155 → Salvador, BA) e botão alinhado ao input; lint, typecheck, build e 273 testes ok | `fix: exibir selo para qualquer estado e alinhar busca de cep` |
 
 ## Definition of Done global
 

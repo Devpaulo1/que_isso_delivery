@@ -46,6 +46,14 @@ const sePraca = {
   uf: 'SP',
 }
 
+const salvador = {
+  cep: '40301-155',
+  logradouro: 'Avenida Sete de Setembro',
+  bairro: 'Centro',
+  localidade: 'Salvador',
+  uf: 'BA',
+}
+
 beforeEach(() => clearCepCache())
 
 describe('DeliveryAddressForm', () => {
@@ -78,6 +86,22 @@ describe('DeliveryAddressForm', () => {
 
     await user.type(field('CEP'), '01001000')
     expect(await screen.findByRole('img', { name: 'Entrega em São Paulo, SP' })).toBeInTheDocument()
+  })
+
+  it('mostra o selo de qualquer estado quando o CEP consultado é da Bahia', async () => {
+    const user = userEvent.setup()
+    mockViaCep(salvador)
+    renderWithProviders(
+      <>
+        <Header />
+        <Harness onSubmit={vi.fn()} />
+      </>,
+    )
+
+    await user.type(field('CEP'), '40301155')
+    expect(await screen.findByRole('img', { name: 'Entrega em Salvador, BA' })).toBeInTheDocument()
+    expect(field('Cidade')).toHaveValue('Salvador')
+    expect(field('UF')).toHaveValue('BA')
   })
 
   it('never overwrites number and complement', async () => {

@@ -51,7 +51,12 @@ const Grid = styled.div`
     grid-template-columns: repeat(6, minmax(0, 1fr));
 
     .cep { grid-column: span 3; }
-    .cep-action { grid-column: span 3; align-self: end; }
+    .cep-action {
+      grid-column: span 3;
+      align-self: start;
+      /* Alinha o botão ao input: altura da linha do label (1.4rem) + gap (0.25rem). */
+      margin-top: 1.65rem;
+    }
     .street { grid-column: 1 / -1; }
     .number { grid-column: span 2; }
     .complement { grid-column: span 4; }

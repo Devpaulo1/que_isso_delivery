@@ -1,18 +1,11 @@
 import type { DeliveryLocation } from '@/types/deliveryLocation'
 
-function normalize(value: string): string {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .trim()
-    .toLocaleLowerCase('pt-BR')
+/** Só considera uma localização quando cidade e UF foram preenchidos. */
+export function hasDeliveryLocation(location: DeliveryLocation | null): location is DeliveryLocation {
+  return location !== null && Boolean(location.city?.trim()) && Boolean(location.state?.trim())
 }
 
-/** Aceita "São Paulo/SP" mesmo sem acento ou em caixa alta. */
-export function isSaoPauloSp(location: DeliveryLocation | null): boolean {
-  return (
-    location !== null &&
-    normalize(location.city) === 'sao paulo' &&
-    normalize(location.state) === 'sp'
-  )
+/** Texto exibido no selo do Header, ex.: "Salvador, BA". */
+export function formatDeliveryLocation(location: DeliveryLocation): string {
+  return `${location.city.trim()}, ${location.state.trim().toLocaleUpperCase('pt-BR')}`
 }

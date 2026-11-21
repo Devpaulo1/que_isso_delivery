@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
+import { useDeliveryLocation } from '@/hooks/useDeliveryLocation'
+import { hasDeliveryLocation } from '@/utils/deliveryLocation'
 
 /* Pin do SVG do Figma: mantido exatamente, inclusive as cores. */
 const PIN_PATH =
@@ -17,14 +19,22 @@ const Badge = styled.svg`
   }
 `
 
-/** Selo exibido no Header quando o CEP consultado é de São Paulo/SP. */
+/** Selo exibido no Header quando uma localização foi resolvida pelo CEP. */
 export function DeliveryLocationBadge() {
   const { t } = useTranslation()
+  const { location } = useDeliveryLocation()
+
+  if (!hasDeliveryLocation(location)) return null
+
+  const city = location.city.trim()
+  const state = location.state.trim().toLocaleUpperCase('pt-BR')
+  const label = `${city}, ${state}`
+  const fontSize = label.length > 18 ? 10 : label.length > 13 ? 12 : 16
 
   return (
     <Badge
       role="img"
-      aria-label={t('header.locationSaoPaulo')}
+      aria-label={t('header.location', { city, state })}
       width={143}
       height={38}
       viewBox="0 0 143 38"
@@ -37,10 +47,10 @@ export function DeliveryLocationBadge() {
         y="24"
         fill="#4B2995"
         fontFamily="Baloo 2, sans-serif"
-        fontSize="16"
+        fontSize={fontSize}
         fontWeight="700"
       >
-        São Paulo, SP
+        {label}
       </text>
     </Badge>
   )

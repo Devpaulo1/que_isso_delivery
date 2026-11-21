@@ -13,7 +13,7 @@ export const es: Messages = {
     cartEmpty: 'Carrito vacío',
     cartWithItems_one: 'Carrito con {{count}} artículo',
     cartWithItems_other: 'Carrito con {{count}} artículos',
-    locationSaoPaulo: 'Entrega en São Paulo, SP',
+    location: 'Entrega en {{city}}, {{state}}',
   },
   theme: {
     toLight: 'Activar tema claro',

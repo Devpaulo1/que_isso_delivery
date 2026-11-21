@@ -1,17 +1,20 @@
-import { isSaoPauloSp } from '@/utils/deliveryLocation'
+import { formatDeliveryLocation, hasDeliveryLocation } from '@/utils/deliveryLocation'
 
-describe('isSaoPauloSp', () => {
-  it('reconhece São Paulo/SP', () => {
-    expect(isSaoPauloSp({ city: 'São Paulo', state: 'SP' })).toBe(true)
+describe('deliveryLocation', () => {
+  it('aceita qualquer cidade/UF preenchidos', () => {
+    expect(hasDeliveryLocation({ city: 'Salvador', state: 'BA' })).toBe(true)
+    expect(hasDeliveryLocation({ city: 'São Paulo', state: 'SP' })).toBe(true)
+    expect(hasDeliveryLocation({ city: 'Engenheiro Coelho', state: 'SP' })).toBe(true)
   })
 
-  it('ignora acento, caixa e espaços', () => {
-    expect(isSaoPauloSp({ city: '  SAO PAULO ', state: ' sp ' })).toBe(true)
+  it('rejeita localização vazia ou incompleta', () => {
+    expect(hasDeliveryLocation(null)).toBe(false)
+    expect(hasDeliveryLocation({ city: '', state: 'BA' })).toBe(false)
+    expect(hasDeliveryLocation({ city: 'Salvador', state: '' })).toBe(false)
   })
 
-  it('rejeita outra cidade ou outro estado', () => {
-    expect(isSaoPauloSp({ city: 'Campinas', state: 'SP' })).toBe(false)
-    expect(isSaoPauloSp({ city: 'São Paulo', state: 'RJ' })).toBe(false)
-    expect(isSaoPauloSp(null)).toBe(false)
+  it('formata cidade e UF para o selo', () => {
+    expect(formatDeliveryLocation({ city: ' Salvador ', state: ' ba ' })).toBe('Salvador, BA')
+    expect(formatDeliveryLocation({ city: 'São Paulo', state: 'SP' })).toBe('São Paulo, SP')
   })
 })

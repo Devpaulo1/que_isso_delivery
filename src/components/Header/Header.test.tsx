@@ -25,16 +25,16 @@ describe('Header', () => {
     expect(screen.getByRole('link', { name: /carrinho/i })).toHaveFocus()
   })
 
-  it('mostra o selo de São Paulo ao lado do idioma quando o CEP é de SP', () => {
-    renderWithProviders(<Header />, { location: { city: 'São Paulo', state: 'SP' } })
+  it('mostra o selo ao lado do idioma para qualquer estado', () => {
+    renderWithProviders(<Header />, { location: { city: 'Salvador', state: 'BA' } })
 
-    const badge = screen.getByRole('img', { name: 'Entrega em São Paulo, SP' })
+    const badge = screen.getByRole('img', { name: 'Entrega em Salvador, BA' })
     const language = screen.getByRole('combobox', { name: 'Idioma' })
     expect(badge.compareDocumentPosition(language) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   })
 
-  it('não mostra o selo para outra cidade', () => {
-    renderWithProviders(<Header />, { location: { city: 'Campinas', state: 'SP' } })
+  it('não mostra o selo antes de consultar um CEP', () => {
+    renderWithProviders(<Header />)
     expect(screen.queryByRole('img', { name: /entrega em/i })).not.toBeInTheDocument()
   })
 

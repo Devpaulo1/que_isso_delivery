@@ -9,10 +9,8 @@ import { DeliveryLocationBadge } from '@/components/DeliveryLocationBadge'
 import { LanguageSelector } from '@/components/LanguageSelector'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { useCart } from '@/hooks/useCart'
-import { useDeliveryLocation } from '@/hooks/useDeliveryLocation'
 import { useTheme } from '@/hooks/useTheme'
 import { ROUTES } from '@/routes/paths'
-import { isSaoPauloSp } from '@/utils/deliveryLocation'
 
 const HeaderBar = styled.header`
   position: sticky;
@@ -94,9 +92,7 @@ const CartLink = styled(Link)`
 export function Header() {
   const { themeName } = useTheme()
   const { totalUnits } = useCart()
-  const { location } = useDeliveryLocation()
   const { t } = useTranslation()
-  const showSaoPauloBadge = isSaoPauloSp(location)
   const cartLabel =
     totalUnits === 0 ? t('header.cartEmpty') : t('header.cartWithItems', { count: totalUnits })
 
@@ -112,7 +108,7 @@ export function Header() {
         </Brand>
 
         <Actions aria-label={t('header.actions')}>
-          {showSaoPauloBadge ? <DeliveryLocationBadge /> : null}
+          <DeliveryLocationBadge />
           <LanguageSelector />
           <ThemeToggle />
           <CartLink to={ROUTES.checkout} aria-label={cartLabel}>

@@ -11,7 +11,7 @@ export const pt = {
     cartEmpty: 'Carrinho vazio',
     cartWithItems_one: 'Carrinho com {{count}} item',
     cartWithItems_other: 'Carrinho com {{count}} itens',
-    locationSaoPaulo: 'Entrega em São Paulo, SP',
+    location: 'Entrega em {{city}}, {{state}}',
   },
   theme: {
     toLight: 'Ativar tema claro',

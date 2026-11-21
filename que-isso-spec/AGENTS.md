@@ -216,10 +216,21 @@ Este documento registra o uso de assistentes de IA durante planejamento, impleme
 - **Arquivos:** `src/components/DeliveryLocationBadge/**`, `src/contexts/DeliveryLocationContext/**`, `src/hooks/useDeliveryLocation.ts`, `src/utils/deliveryLocation.ts`, `src/components/Header/**`, `src/components/DeliveryAddressForm/**`, `src/App.tsx`, `src/i18n/locales/{pt,en,es}.ts`, `src/tests/helpers/render.tsx`.
 - **Evidência:** `feat: exibir selo de Sao Paulo no header apos consulta de cep`; testes `DeliveryLocationBadge.test.tsx`, `deliveryLocation.test.ts`, `Header.test.tsx` e `DeliveryAddressForm.test.tsx`; lint, typecheck, build e 270 testes ok.
 
+### Interação 07 — Selo para todos os estados e alinhamento do CEP (T-060)
+
+- **Data:** 2026-11-21
+- **Ferramenta:** assistente de IA do ambiente de desenvolvimento, com verificação no navegador e DOM medido via JavaScript.
+- **Prompt utilizado:** "Alinhe o botao de buscar o CEP, mais uma coisa ele so pegou o de sp, quero que pegue de todos os estados do brasil coloquei o 40301-155 ele nao apareceu nada que seria Bahia".
+- **Objetivo:** corrigir o alinhamento do botão "Buscar CEP" e fazer o selo aparecer para qualquer cidade/UF, não apenas São Paulo/SP.
+- **Resumo da resposta:** manteve o pin e as cores do SVG, mas trocou os rótulos fixos por interpolação de cidade/UF (`header.location`), removeu a restrição `isSaoPauloSp` e passou a renderizar o selo sempre que cidade e UF estiverem preenchidos. Um erro de tradução (`t('header.location', label)` tratava o texto como valor padrão e deixava as variáveis vazias) foi encontrado pelos testes e corrigido passando `{ city, state }`. O botão foi alinhado ao input com `margin-top` calculado a partir da linha do label e do gap do campo.
+- **Decisão tomada pelo estudante:** aprovada — pedido explícito de funcionar para todos os estados, com o CEP `40301-155` (Bahia) como exemplo. A IA decidiu manter a localização sem persistência e atualizar os rótulos pt/en/es.
+- **Arquivos:** `src/utils/deliveryLocation.{ts,test.ts}`, `src/components/DeliveryLocationBadge/**`, `src/components/Header/**`, `src/components/DeliveryAddressForm/**`, `src/i18n/locales/{pt,en,es}.ts`.
+- **Evidência:** `fix: exibir selo para qualquer estado e alinhar busca de cep`; lint, typecheck, build e 273 testes ok; no navegador, ViaCEP real devolveu Salvador/BA para `40301155` e o selo exibiu "Entrega em Salvador, BA"; alinhamento medido com `deltaTop = 0` e `deltaBottom = 0`.
+
 ### Como as respostas foram validadas
 
-- `npm run lint`, `npm run typecheck`, `npm run build` e `npm test`: ok, com **33 arquivos e 270 testes passando**.
-- `npm run test:coverage`: **96,56% statements / 90,43% branches / 97,06% functions / 97,62% lines** (após T-059).
+- `npm run lint`, `npm run typecheck`, `npm run build` e `npm test`: ok, com **33 arquivos e 273 testes passando**.
+- `npm run test:coverage`: **96,59% statements / 90,02% branches / 97,08% functions / 97,64% lines** (após T-060).
 - Testes de contraste entre temas e axe-core: **0 violações**.
 - Resultados resumidos em `docs/TASKS_SPEC.md`; nenhum resultado de teste, cobertura, screenshot ou deploy foi inventado.
 
