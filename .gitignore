@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Tests and env
+coverage
+.env
+.env.*
+!.env.example
+*.tsbuildinfo

@@ -75,7 +75,8 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Critério de pronto:** arquivos temporários e dependências não são versionados; scripts executam.
 - **Teste/evidência:** `git status`, execução dos scripts disponíveis.
 - **Commit:** `chore: configure project tooling`.
-- **Status:** ⏳ Não iniciada.
+- **Evidência:** git status limpo; typecheck, lint e build executados sem erro
+- **Status:** ✅ Concluída.
 
 ### T-007 — Instalar e configurar dependências
 - **Objetivo:** instalar React Router, styled-components, RHF, Zod e ferramentas de teste.
@@ -477,6 +478,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-17 | T-002 | Concluída | registro de revisão na seção 19 do TECH_SPEC | `docs: review technical specification` |
 | 2026-11-17 | T-003 | Concluída | DP-01 a DP-07 resolvidas no PRD §12 e TECH §18 | `docs: approve product decisions` |
 | 2026-11-17 | T-004 | Concluída | plano revisado; ordem T-001→T-048 mantida | `docs: approve implementation task plan` |
+| 2026-11-21 | T-006 | Concluída | git status limpo; typecheck, lint e build executados sem erro | `chore: configure project tooling` |
 
 ## Definition of Done global
 
