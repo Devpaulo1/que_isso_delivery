@@ -218,8 +218,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/components/CoffeeCard/**`.
 - **Critério de pronto:** imagem, nome, descrição, preço, tags e quantidade são exibidos.
 - **Teste/evidência:** teste de renderização e interação.
-- **Commit:** `feat: build coffee product card`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: criar card de produto`.
+- **Evidência:** CoffeeCard.test + currency helpers; renderização e interação ok
+- **Status:** ✅ Concluída.
 
 ### T-021 — Criar CoffeeCatalog
 - **Objetivo:** listar cafés a partir do catálogo tipado.
@@ -505,6 +506,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-017 | Concluída | coffees.test: 14 produtos válidos e 14 PNGs correspondentes (17 testes novos) | `feat: criar catalogo tipado de cafes` |
 | 2026-11-21 | T-018 | Concluída | Header.test (4 testes) + rotas com PageLayout; build e testes ok | `feat: criar cabecalho e layout compartilhado` |
 | 2026-11-21 | T-019 | Concluída | QuantityInput.test + quantity.test: limites e interação (novos testes ok) | `feat: adicionar controle de quantidade validado` |
+| 2026-11-21 | T-020 | Concluída | CoffeeCard.test + currency helpers; renderização e interação ok | `feat: criar card de produto` |
 
 ## Definition of Done global
 
