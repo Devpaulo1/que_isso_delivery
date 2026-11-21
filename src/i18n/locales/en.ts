@@ -1,0 +1,200 @@
+import type { Messages } from './pt'
+
+export const en: Messages = {
+  language: {
+    label: 'Language',
+  },
+  layout: {
+    skipLink: 'Skip to content',
+  },
+  header: {
+    home: ' — home page',
+    actions: 'Actions',
+    cartEmpty: 'Empty cart',
+    cartWithItems_one: 'Cart with {{count}} item',
+    cartWithItems_other: 'Cart with {{count}} items',
+  },
+  theme: {
+    toLight: 'Switch to light theme',
+    toDark: 'Switch to dark theme',
+  },
+  hero: {
+    title: 'Find the perfect coffee for any time of the day',
+    subtitle: 'With QuE IssO you get your coffee wherever you are, at any time',
+    simplePurchase: 'Simple and secure checkout',
+    packaging: 'Packaging keeps the coffee intact',
+    fastDelivery: 'Fast and tracked delivery',
+    freshCoffee: 'Your coffee arrives fresh',
+  },
+  catalog: {
+    title: 'Our coffees',
+    filter: 'Filter by category',
+    list: 'Coffee list',
+  },
+  categories: {
+    traditional: 'Traditional',
+    special: 'Special',
+    'with-milk': 'With milk',
+    alcoholic: 'Alcoholic',
+    iced: 'Iced',
+  },
+  card: {
+    categories: 'Categories',
+    imageAlt: 'Cup of {{name}}',
+    add: 'Add {{name}} to cart',
+    added: '{{quantity}} × {{name}} added to cart',
+  },
+  quantity: {
+    group: 'Quantity of {{name}}',
+    decrease: 'Decrease quantity of {{name}}',
+    increase: 'Increase quantity of {{name}}',
+  },
+  coffees: {
+    'expresso-tradicional': {
+      name: 'Traditional Espresso',
+      description: 'The classic coffee made with hot water and ground beans',
+    },
+    'expresso-americano': {
+      name: 'Americano',
+      description: 'Diluted espresso, milder than the traditional one',
+    },
+    'expresso-cremoso': {
+      name: 'Creamy Espresso',
+      description: 'Traditional espresso with a creamy foam',
+    },
+    'expresso-gelado': {
+      name: 'Iced Espresso',
+      description: 'Drink made with espresso and ice cubes',
+    },
+    'cafe-com-leite': {
+      name: 'Coffee with Milk',
+      description: 'Half traditional espresso, half steamed milk',
+    },
+    latte: {
+      name: 'Latte',
+      description: 'A shot of espresso with double milk and creamy foam',
+    },
+    capuccino: {
+      name: 'Cappuccino',
+      description: 'Cinnamon drink made with equal parts coffee, milk and foam',
+    },
+    macchiato: {
+      name: 'Macchiato',
+      description: 'Espresso mixed with a little hot milk and foam',
+    },
+    mocaccino: {
+      name: 'Mochaccino',
+      description: 'Espresso with chocolate syrup, a little milk and foam',
+    },
+    'chocolate-quente': {
+      name: 'Hot Chocolate',
+      description: 'Drink made with chocolate dissolved in hot milk and coffee',
+    },
+    cubano: {
+      name: 'Cuban',
+      description: 'Iced espresso drink with rum, cream and mint',
+    },
+    havaiano: {
+      name: 'Hawaiian',
+      description: 'Sweet drink made with coffee and coconut milk',
+    },
+    arabe: {
+      name: 'Arabic',
+      description: 'Drink made with Arabic coffee beans and spices',
+    },
+    irlandes: {
+      name: 'Irish',
+      description: 'Coffee-based drink with Irish whiskey, sugar and whipped cream',
+    },
+  },
+  cartItem: {
+    row_one: '{{name}}, {{count}} unit',
+    row_other: '{{name}}, {{count}} units',
+    remove: 'Remove',
+    removeLabel: 'Remove {{name}} from cart',
+  },
+  summary: {
+    label: 'Price summary',
+    items: 'Items total',
+    delivery: 'Delivery',
+    total: 'Total',
+  },
+  emptyCart: {
+    title: 'Your cart is empty',
+    description: 'Choose your favorite coffees from the catalog to build your order.',
+    action: 'See coffees',
+  },
+  form: {
+    optional: 'Optional',
+  },
+  address: {
+    title: 'Delivery address',
+    subtitle: 'Enter the address where you want to receive your order',
+    postalCode: 'ZIP code (CEP)',
+    postalCodeHint: 'The address is filled in automatically',
+    search: 'Look up CEP',
+    searching: 'Searching…',
+    street: 'Street',
+    number: 'Number',
+    complement: 'Complement',
+    neighborhood: 'Neighborhood',
+    city: 'City',
+    state: 'State',
+    status: {
+      loading: 'Looking up address…',
+      success: '✓ Address found. Check it and enter the number.',
+      invalid: '⚠ Invalid CEP. Check the 8 digits.',
+      notFound: '⚠ CEP not found. Please fill in the address manually.',
+      error: '⚠ Could not look up the CEP right now. Try again or fill it in manually.',
+    },
+  },
+  validation: {
+    postalCodeRequired: 'Enter the CEP',
+    postalCodeDigits: 'CEP must have 8 digits',
+    streetRequired: 'Enter the street',
+    numberRequired: 'Enter the number',
+    neighborhoodRequired: 'Enter the neighborhood',
+    cityRequired: 'Enter the city',
+    stateRequired: 'Enter the state',
+    stateInvalid: 'Invalid state',
+    paymentRequired: 'Select a payment method',
+    maxLength: 'Use at most {{max}} characters',
+  },
+  payment: {
+    title: 'Payment',
+    subtitle: 'Payment is made on delivery. Choose how you want to pay',
+    note: 'Fictional order: no charge will be made.',
+    credit: 'Credit card',
+    debit: 'Debit card',
+    cash: 'Cash',
+  },
+  checkout: {
+    pageTitle: 'Checkout',
+    completeOrder: 'Complete your order',
+    selectedCoffees: 'Selected coffees',
+    orderItems: 'Order items',
+    confirm: 'Confirm order',
+    unavailable_one: 'One item in the cart is no longer available in the catalog.',
+    unavailable_other: '{{count}} items in the cart are no longer available in the catalog.',
+    removeUnavailable: 'Remove unavailable items',
+    errorEmpty: 'Add at least one coffee before confirming the order.',
+    errorUnavailable: 'There are unavailable items in the cart. Remove them to continue.',
+    errorSave: 'Could not save the order in this browser. Please try again.',
+  },
+  success: {
+    title: 'Yay! Order confirmed',
+    subtitle: 'Now just wait and your coffee will reach you soon',
+    deliveryDetails: 'Delivery details',
+    deliveryTo: 'Delivery to',
+    postalCode: 'CEP',
+    estimate: 'Estimated delivery',
+    paymentOnDelivery: 'Payment on delivery',
+    orderNumber: 'Order #',
+    summary: 'Order summary',
+    confirmedItems: 'Confirmed order items',
+    backHome: 'Back to Home',
+    noOrderTitle: 'No confirmed order',
+    noOrderDescription:
+      'We could not find a completed order in this browser. Choose your coffees and place an order to see the confirmation.',
+  },
+}

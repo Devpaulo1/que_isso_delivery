@@ -2,12 +2,6 @@ export const PAYMENT_METHODS = ['credit', 'debit', 'cash'] as const
 
 export type PaymentMethod = (typeof PAYMENT_METHODS)[number]
 
-export const PAYMENT_METHOD_LABELS: Record<PaymentMethod, string> = {
-  credit: 'Cartão de crédito',
-  debit: 'Cartão de débito',
-  cash: 'Dinheiro',
-}
-
 export type { CheckoutFormData, CheckoutFormInput } from '@/schemas/checkoutSchema'
 
 export interface DeliveryAddress {

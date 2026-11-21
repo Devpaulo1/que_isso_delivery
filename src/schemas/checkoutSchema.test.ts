@@ -35,7 +35,7 @@ describe('checkoutSchema', () => {
   })
 
   it.each(['street', 'number', 'neighborhood', 'city'] as const)('requires %s', (field) => {
-    expect(errorsFor({ [field]: '   ' })[field]).toMatch(/^Informe/)
+    expect(errorsFor({ [field]: '   ' })[field]).toMatch(/^validation\..*Required$/)
   })
 
   it.each(['', 'S', 'XX', 'SPP', '12'])('rejects UF "%s"', (state) => {
@@ -43,7 +43,7 @@ describe('checkoutSchema', () => {
   })
 
   it.each([undefined, '', 'pix', null])('requires a valid payment method (%s)', (paymentMethod) => {
-    expect(errorsFor({ paymentMethod }).paymentMethod).toBe('Selecione uma forma de pagamento')
+    expect(errorsFor({ paymentMethod }).paymentMethod).toBe('validation.paymentRequired')
   })
 
   it.each(['credit', 'debit', 'cash'])('accepts payment method %s', (paymentMethod) => {

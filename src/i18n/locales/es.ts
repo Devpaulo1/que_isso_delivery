@@ -1,0 +1,200 @@
+import type { Messages } from './pt'
+
+export const es: Messages = {
+  language: {
+    label: 'Idioma',
+  },
+  layout: {
+    skipLink: 'Saltar al contenido',
+  },
+  header: {
+    home: ' — página de inicio',
+    actions: 'Acciones',
+    cartEmpty: 'Carrito vacío',
+    cartWithItems_one: 'Carrito con {{count}} artículo',
+    cartWithItems_other: 'Carrito con {{count}} artículos',
+  },
+  theme: {
+    toLight: 'Activar tema claro',
+    toDark: 'Activar tema oscuro',
+  },
+  hero: {
+    title: 'Encuentra el café perfecto para cualquier hora del día',
+    subtitle: 'Con QuE IssO recibes tu café donde estés, a cualquier hora',
+    simplePurchase: 'Compra simple y segura',
+    packaging: 'El empaque mantiene el café intacto',
+    fastDelivery: 'Entrega rápida y rastreada',
+    freshCoffee: 'El café llega fresquito a tu puerta',
+  },
+  catalog: {
+    title: 'Nuestros cafés',
+    filter: 'Filtrar por categoría',
+    list: 'Lista de cafés',
+  },
+  categories: {
+    traditional: 'Tradicional',
+    special: 'Especial',
+    'with-milk': 'Con leche',
+    alcoholic: 'Alcohólico',
+    iced: 'Helado',
+  },
+  card: {
+    categories: 'Categorías',
+    imageAlt: 'Taza de {{name}}',
+    add: 'Añadir {{name}} al carrito',
+    added: '{{quantity}} × {{name}} añadido al carrito',
+  },
+  quantity: {
+    group: 'Cantidad de {{name}}',
+    decrease: 'Disminuir cantidad de {{name}}',
+    increase: 'Aumentar cantidad de {{name}}',
+  },
+  coffees: {
+    'expresso-tradicional': {
+      name: 'Espresso Tradicional',
+      description: 'El café tradicional hecho con agua caliente y granos molidos',
+    },
+    'expresso-americano': {
+      name: 'Americano',
+      description: 'Espresso diluido, menos intenso que el tradicional',
+    },
+    'expresso-cremoso': {
+      name: 'Espresso Cremoso',
+      description: 'Café espresso tradicional con espuma cremosa',
+    },
+    'expresso-gelado': {
+      name: 'Espresso Helado',
+      description: 'Bebida preparada con café espresso y cubos de hielo',
+    },
+    'cafe-com-leite': {
+      name: 'Café con Leche',
+      description: 'Mitad espresso tradicional, mitad leche vaporizada',
+    },
+    latte: {
+      name: 'Latte',
+      description: 'Una dosis de espresso con el doble de leche y espuma cremosa',
+    },
+    capuccino: {
+      name: 'Capuchino',
+      description: 'Bebida con canela hecha de partes iguales de café, leche y espuma',
+    },
+    macchiato: {
+      name: 'Macchiato',
+      description: 'Espresso mezclado con un poco de leche caliente y espuma',
+    },
+    mocaccino: {
+      name: 'Mocaccino',
+      description: 'Espresso con sirope de chocolate, poca leche y espuma',
+    },
+    'chocolate-quente': {
+      name: 'Chocolate Caliente',
+      description: 'Bebida hecha con chocolate disuelto en leche caliente y café',
+    },
+    cubano: {
+      name: 'Cubano',
+      description: 'Bebida helada de espresso con ron, crema de leche y hierbabuena',
+    },
+    havaiano: {
+      name: 'Hawaiano',
+      description: 'Bebida dulce preparada con café y leche de coco',
+    },
+    arabe: {
+      name: 'Árabe',
+      description: 'Bebida preparada con granos de café árabe y especias',
+    },
+    irlandes: {
+      name: 'Irlandés',
+      description: 'Bebida a base de café, whisky irlandés, azúcar y nata montada',
+    },
+  },
+  cartItem: {
+    row_one: '{{name}}, {{count}} unidad',
+    row_other: '{{name}}, {{count}} unidades',
+    remove: 'Quitar',
+    removeLabel: 'Quitar {{name}} del carrito',
+  },
+  summary: {
+    label: 'Resumen de valores',
+    items: 'Total de artículos',
+    delivery: 'Envío',
+    total: 'Total',
+  },
+  emptyCart: {
+    title: 'Tu carrito está vacío',
+    description: 'Elige tus cafés favoritos del catálogo para armar tu pedido.',
+    action: 'Ver cafés',
+  },
+  form: {
+    optional: 'Opcional',
+  },
+  address: {
+    title: 'Dirección de entrega',
+    subtitle: 'Indica la dirección donde quieres recibir tu pedido',
+    postalCode: 'Código postal (CEP)',
+    postalCodeHint: 'La dirección se completa automáticamente',
+    search: 'Buscar CEP',
+    searching: 'Buscando…',
+    street: 'Calle',
+    number: 'Número',
+    complement: 'Complemento',
+    neighborhood: 'Barrio',
+    city: 'Ciudad',
+    state: 'Estado',
+    status: {
+      loading: 'Buscando dirección…',
+      success: '✓ Dirección encontrada. Revísala e indica el número.',
+      invalid: '⚠ CEP inválido. Revisa los 8 dígitos.',
+      notFound: '⚠ CEP no encontrado. Completa la dirección manualmente.',
+      error: '⚠ No fue posible consultar el CEP ahora. Inténtalo de nuevo o complétala manualmente.',
+    },
+  },
+  validation: {
+    postalCodeRequired: 'Indica el CEP',
+    postalCodeDigits: 'El CEP debe tener 8 dígitos',
+    streetRequired: 'Indica la calle',
+    numberRequired: 'Indica el número',
+    neighborhoodRequired: 'Indica el barrio',
+    cityRequired: 'Indica la ciudad',
+    stateRequired: 'Indica el estado',
+    stateInvalid: 'Estado inválido',
+    paymentRequired: 'Selecciona una forma de pago',
+    maxLength: 'Usa como máximo {{max}} caracteres',
+  },
+  payment: {
+    title: 'Pago',
+    subtitle: 'El pago se realiza en la entrega. Elige cómo quieres pagar',
+    note: 'Pedido ficticio: no se realizará ningún cobro.',
+    credit: 'Tarjeta de crédito',
+    debit: 'Tarjeta de débito',
+    cash: 'Efectivo',
+  },
+  checkout: {
+    pageTitle: 'Finalizar pedido',
+    completeOrder: 'Completa tu pedido',
+    selectedCoffees: 'Cafés seleccionados',
+    orderItems: 'Artículos del pedido',
+    confirm: 'Confirmar pedido',
+    unavailable_one: 'Un artículo del carrito ya no está disponible en el catálogo.',
+    unavailable_other: '{{count}} artículos del carrito ya no están disponibles en el catálogo.',
+    removeUnavailable: 'Quitar artículos no disponibles',
+    errorEmpty: 'Añade al menos un café antes de confirmar el pedido.',
+    errorUnavailable: 'Hay artículos no disponibles en el carrito. Quítalos para continuar.',
+    errorSave: 'No fue posible guardar el pedido en este navegador. Inténtalo de nuevo.',
+  },
+  success: {
+    title: '¡Bien! Pedido confirmado',
+    subtitle: 'Ahora solo espera, que pronto el café llegará a ti',
+    deliveryDetails: 'Detalles de la entrega',
+    deliveryTo: 'Entrega en',
+    postalCode: 'CEP',
+    estimate: 'Tiempo estimado de entrega',
+    paymentOnDelivery: 'Pago en la entrega',
+    orderNumber: 'Pedido n.º',
+    summary: 'Resumen del pedido',
+    confirmedItems: 'Artículos del pedido confirmado',
+    backHome: 'Volver al inicio',
+    noOrderTitle: 'Ningún pedido confirmado',
+    noOrderDescription:
+      'No encontramos un pedido finalizado en este navegador. Elige tus cafés y finaliza un pedido para ver la confirmación.',
+  },
+}

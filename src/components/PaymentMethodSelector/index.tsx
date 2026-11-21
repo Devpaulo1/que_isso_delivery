@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next'
 import type { ReactNode } from 'react'
 import { useFormContext } from 'react-hook-form'
 import styled from 'styled-components'
 import { BankIcon, CreditCardIcon, DollarIcon, MoneyIcon } from '@/components/icons'
 import type { CheckoutFormInput } from '@/schemas/checkoutSchema'
-import { PAYMENT_METHOD_LABELS, PAYMENT_METHODS, type PaymentMethod } from '@/types/checkout'
+import { translateError } from '@/schemas/checkoutSchema'
+import { PAYMENT_METHODS, type PaymentMethod } from '@/types/checkout'
 
 const ICONS: Record<PaymentMethod, ReactNode> = {
   credit: <CreditCardIcon size={18} />,
@@ -138,6 +140,7 @@ export function PaymentMethodSelector() {
     register,
     formState: { errors },
   } = useFormContext<CheckoutFormInput>()
+  const { t } = useTranslation()
   const error = errors.paymentMethod?.message
 
   return (
@@ -145,8 +148,8 @@ export function PaymentMethodSelector() {
       <Legend>
         <DollarIcon size={22} />
         <span>
-          <strong>Pagamento</strong>
-          O pagamento é feito na entrega. Escolha a forma que deseja pagar
+          <strong>{t('payment.title')}</strong>
+          {t('payment.subtitle')}
         </span>
       </Legend>
 
@@ -155,17 +158,17 @@ export function PaymentMethodSelector() {
           <Option key={method}>
             <input type="radio" value={method} {...register('paymentMethod')} />
             {ICONS[method]}
-            {PAYMENT_METHOD_LABELS[method]}
+            {t(`payment.${method}`)}
           </Option>
         ))}
       </Options>
 
       {error ? (
         <ErrorMessage id={ERROR_ID} role="alert">
-          {error}
+          {translateError(t, error)}
         </ErrorMessage>
       ) : null}
-      <Note>Pedido fictício: nenhuma cobrança será realizada.</Note>
+      <Note>{t('payment.note')}</Note>
     </Card>
   )
 }

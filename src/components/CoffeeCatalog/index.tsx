@@ -1,7 +1,7 @@
+import { useTranslation } from 'react-i18next'
 import { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { CoffeeCard } from '@/components/CoffeeCard'
-import { COFFEE_CATEGORY_LABELS } from '@/data/categories'
 import { coffees as catalog } from '@/data/coffees'
 import type { Coffee, CoffeeCategory } from '@/types/coffee'
 import { filterCoffeesByCategory, getAvailableCategories } from '@/utils/catalog'
@@ -74,6 +74,7 @@ export interface CoffeeCatalogProps {
 }
 
 export function CoffeeCatalog({ coffees = catalog, onAddToCart }: CoffeeCatalogProps) {
+  const { t } = useTranslation()
   const [category, setCategory] = useState<CoffeeCategory | null>(null)
   const categories = useMemo(() => getAvailableCategories(coffees), [coffees])
   const visible = useMemo(() => filterCoffeesByCategory(coffees, category), [coffees, category])
@@ -81,8 +82,8 @@ export function CoffeeCatalog({ coffees = catalog, onAddToCart }: CoffeeCatalogP
   return (
     <Section aria-labelledby="catalog-title">
       <Heading>
-        <h2 id="catalog-title">Nossos cafés</h2>
-        <Filters role="group" aria-label="Filtrar por categoria">
+        <h2 id="catalog-title">{t('catalog.title')}</h2>
+        <Filters role="group" aria-label={t('catalog.filter')}>
           {categories.map((item) => (
             <FilterButton
               key={item}
@@ -90,13 +91,13 @@ export function CoffeeCatalog({ coffees = catalog, onAddToCart }: CoffeeCatalogP
               aria-pressed={category === item}
               onClick={() => setCategory((current) => (current === item ? null : item))}
             >
-              {COFFEE_CATEGORY_LABELS[item]}
+              {t(`categories.${item}`)}
             </FilterButton>
           ))}
         </Filters>
       </Heading>
 
-      <Grid aria-label="Lista de cafés">
+      <Grid aria-label={t('catalog.list')}>
         {visible.map((coffee) => (
           <li key={coffee.id}>
             <CoffeeCard coffee={coffee} onAddToCart={onAddToCart} />

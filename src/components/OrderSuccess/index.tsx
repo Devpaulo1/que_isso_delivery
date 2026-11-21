@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import styled, { type DefaultTheme } from 'styled-components'
@@ -6,7 +7,7 @@ import { DollarIcon, MapPinIcon, TimerIcon } from '@/components/icons'
 import { ProductImage } from '@/components/ProductImage'
 import { findCoffeeById } from '@/data/coffees'
 import { ROUTES } from '@/routes/paths'
-import { PAYMENT_METHOD_LABELS } from '@/types/checkout'
+import { LANGUAGES, coffeeName } from '@/i18n'
 import type { Order } from '@/types/order'
 import { formatCurrency } from '@/utils/currency'
 import { formatPostalCode } from '@/utils/postalCode'
@@ -153,8 +154,6 @@ function InfoItem({ tone, icon, children }: { tone: Tone; icon: ReactNode; child
   )
 }
 
-const dateFormatter = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' })
-
 export interface OrderSuccessProps {
   order: Order
 }
@@ -162,49 +161,52 @@ export interface OrderSuccessProps {
 /** Exibe exclusivamente dados do snapshot: não consulta carrinho nem catálogo. */
 export function OrderSuccess({ order }: OrderSuccessProps) {
   const { address } = order
+  const { t, i18n } = useTranslation()
+  const locale = LANGUAGES.find((item) => item.code === i18n.language)?.htmlLang ?? 'pt-BR'
+  const dateFormatter = new Intl.DateTimeFormat(locale, { dateStyle: 'short', timeStyle: 'short' })
 
   return (
     <Wrapper aria-labelledby="success-title">
-      <Title id="success-title">Uhu! Pedido confirmado</Title>
-      <Subtitle>Agora é só aguardar que logo o café chegará até você</Subtitle>
+      <Title id="success-title">{t('success.title')}</Title>
+      <Subtitle>{t('success.subtitle')}</Subtitle>
 
       <Grid>
         <div>
-          <InfoBox aria-label="Detalhes da entrega">
+          <InfoBox aria-label={t('success.deliveryDetails')}>
             <InfoItem tone="purple" icon={<MapPinIcon size={16} />}>
-              Entrega em{' '}
+              {t('success.deliveryTo')}{' '}
               <strong>
                 {address.street}, {address.number}
               </strong>
               {address.complement ? ` — ${address.complement}` : null}
               <br />
-              {address.neighborhood} - {address.city}, {address.state} · CEP {formatPostalCode(address.postalCode)}
+              {address.neighborhood} - {address.city}, {address.state} · {t('success.postalCode')} {formatPostalCode(address.postalCode)}
             </InfoItem>
             <InfoItem tone="yellow" icon={<TimerIcon size={16} />}>
-              Previsão de entrega
+              {t('success.estimate')}
               <br />
               <strong>20 min - 30 min</strong>
             </InfoItem>
             <InfoItem tone="yellowDark" icon={<DollarIcon size={16} />}>
-              Pagamento na entrega
+              {t('success.paymentOnDelivery')}
               <br />
-              <strong>{PAYMENT_METHOD_LABELS[order.paymentMethod]}</strong>
+              <strong>{t(`payment.${order.paymentMethod}`)}</strong>
             </InfoItem>
           </InfoBox>
           <OrderMeta>
-            Pedido nº {order.id.slice(0, 8).toUpperCase()} · {dateFormatter.format(new Date(order.createdAt))}
+            {t('success.orderNumber')} {order.id.slice(0, 8).toUpperCase()} · {dateFormatter.format(new Date(order.createdAt))}
           </OrderMeta>
         </div>
 
         <Summary aria-labelledby="order-summary-title">
-          <h2 id="order-summary-title">Resumo do pedido</h2>
-          <ItemList aria-label="Itens do pedido confirmado">
+          <h2 id="order-summary-title">{t('success.summary')}</h2>
+          <ItemList aria-label={t('success.confirmedItems')}>
             {order.items.map((item) => (
               <li key={item.coffeeId}>
                 {/* Imagem atual do catálogo quando existir (paths mudam entre builds); senão a do snapshot. */}
                 <ProductImage src={findCoffeeById(item.coffeeId)?.image ?? item.image} size={40} />
                 <span>
-                  {item.quantity} × {item.name}
+                  {item.quantity} × {coffeeName(t, { id: item.coffeeId, name: item.name })}
                 </span>
                 <strong>{formatCurrency(item.lineTotalInCents)}</strong>
               </li>
@@ -218,7 +220,7 @@ export function OrderSuccess({ order }: OrderSuccessProps) {
         </Summary>
       </Grid>
 
-      <BackLink to={ROUTES.home}>Voltar para a Home</BackLink>
+      <BackLink to={ROUTES.home}>{t('success.backHome')}</BackLink>
     </Wrapper>
   )
 }

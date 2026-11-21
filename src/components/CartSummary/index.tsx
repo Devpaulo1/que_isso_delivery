@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import type { ReactNode } from 'react'
 import styled from 'styled-components'
 import { formatCurrency } from '@/utils/currency'
@@ -48,19 +49,20 @@ export function CartSummary({
   totalInCents,
   children,
 }: CartSummaryProps) {
+  const { t } = useTranslation()
   return (
-    <section aria-label="Resumo de valores">
+    <section aria-label={t('summary.label')}>
       <List>
         <div>
-          <dt>Total de itens</dt>
+          <dt>{t('summary.items')}</dt>
           <dd>{formatCurrency(subtotalInCents)}</dd>
         </div>
         <div>
-          <dt>Entrega</dt>
+          <dt>{t('summary.delivery')}</dt>
           <dd>{formatCurrency(deliveryFeeInCents)}</dd>
         </div>
         <div className="total">
-          <dt>Total</dt>
+          <dt>{t('summary.total')}</dt>
           <dd>{formatCurrency(totalInCents)}</dd>
         </div>
       </List>

@@ -70,7 +70,7 @@ A IA é ferramenta de apoio. O estudante deve revisar as respostas, tomar as dec
 
 ## Como as respostas foram validadas
 
-- `npm run lint`, `npm run typecheck`, `npm test` (262 testes) e `npm run build` executados a cada tarefa; saídas resumidas no TASKS_SPEC.
+- `npm run lint`, `npm run typecheck`, `npm test` (263 testes) e `npm run build` executados a cada tarefa; saídas resumidas no TASKS_SPEC.
 - Cobertura com `npm run test:coverage`: 96.59% statements / 91.57% branches.
 - Screenshots em Chrome headless (1280px e 320–390px, temas claro e escuro) inspecionados.
 - axe-core no jsdom e no Chrome real: 0 violações.

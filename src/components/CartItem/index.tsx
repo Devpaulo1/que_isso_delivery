@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+import { coffeeName } from '@/i18n'
 import styled from 'styled-components'
 import { TrashIcon } from '@/components/icons'
 import { ProductImage } from '@/components/ProductImage'
@@ -76,23 +78,25 @@ export interface CartItemProps {
 
 export function CartItem({ item, onIncrement, onDecrement, onRemove }: CartItemProps) {
   const { coffee, quantity, lineTotalInCents } = item
+  const { t } = useTranslation()
+  const name = coffeeName(t, coffee)
 
   return (
-    <Row aria-label={`${coffee.name}, ${quantity} ${quantity === 1 ? 'unidade' : 'unidades'}`}>
+    <Row aria-label={t('cartItem.row', { name, count: quantity })}>
       <ProductImage src={coffee.image} size={64} />
       <Info>
-        <h3>{coffee.name}</h3>
+        <h3>{name}</h3>
         <Actions>
           <QuantityInput
-            label={coffee.name}
+            label={name}
             value={quantity}
             readOnly
             onIncrement={() => onIncrement(coffee.id)}
             onDecrement={() => onDecrement(coffee.id)}
           />
-          <RemoveButton type="button" onClick={() => onRemove(coffee.id)} aria-label={`Remover ${coffee.name} do carrinho`}>
+          <RemoveButton type="button" onClick={() => onRemove(coffee.id)} aria-label={t('cartItem.removeLabel', { name })}>
             <TrashIcon size={16} />
-            Remover
+            {t('cartItem.remove')}
           </RemoveButton>
         </Actions>
       </Info>

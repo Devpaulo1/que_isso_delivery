@@ -33,7 +33,7 @@ npm run dev        # http://localhost:5173
 | `npm run test:watch` | Testes em modo watch |
 | `npm run test:coverage` | Testes com relatório de cobertura (v8) |
 
-Resultado na última execução: **262 testes passando**, cobertura de 96.59% statements / 91.57% branches, lint e typecheck sem erros.
+Resultado na última execução: **263 testes passando**, lint e typecheck sem erros. Antes da internacionalização, a cobertura medida foi de 96.59% statements / 91.57% branches.
 
 ## Stack (versões efetivas)
 
@@ -49,6 +49,7 @@ Resultado na última execução: **262 testes passando**, cobertura de 96.59% st
 | Vitest + Testing Library | 4.1.12 / 16.3.3 | Testes |
 | jsdom | 26.1.0 | Ambiente de testes |
 | axe-core | 4.14.1 | Testes automáticos de acessibilidade |
+| i18next + react-i18next | 27.2.2 / 18.0.3 | Interface em português, inglês e espanhol |
 
 ## Fluxo do produto
 
@@ -89,6 +90,7 @@ Principais decisões:
 - **ViaCEP:** consulta automática quando o CEP tem 8 dígitos, mais um botão "Buscar CEP" para nova tentativa. Trata CEP inválido, não encontrado, resposta parcial, erro de rede/HTTP/JSON, cancela consultas antigas (`AbortController`) e mantém cache. Número e complemento nunca são sobrescritos.
 - **Pedido:** ao confirmar, a ordem é: criar snapshot imutável → salvar → limpar carrinho → navegar. Se não conseguir salvar, o carrinho é mantido.
 - **Tema:** claro/escuro com os mesmos tokens semânticos; preferência salva, com fallback para a preferência do sistema.
+- **Idioma:** seletor pt/en/es no Header com `i18next`; preferência salva em `que-isso:language:v1` e `document.documentElement.lang` sincronizado. Nomes/descrições dos cafés e rótulos de erro também são traduzidos.
 
 ## Acessibilidade e responsividade
 
@@ -121,7 +123,7 @@ Todas as interações estão registradas em [que-isso-spec/docs/AI_USAGE.md](./q
 ## Limitações conhecidas
 
 - O Figma de referência não foi inspecionado diretamente: layout, medidas e breakpoints seguem a descrição textual da spec (DP-07).
-- O bundle é um único chunk (~147 kB gzip); code-splitting por rota é uma melhoria possível.
+- O bundle é um único chunk (~169 kB gzip após i18n); code-splitting por rota é uma melhoria possível.
 - Deploy: ver seção abaixo.
 
 ## Deploy

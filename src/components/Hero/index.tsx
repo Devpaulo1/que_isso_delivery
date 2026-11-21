@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import type { ReactNode } from 'react'
 import styled, { type DefaultTheme } from 'styled-components'
 import heroImage from '@/assets/hero.png'
@@ -12,11 +13,11 @@ const toneColors: Record<Tone, (theme: DefaultTheme) => { bg: string; fg: string
   purple: (t) => ({ bg: t.colors.brandPurpleDark, fg: t.colors.onBrand }),
 }
 
-const highlights: Array<{ tone: Tone; icon: ReactNode; text: string }> = [
-  { tone: 'yellowDark', icon: <CartIcon size={16} />, text: 'Compra simples e segura' },
-  { tone: 'text', icon: <PackageIcon size={16} />, text: 'Embalagem mantém o café intacto' },
-  { tone: 'yellow', icon: <TimerIcon size={16} />, text: 'Entrega rápida e rastreada' },
-  { tone: 'purple', icon: <CoffeeIcon size={16} />, text: 'O café chega fresquinho até você' },
+const highlights: Array<{ tone: Tone; icon: ReactNode; text: `hero.${string}` }> = [
+  { tone: 'yellowDark', icon: <CartIcon size={16} />, text: 'hero.simplePurchase' },
+  { tone: 'text', icon: <PackageIcon size={16} />, text: 'hero.packaging' },
+  { tone: 'yellow', icon: <TimerIcon size={16} />, text: 'hero.fastDelivery' },
+  { tone: 'purple', icon: <CoffeeIcon size={16} />, text: 'hero.freshCoffee' },
 ]
 
 const Section = styled.section`
@@ -89,18 +90,17 @@ const Illustration = styled.img`
 `
 
 export function Hero() {
+  const { t } = useTranslation()
   return (
     <Section aria-labelledby="hero-title">
       <div>
-        <Title id="hero-title">Encontre o café perfeito para qualquer hora do dia</Title>
-        <Subtitle>
-          Com o QuE IssO você recebe seu café onde estiver, a qualquer hora
-        </Subtitle>
+        <Title id="hero-title">{t('hero.title')}</Title>
+        <Subtitle>{t('hero.subtitle')}</Subtitle>
         <List>
           {highlights.map(({ tone, icon, text }) => (
             <li key={text}>
               <IconBadge $tone={tone}>{icon}</IconBadge>
-              {text}
+              {t(text)}
             </li>
           ))}
         </List>

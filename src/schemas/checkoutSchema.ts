@@ -1,3 +1,4 @@
+import type { TFunction } from 'i18next'
 import { z } from 'zod'
 import { PAYMENT_METHODS } from '@/types/checkout'
 import { digitsOnly } from '@/utils/postalCode'
@@ -7,37 +8,49 @@ export const BRAZILIAN_STATES = [
   'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO',
 ] as const
 
+/**
+ * As mensagens do schema são chaves de tradução (ex.: `validation.streetRequired`),
+ * traduzidas na exibição para acompanhar a troca de idioma.
+ * Parâmetros vão depois de `|` (ex.: `validation.maxLength|120`).
+ */
+const maxLength = (max: number) => `validation.maxLength|${max}`
+
+export function translateError(t: TFunction, message: string): string {
+  const [key, max] = message.split('|')
+  return t(key, { max, defaultValue: message })
+}
+
 const requiredText = (message: string, max = 120) =>
   z
     .string({ error: message })
     .trim()
     .min(1, message)
-    .max(max, `Use no máximo ${max} caracteres`)
+    .max(max, maxLength(max))
 
 export const checkoutSchema = z.object({
   postalCode: z
-    .string({ error: 'Informe o CEP' })
+    .string({ error: 'validation.postalCodeRequired' })
     .trim()
-    .min(1, 'Informe o CEP')
+    .min(1, 'validation.postalCodeRequired')
     .transform(digitsOnly)
-    .pipe(z.string().regex(/^\d{8}$/, 'CEP deve ter 8 dígitos')),
-  street: requiredText('Informe a rua'),
-  number: requiredText('Informe o número', 10),
+    .pipe(z.string().regex(/^\d{8}$/, 'validation.postalCodeDigits')),
+  street: requiredText('validation.streetRequired'),
+  number: requiredText('validation.numberRequired', 10),
   complement: z
     .string()
     .trim()
-    .max(60, 'Use no máximo 60 caracteres')
+    .max(60, maxLength(60))
     .optional()
     .transform((value) => (value ? value : undefined)),
-  neighborhood: requiredText('Informe o bairro', 80),
-  city: requiredText('Informe a cidade', 80),
+  neighborhood: requiredText('validation.neighborhoodRequired', 80),
+  city: requiredText('validation.cityRequired', 80),
   state: z
-    .string({ error: 'Informe a UF' })
+    .string({ error: 'validation.stateRequired' })
     .trim()
-    .min(1, 'Informe a UF')
+    .min(1, 'validation.stateRequired')
     .transform((value) => value.toUpperCase())
-    .pipe(z.enum(BRAZILIAN_STATES, { error: 'UF inválida' })),
-  paymentMethod: z.enum(PAYMENT_METHODS, { error: 'Selecione uma forma de pagamento' }),
+    .pipe(z.enum(BRAZILIAN_STATES, { error: 'validation.stateInvalid' })),
+  paymentMethod: z.enum(PAYMENT_METHODS, { error: 'validation.paymentRequired' }),
 })
 
 /** Valores iniciais do formulário: nenhum pagamento pré-selecionado (RF-09). */

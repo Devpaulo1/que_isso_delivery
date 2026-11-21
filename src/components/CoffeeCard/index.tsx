@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { CartIcon } from '@/components/icons'
 import { ProductImage } from '@/components/ProductImage'
 import { QuantityInput } from '@/components/QuantityInput'
 import { MIN_QUANTITY } from '@/config/constants'
+import { coffeeDescription, coffeeName, tagLabel } from '@/i18n'
 import type { Coffee } from '@/types/coffee'
 import { formatAmount } from '@/utils/currency'
 import { isValidQuantity } from '@/utils/quantity'
@@ -118,35 +120,37 @@ export function CoffeeCard({ coffee, onAddToCart }: CoffeeCardProps) {
   const [quantity, setQuantity] = useState(MIN_QUANTITY)
   const [feedback, setFeedback] = useState('')
   const titleId = `coffee-${coffee.id}-title`
+  const { t } = useTranslation()
+  const name = coffeeName(t, coffee)
 
   function handleAdd() {
     if (!isValidQuantity(quantity)) return
     onAddToCart?.(coffee.id, quantity)
-    setFeedback(`${quantity} × ${coffee.name} adicionado ao carrinho`)
+    setFeedback(t('card.added', { quantity, name }))
     setQuantity(MIN_QUANTITY)
   }
 
   return (
     <Card aria-labelledby={titleId}>
-      <Image src={coffee.image} alt={`Xícara de ${coffee.name}`} size={120} loading="lazy" />
-      <Tags aria-label="Categorias">
+      <Image src={coffee.image} alt={t('card.imageAlt', { name })} size={120} loading="lazy" />
+      <Tags aria-label={t('card.categories')}>
         {coffee.tags.map((tag) => (
-          <li key={tag}>{tag}</li>
+          <li key={tag}>{tagLabel(t, tag)}</li>
         ))}
       </Tags>
-      <Name id={titleId}>{coffee.name}</Name>
-      <Description>{coffee.description}</Description>
+      <Name id={titleId}>{name}</Name>
+      <Description>{coffeeDescription(t, coffee)}</Description>
 
       <Footer>
         <Price>
           R$<strong>{formatAmount(coffee.priceInCents)}</strong>
         </Price>
         <Controls>
-          <QuantityInput label={coffee.name} value={quantity} onChange={setQuantity} />
+          <QuantityInput label={name} value={quantity} onChange={setQuantity} />
           <AddButton
             type="button"
             onClick={handleAdd}
-            aria-label={`Adicionar ${coffee.name} ao carrinho`}
+            aria-label={t('card.add', { name })}
             disabled={!isValidQuantity(quantity)}
           >
             <CartIcon size={20} />

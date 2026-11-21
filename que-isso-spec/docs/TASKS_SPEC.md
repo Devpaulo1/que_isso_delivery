@@ -512,6 +512,18 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Evidência:** TECH_SPEC §20 com matriz RF/RN/RNF, pendências e divergências; PRD atualizado para status "Implemented — pending student review"
 - **Status:** ✅ Concluída.
 
+## Fase 9 — Internacionalização
+
+### T-057 — Adicionar seletor de idioma (pt/en/es)
+- **Objetivo:** traduzir a interface, os cafés, as tags e as mensagens de erro, com preferência persistida e `document.documentElement.lang` sincronizado.
+- **Requisitos:** RNF-01, RNF-06, RF-15.
+- **Arquivos:** `src/i18n/**`, `src/components/LanguageSelector/**`, `src/main.tsx`, componentes e testes afetados.
+- **Critério de pronto:** trocar idioma atualiza toda a UI; idioma inválido no storage cai para pt-BR; textos visíveis permanecem identificados como QuE IssO.
+- **Teste/evidência:** build, lint, typecheck e suíte completa com i18next ativo.
+- **Commit:** `feat: adicionar seletor de idioma com i18next`.
+- **Evidência:** i18n com pt/en/es, `LanguageSelector`, chaves `que-isso:language:v1` e tradução de cafés/tags/erros
+- **Status:** ✅ Concluída.
+
 ## Registro de execução
 
 | Data | Task ID | Resultado | Testes/evidência | Commit |
@@ -563,6 +575,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-046 | Concluída | README raiz e que-isso-spec/README com instalação, scripts, stack, arquitetura, fluxo, branding e limitações | `docs: completar documentacao do projeto` |
 | 2026-11-21 | T-047 | Concluída (config local) | vercel.json e public/_redirects na raiz; build gera dist/_redirects; publicação não autorizada | `chore: preparar deploy de producao` |
 | 2026-11-21 | T-048 | Concluída | TECH_SPEC §20 com matriz RF/RN/RNF, pendências e divergências; PRD atualizado | `docs: finalizar rastreabilidade das specs` |
+| 2026-11-21 | T-057 | Concluída | Header.test troca pt/en/es e persiste idioma; lint, typecheck, build e 263 testes ok | `feat: adicionar seletor de idioma com i18next` |
 
 ## Definition of Done global
 

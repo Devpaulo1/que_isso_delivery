@@ -15,4 +15,5 @@ export const STORAGE_KEYS = {
   cart: 'que-isso:cart:v1',
   theme: 'que-isso:theme:v1',
   lastOrder: 'que-isso:last-order:v1',
+  language: 'que-isso:language:v1',
 } as const

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useRef } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
 import styled from 'styled-components'
@@ -85,16 +86,14 @@ const Status = styled.p<{ $tone: 'neutral' | 'success' | 'error' }>`
     $tone === 'error' ? theme.colors.error : $tone === 'success' ? theme.colors.success : theme.colors.text};
 `
 
+/** `text` é a chave de tradução da mensagem; vazio = sem mensagem. */
 const STATUS_MESSAGES: Record<CepLookupState['status'], { text: string; tone: 'neutral' | 'success' | 'error' }> = {
   idle: { text: '', tone: 'neutral' },
-  loading: { text: 'Buscando endereço…', tone: 'neutral' },
-  success: { text: '✓ Endereço encontrado. Confira e informe o número.', tone: 'success' },
-  invalid: { text: '⚠ CEP inválido. Verifique os 8 dígitos.', tone: 'error' },
-  'not-found': { text: '⚠ CEP não encontrado. Preencha o endereço manualmente.', tone: 'error' },
-  error: {
-    text: '⚠ Não foi possível consultar o CEP agora. Tente novamente ou preencha manualmente.',
-    tone: 'error',
-  },
+  loading: { text: 'address.status.loading', tone: 'neutral' },
+  success: { text: 'address.status.success', tone: 'success' },
+  invalid: { text: 'address.status.invalid', tone: 'error' },
+  'not-found': { text: 'address.status.notFound', tone: 'error' },
+  error: { text: 'address.status.error', tone: 'error' },
 }
 
 /** Campos preenchidos pela API. Número e complemento nunca são sobrescritos. */
@@ -112,6 +111,7 @@ export function DeliveryAddressForm() {
     formState: { errors },
   } = useFormContext<CheckoutFormInput>()
   const { state, lookup } = useCepLookup()
+  const { t } = useTranslation()
   const lastLookedUp = useRef<string | null>(null)
 
   async function runLookup(rawCep: string) {
@@ -134,8 +134,8 @@ export function DeliveryAddressForm() {
       <Heading>
         <MapPinIcon size={22} />
         <div>
-          <h3 id="address-title">Endereço de entrega</h3>
-          <p>Informe o endereço onde deseja receber seu pedido</p>
+          <h3 id="address-title">{t('address.title')}</h3>
+          <p>{t('address.subtitle')}</p>
         </div>
       </Heading>
 
@@ -146,12 +146,12 @@ export function DeliveryAddressForm() {
           render={({ field, fieldState }) => (
             <TextField
               className="cep"
-              label="CEP"
+              label={t('address.postalCode')}
               placeholder="00000-000"
               inputMode="numeric"
               autoComplete="postal-code"
               maxLength={9}
-              hint="O endereço é preenchido automaticamente"
+              hint={t('address.postalCodeHint')}
               error={fieldState.error?.message}
               name={field.name}
               ref={field.ref}
@@ -174,31 +174,31 @@ export function DeliveryAddressForm() {
             onClick={() => void runLookup(getValues('postalCode') ?? '')}
             disabled={state.status === 'loading'}
           >
-            {state.status === 'loading' ? 'Buscando…' : 'Buscar CEP'}
+            {state.status === 'loading' ? t('address.searching') : t('address.search')}
           </LookupButton>
         </div>
 
         <Status role="status" aria-live="polite" $tone={status.tone}>
-          {status.text}
+          {status.text ? t(status.text) : ''}
         </Status>
 
         <TextField
           className="street"
-          label="Rua"
+          label={t('address.street')}
           autoComplete="address-line1"
           error={errors.street?.message}
           {...register('street')}
         />
         <TextField
           className="number"
-          label="Número"
+          label={t('address.number')}
           inputMode="numeric"
           error={errors.number?.message}
           {...register('number')}
         />
         <TextField
           className="complement"
-          label="Complemento"
+          label={t('address.complement')}
           optional
           autoComplete="address-line2"
           error={errors.complement?.message}
@@ -206,20 +206,20 @@ export function DeliveryAddressForm() {
         />
         <TextField
           className="neighborhood"
-          label="Bairro"
+          label={t('address.neighborhood')}
           error={errors.neighborhood?.message}
           {...register('neighborhood')}
         />
         <TextField
           className="city"
-          label="Cidade"
+          label={t('address.city')}
           autoComplete="address-level2"
           error={errors.city?.message}
           {...register('city')}
         />
         <TextField
           className="state"
-          label="UF"
+          label={t('address.state')}
           maxLength={2}
           autoComplete="address-level1"
           error={errors.state?.message}

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { MoonIcon, SunIcon } from '@/components/icons'
 import { useTheme } from '@/hooks/useTheme'
@@ -20,8 +21,9 @@ const ToggleButton = styled.button`
 
 export function ThemeToggle() {
   const { themeName, toggleTheme } = useTheme()
+  const { t } = useTranslation()
   const isDark = themeName === 'dark'
-  const label = isDark ? 'Ativar tema claro' : 'Ativar tema escuro'
+  const label = isDark ? t('theme.toLight') : t('theme.toDark')
 
   return (
     <ToggleButton type="button" onClick={toggleTheme} aria-label={label} title={label}>

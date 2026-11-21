@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -116,6 +117,7 @@ export function Checkout() {
     missingCoffeeIds,
     clearCart,
   } = useCart()
+  const { t } = useTranslation()
   const [submitError, setSubmitError] = useState<string | null>(null)
 
   const methods = useForm<CheckoutFormInput, unknown, CheckoutFormData>({
@@ -137,8 +139,8 @@ export function Checkout() {
     if (!check.ok) {
       setSubmitError(
         check.reason === 'empty'
-          ? 'Adicione pelo menos um café antes de confirmar o pedido.'
-          : 'Há itens indisponíveis no carrinho. Remova-os para continuar.',
+          ? t('checkout.errorEmpty')
+          : t('checkout.errorUnavailable'),
       )
       return
     }
@@ -147,7 +149,7 @@ export function Checkout() {
     const order = createOrderSnapshot({ items: resolvedItems, form: data })
     if (!saveLastOrder(order)) {
       // Sem snapshot salvo, o carrinho NÃO é limpo: nada se perde.
-      setSubmitError('Não foi possível salvar o pedido neste navegador. Tente novamente.')
+      setSubmitError(t('checkout.errorSave'))
       return
     }
     setSubmitError(null)
@@ -157,26 +159,24 @@ export function Checkout() {
 
   return (
     <>
-      <PageTitle>Finalizar pedido</PageTitle>
+      <PageTitle>{t('checkout.pageTitle')}</PageTitle>
       <FormProvider {...methods}>
-        <Form onSubmit={methods.handleSubmit(onSubmit)} noValidate aria-label="Finalizar pedido">
+        <Form onSubmit={methods.handleSubmit(onSubmit)} noValidate aria-label={t('checkout.pageTitle')}>
           <Column>
-            <h2>Complete seu pedido</h2>
+            <h2>{t('checkout.completeOrder')}</h2>
             <DeliveryAddressForm />
             <PaymentMethodSelector />
           </Column>
 
           <Column>
-            <h2>Cafés selecionados</h2>
-            <OrderCard aria-label="Itens do pedido">
+            <h2>{t('checkout.selectedCoffees')}</h2>
+            <OrderCard aria-label={t('checkout.orderItems')}>
               {missingCoffeeIds.length > 0 ? (
                 <Alert role="alert">
-                  {missingCoffeeIds.length === 1
-                    ? 'Um item do carrinho não está mais disponível no catálogo.'
-                    : `${missingCoffeeIds.length} itens do carrinho não estão mais disponíveis no catálogo.`}
+                  {t('checkout.unavailable', { count: missingCoffeeIds.length })}
                   <br />
                   <button type="button" onClick={removeUnavailableItems}>
-                    Remover itens indisponíveis
+                    {t('checkout.removeUnavailable')}
                   </button>
                 </Alert>
               ) : null}
@@ -205,7 +205,7 @@ export function Checkout() {
                       type="submit"
                       disabled={methods.formState.isSubmitting || missingCoffeeIds.length > 0}
                     >
-                      Confirmar pedido
+                      {t('checkout.confirm')}
                     </ConfirmButton>
                   </CartSummary>
                 </>

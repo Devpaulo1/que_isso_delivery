@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 import { Header } from '@/components/Header'
@@ -30,9 +31,10 @@ const Main = styled.main`
 export const MAIN_CONTENT_ID = 'conteudo'
 
 export function PageLayout() {
+  const { t } = useTranslation()
   return (
     <>
-      <SkipLink href={`#${MAIN_CONTENT_ID}`}>Pular para o conteúdo</SkipLink>
+      <SkipLink href={`#${MAIN_CONTENT_ID}`}>{t('layout.skipLink')}</SkipLink>
       <Header />
       <Main id={MAIN_CONTENT_ID} tabIndex={-1}>
         <Outlet />

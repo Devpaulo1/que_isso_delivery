@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { CoffeeIcon } from '@/components/icons'
@@ -55,18 +56,19 @@ export interface EmptyCartProps {
 }
 
 export function EmptyCart({
-  title = 'Seu carrinho está vazio',
-  description = 'Escolha seus cafés favoritos no catálogo para montar o pedido.',
-  actionLabel = 'Ver cafés',
+  title,
+  description,
+  actionLabel,
   to = ROUTES.home,
   headingLevel = 'h2',
 }: EmptyCartProps) {
+  const { t } = useTranslation()
   return (
     <Wrapper role="status">
       <CoffeeIcon size={48} />
-      <Title as={headingLevel}>{title}</Title>
-      <p>{description}</p>
-      <Action to={to}>{actionLabel}</Action>
+      <Title as={headingLevel}>{title ?? t('emptyCart.title')}</Title>
+      <p>{description ?? t('emptyCart.description')}</p>
+      <Action to={to}>{actionLabel ?? t('emptyCart.action')}</Action>
     </Wrapper>
   )
 }

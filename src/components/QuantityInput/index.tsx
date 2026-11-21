@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useId, useState, type ChangeEvent } from 'react'
 import styled from 'styled-components'
 import { MinusIcon, PlusIcon } from '@/components/icons'
@@ -69,6 +70,7 @@ export function QuantityInput({
   readOnly = false,
 }: QuantityInputProps) {
   const inputId = useId()
+  const { t } = useTranslation()
   /** Texto em edição; `null` exibe o último valor válido. */
   const [draft, setDraft] = useState<string | null>(null)
 
@@ -83,7 +85,7 @@ export function QuantityInput({
   }
 
   return (
-    <Wrapper role="group" aria-label={`Quantidade de ${label}`}>
+    <Wrapper role="group" aria-label={t('quantity.group', { name: label })}>
       <StepButton
         type="button"
         onClick={() => {
@@ -91,12 +93,12 @@ export function QuantityInput({
           decrement()
         }}
         disabled={!onDecrement && value <= min}
-        aria-label={`Diminuir quantidade de ${label}`}
+        aria-label={t('quantity.decrease', { name: label })}
       >
         <MinusIcon size={16} />
       </StepButton>
       <label htmlFor={inputId} className="sr-only">
-        Quantidade de {label}
+        {t('quantity.group', { name: label })}
       </label>
       <Field
         id={inputId}
@@ -116,7 +118,7 @@ export function QuantityInput({
           increment()
         }}
         disabled={value >= max}
-        aria-label={`Aumentar quantidade de ${label}`}
+        aria-label={t('quantity.increase', { name: label })}
       >
         <PlusIcon size={16} />
       </StepButton>

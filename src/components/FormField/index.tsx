@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+import { translateError } from '@/schemas/checkoutSchema'
 import { useId, type InputHTMLAttributes, type Ref } from 'react'
 import styled from 'styled-components'
 
@@ -77,6 +79,7 @@ export interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElemen
  */
 export function TextField({ label, error, hint, optional, className, ref, ...inputProps }: TextFieldProps) {
   const id = useId()
+  const { t } = useTranslation()
   const hintId = hint ? `${id}-hint` : undefined
   const errorId = error ? `${id}-error` : undefined
   const describedBy = [hintId, errorId].filter(Boolean).join(' ') || undefined
@@ -85,7 +88,7 @@ export function TextField({ label, error, hint, optional, className, ref, ...inp
     <Wrapper className={className}>
       <Label htmlFor={id}>
         {label}
-        {optional ? <span>Opcional</span> : null}
+        {optional ? <span>{t('form.optional')}</span> : null}
       </Label>
       <Input
         id={id}
@@ -95,7 +98,7 @@ export function TextField({ label, error, hint, optional, className, ref, ...inp
         {...inputProps}
       />
       {hint ? <Hint id={hintId}>{hint}</Hint> : null}
-      {error ? <ErrorMessage id={errorId}>{error}</ErrorMessage> : null}
+      {error ? <ErrorMessage id={errorId}>{translateError(t, error)}</ErrorMessage> : null}
     </Wrapper>
   )
 }

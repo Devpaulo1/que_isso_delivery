@@ -1,11 +1,12 @@
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import logoDark from '@/assets/Log/logo-dark.svg'
 import logoLight from '@/assets/Log/logo-light.svg'
 import { CartBadge } from '@/components/CartBadge'
 import { CartIcon } from '@/components/icons'
+import { LanguageSelector } from '@/components/LanguageSelector'
 import { ThemeToggle } from '@/components/ThemeToggle'
-import { cartLinkLabel } from '@/components/Header/labels'
 import { useCart } from '@/hooks/useCart'
 import { useTheme } from '@/hooks/useTheme'
 import { ROUTES } from '@/routes/paths'
@@ -86,6 +87,9 @@ const CartLink = styled(Link)`
 export function Header() {
   const { themeName } = useTheme()
   const { totalUnits } = useCart()
+  const { t } = useTranslation()
+  const cartLabel =
+    totalUnits === 0 ? t('header.cartEmpty') : t('header.cartWithItems', { count: totalUnits })
 
   return (
     <HeaderBar>
@@ -95,12 +99,13 @@ export function Header() {
           <span>
             QuE IssO <small>Delivery</small>
           </span>
-          <span className="sr-only"> — página inicial</span>
+          <span className="sr-only">{t('header.home')}</span>
         </Brand>
 
-        <Actions aria-label="Ações">
+        <Actions aria-label={t('header.actions')}>
+          <LanguageSelector />
           <ThemeToggle />
-          <CartLink to={ROUTES.checkout} aria-label={cartLinkLabel(totalUnits)}>
+          <CartLink to={ROUTES.checkout} aria-label={cartLabel}>
             <CartIcon size={22} />
             <CartBadge count={totalUnits} />
           </CartLink>
