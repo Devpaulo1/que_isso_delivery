@@ -352,8 +352,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/components/DeliveryAddressForm/**`.
 - **Critério de pronto:** campos, mensagens, loading e preenchimento automático funcionam; número e complemento não são sobrescritos.
 - **Teste/evidência:** testes de preenchimento e erros acessíveis.
-- **Commit:** `feat: build delivery address form`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: criar formulario de endereco`.
+- **Evidência:** DeliveryAddressForm.test: preenchimento, erros acessíveis e CEP sem sobrescrever número/complemento
+- **Status:** ✅ Concluída.
 
 ### T-034 — Criar PaymentMethodSelector
 - **Objetivo:** permitir escolher crédito, débito ou dinheiro.
@@ -531,6 +532,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-030 | Concluída | CartSummary.test: subtotal, taxa e total em BRL | `feat: exibir resumo financeiro do carrinho` |
 | 2026-11-21 | T-031 | Concluída | checkoutSchema.test: entradas válidas, CEP, UF e complemento opcional | `feat: validar checkout com Zod` |
 | 2026-11-21 | T-032 | Concluída | viaCep.test: CEP inválido, não encontrado, parcial, HTTP/rede e abort | `feat: integrar consulta ao ViaCEP` |
+| 2026-11-21 | T-033 | Concluída | DeliveryAddressForm.test: preenchimento, erros acessíveis e CEP sem sobrescrever número/complemento | `feat: criar formulario de endereco` |
 
 ## Definition of Done global
 

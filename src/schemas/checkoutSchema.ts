@@ -40,6 +40,17 @@ export const checkoutSchema = z.object({
   paymentMethod: z.enum(PAYMENT_METHODS, { error: 'Selecione uma forma de pagamento' }),
 })
 
+/** Valores iniciais do formulário: nenhum pagamento pré-selecionado (RF-09). */
+export const checkoutDefaultValues = {
+  postalCode: '',
+  street: '',
+  number: '',
+  complement: '',
+  neighborhood: '',
+  city: '',
+  state: '',
+}
+
 /** Valores do formulário (o que o usuário digita). */
 export type CheckoutFormInput = z.input<typeof checkoutSchema>
 /** Dados validados e normalizados (CEP só dígitos, UF maiúscula). */
