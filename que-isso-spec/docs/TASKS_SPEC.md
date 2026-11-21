@@ -156,8 +156,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/contexts/ThemeContext/**`, `src/hooks/useTheme.ts`, `src/components/ThemeToggle/**`.
 - **Critério de pronto:** todas as telas recebem tema atual e preferência sobrevive a refresh.
 - **Teste/evidência:** teste de alternância e storage.
-- **Commit:** `feat: add persistent light and dark themes`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: adicionar temas claro e escuro persistentes`.
+- **Evidência:** ThemeToggle.test: alternância, persistência e valores inválidos (8 testes novos)
+- **Status:** ✅ Concluída.
 
 ### T-015 — Preparar favicon e assets finais
 - **Objetivo:** integrar logo aprovada e favicon.
@@ -493,6 +494,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-011 | Concluída | logo-light/dark.svg em src/assets/Log; prompt e decisão em AI_USAGE (Interação 04) | `feat: integrar assets de marca existentes` |
 | 2026-11-21 | T-012 | Concluída | themes.test: 2 temas com mesmas chaves + 28 comparações WCAG AA (30 testes) | `style: definir tokens e temas de design` |
 | 2026-11-21 | T-013 | Concluída | build ok; GlobalStyle com reset, fontes Baloo 2/Roboto, foco visível e reduced-motion | `style: configurar estilos globais` |
+| 2026-11-21 | T-014 | Concluída | ThemeToggle.test: alternância, persistência e valores inválidos (8 testes novos) | `feat: adicionar temas claro e escuro persistentes` |
 
 ## Definition of Done global
 
