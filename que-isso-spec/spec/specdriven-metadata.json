@@ -1,0 +1,27 @@
+{
+  "title": "QuE IssO",
+  "slug": "que-isso",
+  "description": "React + TypeScript single-page coffee e-commerce project with specification-driven planning and incremental AI-assisted implementation.",
+  "category": "frontend",
+  "stack": [
+    "React",
+    "Vite",
+    "TypeScript",
+    "React Router",
+    "Context API",
+    "useReducer",
+    "React Hook Form",
+    "Zod",
+    "styled-components"
+  ],
+  "tags": [
+    "ecommerce",
+    "coffee",
+    "spa",
+    "education",
+    "spec-driven-development"
+  ],
+  "entryPoint": "SPEC.md",
+  "version": "1.0.0",
+  "status": "draft"
+}
