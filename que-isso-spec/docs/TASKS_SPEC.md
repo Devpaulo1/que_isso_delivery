@@ -414,8 +414,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/components/OrderSuccess/**`, `src/pages/Success/**`.
 - **Critério de pronto:** tela exibe endereço, pagamento, itens e valores a partir do snapshot.
 - **Teste/evidência:** teste com pedido conhecido.
-- **Commit:** `feat: display completed order summary`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: exibir resumo do pedido concluido`.
+- **Evidência:** Success.test: endereço, pagamento, itens e valores lidos do snapshot
+- **Status:** ✅ Concluída.
 
 ### T-040 — Tratar acesso sem pedido válido
 - **Objetivo:** exibir estado vazio ao acessar Success sem snapshot.
@@ -543,6 +544,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-036 | Concluída | CheckoutGuards.test + cart.test: carrinho vazio, IDs inexistentes e dados inválidos | `fix: impedir envio de pedido invalido` |
 | 2026-11-21 | T-037 | Concluída | order.test: preço/nome/quantidade congelados e independentes do carrinho | `feat: criar snapshot imutavel do pedido` |
 | 2026-11-21 | T-038 | Concluída | ConfirmOrder.test: snapshot salvo antes de limpar e navegar para sucesso | `feat: confirmar pedido e limpar carrinho com seguranca` |
+| 2026-11-21 | T-039 | Concluída | Success.test: endereço, pagamento, itens e valores lidos do snapshot | `feat: exibir resumo do pedido concluido` |
 
 ## Definition of Done global
 
