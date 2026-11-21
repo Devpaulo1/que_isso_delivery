@@ -404,8 +404,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/pages/Checkout/**`, `src/utils/storage.ts`.
 - **Critério de pronto:** pedido fica persistido e carrinho é limpo somente após snapshot salvo.
 - **Teste/evidência:** teste de ordem das operações.
-- **Commit:** `feat: confirm order and clear cart safely`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: confirmar pedido e limpar carrinho com seguranca`.
+- **Evidência:** ConfirmOrder.test: snapshot salvo antes de limpar e navegar para sucesso
+- **Status:** ✅ Concluída.
 
 ### T-039 — Criar OrderSuccess
 - **Objetivo:** apresentar dados do pedido concluído.
@@ -541,6 +542,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-035 | Concluída | Checkout.test + AppRoutes.test: itens, resumo, endereço, pagamento e estado vazio | `feat: montar pagina de checkout` |
 | 2026-11-21 | T-036 | Concluída | CheckoutGuards.test + cart.test: carrinho vazio, IDs inexistentes e dados inválidos | `fix: impedir envio de pedido invalido` |
 | 2026-11-21 | T-037 | Concluída | order.test: preço/nome/quantidade congelados e independentes do carrinho | `feat: criar snapshot imutavel do pedido` |
+| 2026-11-21 | T-038 | Concluída | ConfirmOrder.test: snapshot salvo antes de limpar e navegar para sucesso | `feat: confirmar pedido e limpar carrinho com seguranca` |
 
 ## Definition of Done global
 

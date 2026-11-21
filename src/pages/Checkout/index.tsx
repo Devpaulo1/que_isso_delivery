@@ -17,6 +17,8 @@ import {
   type CheckoutFormInput,
 } from '@/schemas/checkoutSchema'
 import { validateCartForCheckout } from '@/utils/cart'
+import { createOrderSnapshot } from '@/utils/order'
+import { saveLastOrder } from '@/utils/orderStorage'
 
 const PageTitle = styled.h1`
   margin-top: ${({ theme }) => theme.space[8]};
@@ -112,6 +114,7 @@ export function Checkout() {
     removeItem,
     items,
     missingCoffeeIds,
+    clearCart,
   } = useCart()
   const [submitError, setSubmitError] = useState<string | null>(null)
 
@@ -128,7 +131,7 @@ export function Checkout() {
     setSubmitError(null)
   }
 
-  function onSubmit() {
+  function onSubmit(data: CheckoutFormData) {
     // Guarda final: o formulário já foi validado pelo Zod; agora o carrinho (RN-10).
     const check = validateCartForCheckout(items)
     if (!check.ok) {
@@ -139,8 +142,17 @@ export function Checkout() {
       )
       return
     }
+
+    // Ordem segura (RF-13): 1) snapshot  2) persistir  3) limpar carrinho  4) navegar.
+    const order = createOrderSnapshot({ items: resolvedItems, form: data })
+    if (!saveLastOrder(order)) {
+      // Sem snapshot salvo, o carrinho NÃO é limpo: nada se perde.
+      setSubmitError('Não foi possível salvar o pedido neste navegador. Tente novamente.')
+      return
+    }
     setSubmitError(null)
-    navigate(ROUTES.success)
+    clearCart()
+    navigate(ROUTES.success, { replace: true })
   }
 
   return (
