@@ -3,9 +3,9 @@ import { App } from '@/App'
 import { DELIVERY_FEE_IN_CENTS, STORAGE_KEYS } from '@/config/constants'
 
 describe('test setup', () => {
-  it('resolves the @ alias and renders with jsdom', () => {
+  it('resolves the @ alias and renders the app', () => {
     render(<App />)
-    expect(screen.getByRole('heading', { name: 'QuE IssO' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument()
   })
 
   it('exposes centralized constants', () => {

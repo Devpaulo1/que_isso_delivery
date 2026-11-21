@@ -104,8 +104,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/App.tsx`, `src/main.tsx`, `src/pages/**`.
 - **Critério de pronto:** navegação entre três rotas sem reload.
 - **Teste/evidência:** teste de navegação ou verificação manual.
-- **Commit:** `feat: configure application routes`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: configurar rotas da aplicacao`.
+- **Evidência:** AppRoutes.test: 3 rotas + navegação sem reload (6 testes ok)
+- **Status:** ✅ Concluída.
 
 ## Fase 2 — Branding e design system
 
@@ -483,6 +484,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-006 | Concluída | git status limpo; typecheck, lint e build executados sem erro | `chore: configure project tooling` |
 | 2026-11-21 | T-007 | Concluída | build ok; 1 teste de setup passou com Vitest + jsdom | `chore: adicionar dependencias de aplicacao e testes` |
 | 2026-11-21 | T-008 | Concluída | alias @/ em vite e tsconfig; typecheck, 2 testes e build ok | `chore: organizar estrutura e alias da aplicacao` |
+| 2026-11-21 | T-009 | Concluída | AppRoutes.test: 3 rotas + navegação sem reload (6 testes ok) | `feat: configurar rotas da aplicacao` |
 
 ## Definition of Done global
 
