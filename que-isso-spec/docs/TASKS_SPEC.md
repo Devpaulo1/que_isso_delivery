@@ -320,8 +320,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/components/CartSummary/**`.
 - **Critério de pronto:** valores refletem o estado atual e usam BRL.
 - **Teste/evidência:** teste de renderização com valores conhecidos.
-- **Commit:** `feat: display cart financial summary`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: exibir resumo financeiro do carrinho`.
+- **Evidência:** CartSummary.test: subtotal, taxa e total em BRL
+- **Status:** ✅ Concluída.
 
 ## Fase 5 — Checkout e CEP
 
@@ -525,6 +526,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-027 | Concluída | Home.test: fluxo card → carrinho atualiza badge | `feat: conectar cards ao carrinho` |
 | 2026-11-21 | T-028 | Concluída | CartItem.test: incremento, decremento e remoção | `feat: criar item do carrinho e estado vazio` |
 | 2026-11-21 | T-029 | Concluída | cartStorage.test: hidratação, persistência e JSON inválido | `feat: persistir carrinho no localStorage` |
+| 2026-11-21 | T-030 | Concluída | CartSummary.test: subtotal, taxa e total em BRL | `feat: exibir resumo financeiro do carrinho` |
 
 ## Definition of Done global
 
