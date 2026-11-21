@@ -33,7 +33,7 @@ Não há backend, autenticação, banco de dados próprio nem pagamento real.
 
 ## Referências
 
-- [Figma — QuE IssO Projeto Final React](https://www.figma.com/design/yGPNTA0Yczb183EikXGIiA/Coffee-Delivery-%E2%80%A2-Projeto-Final-React?node-id=217-511&t=ojymzxreqtuCt0uo-0)
+- [Figma — Coffee Delivery Projeto Final React](https://www.figma.com/design/yGPNTA0Yczb183EikXGIiA/Coffee-Delivery-%E2%80%A2-Projeto-Final-React?node-id=217-511&t=ojymzxreqtuCt0uo-0)
 - [ViaCEP](https://viacep.com.br/)
 - [React](https://react.dev/)
 - [Vite](https://vite.dev/)
@@ -43,38 +43,15 @@ Não há backend, autenticação, banco de dados próprio nem pagamento real.
 
 ## Status
 
-**Fase atual:** especificação e aprovação. Nenhuma tarefa de implementação deve ser considerada concluída apenas porque está listada no TASKS_SPEC.
+**Fase atual:** implementação concluída (T-001 a T-048). Decisões tomadas pela IA aguardam revisão do estudante — ver docs/AI_USAGE.md.
 
 ## Instalação e execução
 
-Os comandos serão definidos após a criação do projeto e instalação das dependências. Quando disponíveis, os comandos esperados serão:
-
-```bash
-npm install
-npm run dev
-npm run test
-npm run lint
-npm run typecheck
-npm run build
-```
-
-Não execute comandos que ainda não estejam configurados no `package.json`.
+Ver o [README do projeto](../README.md#instalação-e-execução) — scripts `dev`, `build`, `preview`, `lint`, `typecheck`, `test`, `test:watch` e `test:coverage` estão configurados.
 
 ## Branding com IA
 
-Esta seção deve ser completada após a criação e aprovação da identidade visual.
-
-- **Nome da marca:**
-- **Conceito:**
-- **Ferramenta de IA utilizada:**
-- **Prompt utilizado:**
-- **Proposta escolhida:**
-- **Justificativa da escolha:**
-- **Paleta de cores:**
-- **Tipografia:**
-- **Variações para fundo claro/escuro:**
-- **Arquivos da logo e favicon:**
-- **Verificação de legibilidade e direitos de uso:**
+Documentado no [README do projeto](../README.md#branding-com-ia).
 
 ## Uso de IA no desenvolvimento
 

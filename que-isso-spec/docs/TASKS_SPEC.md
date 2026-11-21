@@ -488,8 +488,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `README.md`, `docs/AI_USAGE.md`, assets.
 - **Critério de pronto:** pessoa externa consegue instalar, executar e compreender o projeto; branding documentado.
 - **Teste/evidência:** seguir README em ambiente limpo, se possível.
-- **Commit:** `docs: complete project documentation`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `docs: completar documentacao do projeto`.
+- **Evidência:** README raiz e que-isso-spec/README com instalação, scripts, stack, arquitetura, fluxo, branding e limitações
+- **Status:** ✅ Concluída.
 
 ### T-047 — Preparar deploy e demonstração
 - **Objetivo:** publicar SPA e preparar apresentação do fluxo.
@@ -557,6 +558,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-043 | Concluída | purchaseFlow.test cobre Home → Checkout → Success com refresh simulado; script test:coverage configurado | `test: cobrir fluxos principais de compra` |
 | 2026-11-21 | T-044 | Concluída | lint, typecheck, build e 262 testes ok; helpers de quantidade e storage simplificados | `refactor: finalizar revisao de qualidade` |
 | 2026-11-21 | T-045 | Concluída | AI_USAGE.md com cinco interações, prompts, decisões e evidências; autoria adaptada para Paulo | `docs: registrar desenvolvimento assistido por IA` |
+| 2026-11-21 | T-046 | Concluída | README raiz e que-isso-spec/README com instalação, scripts, stack, arquitetura, fluxo, branding e limitações | `docs: completar documentacao do projeto` |
 
 ## Definition of Done global
 
