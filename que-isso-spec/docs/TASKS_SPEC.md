@@ -178,8 +178,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/types/**`.
 - **Critério de pronto:** tipos representam contratos e não utilizam `any`.
 - **Teste/evidência:** typecheck.
-- **Commit:** `feat: define application domain types`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: definir tipos de dominio`.
+- **Evidência:** typecheck e build ok; tipos em src/types sem `any`
+- **Status:** ✅ Concluída.
 
 ### T-017 — Criar catálogo local tipado
 - **Objetivo:** cadastrar cafés e metadados.
@@ -497,6 +498,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-013 | Concluída | build ok; GlobalStyle com reset, fontes Baloo 2/Roboto, foco visível e reduced-motion | `style: configurar estilos globais` |
 | 2026-11-21 | T-014 | Concluída | ThemeToggle.test: alternância, persistência e valores inválidos (8 testes novos) | `feat: adicionar temas claro e escuro persistentes` |
 | 2026-11-21 | T-015 | Concluída | build copia favicon.svg para dist; index.html referencia /favicon.svg | `feat: integrar marca e favicon` |
+| 2026-11-21 | T-016 | Concluída | typecheck e build ok; tipos em src/types sem `any` | `feat: definir tipos de dominio` |
 
 ## Definition of Done global
 
