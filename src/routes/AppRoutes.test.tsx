@@ -20,7 +20,7 @@ describe('AppRoutes', () => {
   it('navigates Home → Checkout → Success without reload', async () => {
     const user = userEvent.setup()
     renderAt('/')
-    await user.click(screen.getByRole('link', { name: 'Carrinho' }))
+    await user.click(screen.getByRole('link', { name: /carrinho/i }))
     expect(screen.getByRole('heading', { name: 'Checkout' })).toBeInTheDocument()
     await user.click(screen.getByRole('link', { name: /confirmar/i }))
     expect(screen.getByRole('heading', { name: 'Pedido confirmado' })).toBeInTheDocument()

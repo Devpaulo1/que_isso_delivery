@@ -8,7 +8,7 @@ describe('Header', () => {
     renderWithProviders(<Header />)
     expect(screen.getByRole('link', { name: /que isso/i })).toHaveAttribute('href', '/')
     expect(screen.getByRole('button', { name: /ativar tema/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Carrinho' })).toHaveAttribute('href', '/checkout')
+    expect(screen.getByRole('link', { name: /carrinho/i })).toHaveAttribute('href', '/checkout')
   })
 
   it('is navigable by keyboard in a logical order', async () => {
@@ -19,7 +19,7 @@ describe('Header', () => {
     await user.tab()
     expect(screen.getByRole('button', { name: /ativar tema/i })).toHaveFocus()
     await user.tab()
-    expect(screen.getByRole('link', { name: 'Carrinho' })).toHaveFocus()
+    expect(screen.getByRole('link', { name: /carrinho/i })).toHaveFocus()
   })
 
   it('switches the logo with the theme', async () => {

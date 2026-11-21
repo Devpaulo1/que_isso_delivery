@@ -1,10 +1,12 @@
-import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import logoDark from '@/assets/Log/logo-dark.svg'
 import logoLight from '@/assets/Log/logo-light.svg'
+import { CartBadge } from '@/components/CartBadge'
 import { CartIcon } from '@/components/icons'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { cartLinkLabel } from '@/components/Header/labels'
+import { useCart } from '@/hooks/useCart'
 import { useTheme } from '@/hooks/useTheme'
 import { ROUTES } from '@/routes/paths'
 
@@ -80,14 +82,9 @@ const CartLink = styled(Link)`
   }
 `
 
-interface HeaderProps {
-  /** Conteúdo exibido sobre o link do carrinho (ex.: CartBadge). */
-  cartBadge?: ReactNode
-  cartLabel?: string
-}
-
-export function Header({ cartBadge, cartLabel = 'Carrinho' }: HeaderProps) {
+export function Header() {
   const { themeName } = useTheme()
+  const { totalUnits } = useCart()
 
   return (
     <HeaderBar>
@@ -95,16 +92,16 @@ export function Header({ cartBadge, cartLabel = 'Carrinho' }: HeaderProps) {
         <Brand to={ROUTES.home} aria-label="QuE IssO — página inicial">
           <img src={themeName === 'dark' ? logoDark : logoLight} alt="" width={40} height={40} />
           <span>
-            QuE
-            <small>IssO</small>
+            Coffee
+            <small>Delivery</small>
           </span>
         </Brand>
 
         <Actions aria-label="Ações">
           <ThemeToggle />
-          <CartLink to={ROUTES.checkout} aria-label={cartLabel}>
+          <CartLink to={ROUTES.checkout} aria-label={cartLinkLabel(totalUnits)}>
             <CartIcon size={22} />
-            {cartBadge}
+            <CartBadge count={totalUnits} />
           </CartLink>
         </Actions>
       </HeaderInner>
