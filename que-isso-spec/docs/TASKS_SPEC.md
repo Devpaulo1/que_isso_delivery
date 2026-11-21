@@ -310,8 +310,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/hooks/useLocalStorage.ts`, `src/utils/storage.ts`, `src/contexts/CartContext/**`.
 - **Critério de pronto:** refresh recupera dados válidos e storage corrompido não quebra a aplicação.
 - **Teste/evidência:** testes de hidratação, persistência e JSON inválido.
-- **Commit:** `feat: persist cart in local storage`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: persistir carrinho no localStorage`.
+- **Evidência:** cartStorage.test: hidratação, persistência e JSON inválido
+- **Status:** ✅ Concluída.
 
 ### T-030 — Criar CartSummary
 - **Objetivo:** apresentar subtotal, taxa e total.
@@ -523,6 +524,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-026 | Concluída | CartBadge.test: soma de unidades e atualização no Header | `feat: exibir quantidade total do carrinho` |
 | 2026-11-21 | T-027 | Concluída | Home.test: fluxo card → carrinho atualiza badge | `feat: conectar cards ao carrinho` |
 | 2026-11-21 | T-028 | Concluída | CartItem.test: incremento, decremento e remoção | `feat: criar item do carrinho e estado vazio` |
+| 2026-11-21 | T-029 | Concluída | cartStorage.test: hidratação, persistência e JSON inválido | `feat: persistir carrinho no localStorage` |
 
 ## Definition of Done global
 
