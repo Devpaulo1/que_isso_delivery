@@ -9,7 +9,7 @@ function renderAt(path: string) {
 
 describe('AppRoutes', () => {
   it.each([
-    ['/', 'Home'],
+    ['/', /encontre o café perfeito/i],
     ['/checkout', 'Checkout'],
     ['/success', 'Pedido confirmado'],
   ])('renders %s', (path, heading) => {

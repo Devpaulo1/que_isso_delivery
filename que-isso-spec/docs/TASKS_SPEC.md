@@ -238,8 +238,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/pages/Home/**`, `src/components/**`.
 - **Critério de pronto:** Home funcional e responsiva, alinhada ao design aprovado.
 - **Teste/evidência:** smoke test desktop/mobile.
-- **Commit:** `feat: complete responsive home page`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: finalizar pagina home responsiva`.
+- **Evidência:** Home.test + AppRoutes.test; hero com PNG local e grade responsiva
+- **Status:** ✅ Concluída.
 
 ## Fase 4 — Carrinho e persistência
 
@@ -509,6 +510,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-019 | Concluída | QuantityInput.test + quantity.test: limites e interação (novos testes ok) | `feat: adicionar controle de quantidade validado` |
 | 2026-11-21 | T-020 | Concluída | CoffeeCard.test + currency helpers; renderização e interação ok | `feat: criar card de produto` |
 | 2026-11-21 | T-021 | Concluída | CoffeeCatalog.test + layout responsivo com grid mínimo de 17.25rem | `feat: renderizar catalogo de cafes na home` |
+| 2026-11-21 | T-022 | Concluída | Home.test + AppRoutes.test; hero com PNG local e grade responsiva | `feat: finalizar pagina home responsiva` |
 
 ## Definition of Done global
 
