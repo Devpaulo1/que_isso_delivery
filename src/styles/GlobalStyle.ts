@@ -74,9 +74,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   @media (prefers-reduced-motion: reduce) {
+    /* "none" em vez de duração mínima: evita criar transições "all"
+       em elementos que não tinham nenhuma. */
     *, *::before, *::after {
-      transition-duration: 0.01ms !important;
-      animation-duration: 0.01ms !important;
+      transition: none !important;
+      animation: none !important;
     }
   }
 `
