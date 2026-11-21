@@ -6,11 +6,10 @@ SPA de e-commerce fictício para cafeteria, desenvolvida com React, TypeScript e
 
 ## Documentação do projeto
 
-- [AGENTS.md](./AGENTS.md) — regras para assistentes de IA.
+- [AGENTS.md](./AGENTS.md) — regras para assistentes de IA e registro obrigatório de uso de IA (seção 13).
 - [PRD_SPEC](./docs/PRD_SPEC.md) — objetivos, escopo, requisitos e critérios de aceite.
 - [TECH_SPEC](./docs/TECH_SPEC.md) — stack, arquitetura, modelos, estado, integrações e testes.
 - [TASKS_SPEC](./docs/TASKS_SPEC.md) — tarefas incrementais e critérios de conclusão.
-- [AI_USAGE](./docs/AI_USAGE.md) — registro obrigatório de uso de IA.
 
 ## Fluxo do produto
 
@@ -43,7 +42,7 @@ Não há backend, autenticação, banco de dados próprio nem pagamento real.
 
 ## Status
 
-**Fase atual:** implementação concluída (T-001 a T-048). Decisões tomadas pela IA aguardam revisão do estudante — ver docs/AI_USAGE.md.
+**Fase atual:** implementação concluída (T-001 a T-048, mais T-057 e T-058). Decisões tomadas pela IA aguardam revisão do estudante — ver `AGENTS.md`, seção 13.
 
 ## Instalação e execução
 
@@ -55,7 +54,7 @@ Documentado no [README do projeto](../README.md#branding-com-ia).
 
 ## Uso de IA no desenvolvimento
 
-Registrar pelo menos três interações reais em [docs/AI_USAGE.md](./docs/AI_USAGE.md), incluindo prompt, objetivo, resumo, decisão humana e evidência.
+As interações reais estão registradas em [AGENTS.md](./AGENTS.md#13-registro-de-uso-de-ia), incluindo prompt, objetivo, resumo, decisão humana e evidência.
 
 ## Processo de desenvolvimento
 

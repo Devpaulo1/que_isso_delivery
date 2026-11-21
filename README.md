@@ -106,10 +106,10 @@ O endereço digitado é usado apenas para consultar o ViaCEP (somente o CEP é e
 
 - **Nome da marca:** QuE IssO
 - **Conceito:** xícara de café cujo vapor forma um pin de localização: café quentinho entregue onde você estiver.
-- **Ferramenta de IA utilizada:** Claude Code (modelo Claude Opus 5.5), gerando SVG vetorial.
+- **Ferramenta de IA utilizada:** assistente de IA do ambiente de desenvolvimento, com SVG vetorial escrito em código.
 - **Prompt utilizado:** "Crie uma logo SVG original e simples para a cafeteria QuE IssO: uma xícara amarela (#DBAC2C) sobre um pires roxo, cujo vapor forma um pin de localização roxo (#8047F8). Deve funcionar em 16px e ter variação para fundo escuro."
 - **Proposta escolhida:** símbolo de xícara + pin de localização, com o nome em Baloo 2 ao lado. No Header o texto aparece como **QuE IssO** com **Delivery** logo abaixo.
-- **Justificativa da escolha:** comunica café e entrega em um único ícone, é legível em tamanho pequeno e, por ser vetorial, não perde qualidade. *(Escolha feita pela IA; pendente de aprovação do estudante. Ver `que-isso-spec/docs/AI_USAGE.md`.)*
+- **Justificativa da escolha:** comunica café e entrega em um único ícone, é legível em tamanho pequeno e, por ser vetorial, não perde qualidade. *(Escolha feita pela IA; pendente de aprovação do estudante. Ver `que-isso-spec/AGENTS.md`, seção 13.)*
 - **Paleta de cores:** amarelo `#DBAC2C` / `#C47F17` / `#F1E9C9` e roxo `#8047F8` / `#4B2995` / `#EBE5F9` no tema claro; o tema escuro usa variações mais claras (`#E5B94A`, `#A98BFA`, `#C9B8FD`) sobre fundo `#15121B`. Tokens em `src/styles/themes.ts`.
 - **Tipografia:** Baloo 2 (títulos) e Roboto (textos), via Google Fonts.
 - **Variações para fundo claro/escuro:** `src/assets/Log/logo-light.svg` e `src/assets/Log/logo-dark.svg`; o Header troca a logo conforme o tema.
@@ -118,7 +118,7 @@ O endereço digitado é usado apenas para consultar o ViaCEP (somente o CEP é e
 
 ## Uso de IA no desenvolvimento
 
-Todas as interações estão registradas em [que-isso-spec/docs/AI_USAGE.md](./que-isso-spec/docs/AI_USAGE.md), incluindo as decisões que ainda aguardam revisão do estudante.
+Todas as interações estão registradas em [que-isso-spec/AGENTS.md](./que-isso-spec/AGENTS.md), seção 13, incluindo as decisões que ainda aguardam revisão do estudante.
 
 ## Limitações conhecidas
 

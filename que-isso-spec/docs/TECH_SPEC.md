@@ -133,8 +133,7 @@ que-isso/
 ├── docs/
 │   ├── PRD_SPEC.md
 │   ├── TECH_SPEC.md
-│   ├── TASKS_SPEC.md
-│   └── AI_USAGE.md
+│   └── TASKS_SPEC.md
 ├── AGENTS.md
 ├── README.md
 ├── package.json
@@ -542,7 +541,7 @@ Status: ✅ atendido com evidência automatizada · ⚠️ atendido com ressalva
 
 ### Pendências explícitas
 
-1. **Revisão humana:** DP-01 a DP-07 e as decisões listadas em `AI_USAGE.md` foram adotadas pela IA e precisam ser revisadas pelo estudante.
+1. **Revisão humana:** DP-01 a DP-07 e as decisões listadas em `AGENTS.md` (seção 13) foram adotadas pela IA e precisam ser revisadas pelo estudante.
 2. **Deploy (T-047):** configuração pronta; falta publicar com a conta do estudante e registrar a URL.
 3. **Figma (DP-07):** não inspecionado; medidas seguem a descrição textual.
 4. **Compatibilidade (RNF-05):** validar manualmente no Firefox e no Safari.

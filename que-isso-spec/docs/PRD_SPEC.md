@@ -251,7 +251,7 @@ Entrega obrigatória:
 | DP-02 | Taxa de entrega | R$ 5,00 fixa (500 centavos) em `src/config/constants.ts` | Adotado pela IA — pendente de revisão do estudante |
 | DP-03 | Decremento para zero | Remover item ao decrementar de 1 | Adotado pela IA — pendente de revisão do estudante |
 | DP-04 | Estilização | styled-components com ThemeProvider | Adotado pela IA — pendente de revisão do estudante |
-| DP-05 | Logo e identidade | Logo SVG gerada com IA (Claude) e documentada no README | Adotado pela IA — pendente de revisão do estudante |
+| DP-05 | Logo e identidade | Logo SVG original integrada ao projeto e documentada no README | Adotado pela IA — pendente de revisão do estudante |
 | DP-06 | Catálogo e imagens | Dados locais tipados; ilustrações PNG originais do projeto em `src/assets/img/` (sem licença de terceiros) | Adotado pela IA — pendente de revisão do estudante |
 | DP-07 | Figma | Figma não acessível ao agente nesta sessão; layout segue a descrição textual da spec (amarelo/roxo, Baloo 2/Roboto, Home → Checkout → Success). Medidas exatas não foram inspecionadas | Mantido como limitação documentada |
 
@@ -266,7 +266,7 @@ Entrega obrigatória:
 
 ## 14. Registro de revisão do PRD (T-001)
 
-Revisão realizada em 2026-11-17 pela IA (Claude Code), a pedido do estudante, que solicitou a implementação completa a partir desta especificação. A revisão humana do PRD ainda deve ser feita pelo estudante.
+Revisão realizada em 2026-11-17 pelo assistente de IA, a pedido do estudante, que solicitou a implementação completa a partir desta especificação. A revisão humana do PRD ainda deve ser feita pelo estudante.
 
 - [x] Escopo (dentro/fora) revisado — sem inclusão de backend, autenticação ou pagamento real.
 - [x] Fluxos FL-01 a FL-06 revisados e mantidos.

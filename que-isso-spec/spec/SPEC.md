@@ -32,7 +32,7 @@ This is the entry point for the QuE IssO project specification package. The deta
 - Technical architecture: `./docs/TECH_SPEC.md`
 - Implementation tasks: `./docs/TASKS_SPEC.md`
 - Agent operating rules: `./AGENTS.md`
-- AI usage evidence: `./docs/AI_USAGE.md`
+- AI usage evidence: `./AGENTS.md` (section 13)
 
 ## Operating contract
 

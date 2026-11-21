@@ -123,11 +123,11 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 ### T-011 — Gerar proposta de logo com IA
 - **Objetivo:** criar pelo menos uma proposta original de logo.
 - **Requisitos:** RF-16.
-- **Arquivos:** `src/assets/Log/**` (após aprovação), `docs/AI_USAGE.md`, `README.md`.
+- **Arquivos:** `src/assets/Log/**` (após aprovação), `AGENTS.md` (seção 13), `README.md`.
 - **Critério de pronto:** ferramenta, prompt, resultado e justificativa documentados; logo aprovada.
 - **Teste/evidência:** inspeção em fundo claro/escuro e tamanho reduzido.
 - **Commit:** `feat: integrar assets de marca existentes`.
-- **Evidência:** logo-light/dark.svg em src/assets/Log; prompt e decisão em AI_USAGE (Interação 04)
+- **Evidência:** logo-light/dark.svg em src/assets/Log; prompt e decisão em AGENTS.md (Interação 04)
 - **Status:** ✅ Concluída.
 
 ### T-012 — Criar paleta, tipografia e tokens
@@ -475,17 +475,17 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 ### T-045 — Registrar uso de IA
 - **Objetivo:** documentar pelo menos três interações relevantes.
 - **Requisitos:** uso obrigatório de IA.
-- **Arquivos:** `docs/AI_USAGE.md`.
+- **Arquivos:** `AGENTS.md` (seção 13).
 - **Critério de pronto:** cada registro contém prompt, objetivo, resumo da resposta, decisão humana e evidência.
 - **Teste/evidência:** revisão dos três registros.
 - **Commit:** `docs: registrar desenvolvimento assistido por IA`.
-- **Evidência:** AI_USAGE.md com cinco interações, prompts, decisões e evidências; autoria adaptada para Paulo
+- **Evidência:** AGENTS.md com cinco interações, prompts, decisões e evidências; autoria adaptada para Paulo
 - **Status:** ✅ Concluída.
 
 ### T-046 — Finalizar README e Branding com IA
 - **Objetivo:** documentar instalação, scripts, arquitetura, fluxo, marca e ferramenta de IA.
 - **Requisitos:** RF-16, RNF-06.
-- **Arquivos:** `README.md`, `docs/AI_USAGE.md`, assets.
+- **Arquivos:** `README.md`, `AGENTS.md` (seção 13), assets.
 - **Critério de pronto:** pessoa externa consegue instalar, executar e compreender o projeto; branding documentado.
 - **Teste/evidência:** seguir README em ambiente limpo, se possível.
 - **Commit:** `docs: completar documentacao do projeto`.
@@ -524,6 +524,18 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Evidência:** i18n com pt/en/es, `LanguageSelector`, chaves `que-isso:language:v1` e tradução de cafés/tags/erros
 - **Status:** ✅ Concluída.
 
+## Fase 10 — Documentação do agente
+
+### T-058 — Substituir registro de IA por AGENTS.md
+- **Objetivo:** concentrar as regras de atuação e o registro de uso de IA em um único `AGENTS.md`, removendo `docs/AI_USAGE.md` e a cópia divergente em `spec/agents.md`.
+- **Requisitos:** uso obrigatório de IA, documentação do projeto.
+- **Arquivos:** `que-isso-spec/AGENTS.md`, `README.md`, `que-isso-spec/README.md`, `docs/PRD_SPEC.md`, `docs/TECH_SPEC.md`, `docs/TASKS_SPEC.md`, `spec/SPEC.md`, `src/assets/Log/README.md`.
+- **Critério de pronto:** um único AGENTS.md com papel, regras, fluxo, ferramentas, guarda-corpos, commits, critérios de aceite e cinco interações de IA; nenhum link ativo ao arquivo removido, nenhuma menção a ferramenta de IA específica e apenas registro histórico da substituição.
+- **Teste/evidência:** varredura por `AI_USAGE` e pelo nome da ferramenta citada; conferência dos links e do histórico.
+- **Commit:** `docs: substituir registro de IA por AGENTS.md`.
+- **Evidência:** AGENTS.md único com seção 13 de uso de IA; referências atualizadas em README, specs e assets
+- **Status:** ✅ Concluída.
+
 ## Registro de execução
 
 | Data | Task ID | Resultado | Testes/evidência | Commit |
@@ -537,7 +549,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-008 | Concluída | alias @/ em vite e tsconfig; typecheck, 2 testes e build ok | `chore: organizar estrutura e alias da aplicacao` |
 | 2026-11-21 | T-009 | Concluída | AppRoutes.test: 3 rotas + navegação sem reload (6 testes ok) | `feat: configurar rotas da aplicacao` |
 | 2026-11-21 | T-010 | Concluída | direção registrada no PRD §10.1 e no README | `docs: registrar direcao de marca do QuE IssO` |
-| 2026-11-21 | T-011 | Concluída | logo-light/dark.svg em src/assets/Log; prompt e decisão em AI_USAGE (Interação 04) | `feat: integrar assets de marca existentes` |
+| 2026-11-21 | T-011 | Concluída | logo-light/dark.svg em src/assets/Log; prompt e decisão em AGENTS.md (Interação 04) | `feat: integrar assets de marca existentes` |
 | 2026-11-21 | T-012 | Concluída | themes.test: 2 temas com mesmas chaves + 28 comparações WCAG AA (30 testes) | `style: definir tokens e temas de design` |
 | 2026-11-21 | T-013 | Concluída | build ok; GlobalStyle com reset, fontes Baloo 2/Roboto, foco visível e reduced-motion | `style: configurar estilos globais` |
 | 2026-11-21 | T-014 | Concluída | ThemeToggle.test: alternância, persistência e valores inválidos (8 testes novos) | `feat: adicionar temas claro e escuro persistentes` |
@@ -571,11 +583,12 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-042 | Concluída | a11y.test (axe-core) + themes.test: páginas e estados sem violações; contraste AA e foco verificados | `fix: melhorar acessibilidade da interface` |
 | 2026-11-21 | T-043 | Concluída | purchaseFlow.test cobre Home → Checkout → Success com refresh simulado; script test:coverage configurado | `test: cobrir fluxos principais de compra` |
 | 2026-11-21 | T-044 | Concluída | lint, typecheck, build e 262 testes ok; helpers de quantidade e storage simplificados | `refactor: finalizar revisao de qualidade` |
-| 2026-11-21 | T-045 | Concluída | AI_USAGE.md com cinco interações, prompts, decisões e evidências; autoria adaptada para Paulo | `docs: registrar desenvolvimento assistido por IA` |
+| 2026-11-21 | T-045 | Concluída | AGENTS.md com cinco interações, prompts, decisões e evidências; autoria adaptada para Paulo | `docs: registrar desenvolvimento assistido por IA` |
 | 2026-11-21 | T-046 | Concluída | README raiz e que-isso-spec/README com instalação, scripts, stack, arquitetura, fluxo, branding e limitações | `docs: completar documentacao do projeto` |
 | 2026-11-21 | T-047 | Concluída (config local) | vercel.json e public/_redirects na raiz; build gera dist/_redirects; publicação não autorizada | `chore: preparar deploy de producao` |
 | 2026-11-21 | T-048 | Concluída | TECH_SPEC §20 com matriz RF/RN/RNF, pendências e divergências; PRD atualizado | `docs: finalizar rastreabilidade das specs` |
 | 2026-11-21 | T-057 | Concluída | Header.test troca pt/en/es e persiste idioma; lint, typecheck, build e 263 testes ok | `feat: adicionar seletor de idioma com i18next` |
+| 2026-11-21 | T-058 | Concluída | AGENTS.md único com seção 13 de uso de IA; referências atualizadas em README, specs e assets | `docs: substituir registro de IA por AGENTS.md` |
 
 ## Definition of Done global
 
