@@ -208,8 +208,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/components/QuantityInput/**`.
 - **Critério de pronto:** não aceita zero, negativo, decimal ou valor inválido na ação de adicionar.
 - **Teste/evidência:** testes de limites e interação.
-- **Commit:** `feat: add validated quantity control`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: adicionar controle de quantidade validado`.
+- **Evidência:** QuantityInput.test + quantity.test: limites e interação (novos testes ok)
+- **Status:** ✅ Concluída.
 
 ### T-020 — Criar CoffeeCard
 - **Objetivo:** apresentar informações do café e controle de quantidade.
@@ -503,6 +504,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-016 | Concluída | typecheck e build ok; tipos em src/types sem `any` | `feat: definir tipos de dominio` |
 | 2026-11-21 | T-017 | Concluída | coffees.test: 14 produtos válidos e 14 PNGs correspondentes (17 testes novos) | `feat: criar catalogo tipado de cafes` |
 | 2026-11-21 | T-018 | Concluída | Header.test (4 testes) + rotas com PageLayout; build e testes ok | `feat: criar cabecalho e layout compartilhado` |
+| 2026-11-21 | T-019 | Concluída | QuantityInput.test + quantity.test: limites e interação (novos testes ok) | `feat: adicionar controle de quantidade validado` |
 
 ## Definition of Done global
 
