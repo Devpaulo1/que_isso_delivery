@@ -84,8 +84,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `package.json`, lockfile, configuração de testes.
 - **Critério de pronto:** dependências compatíveis e sem imports não resolvidos.
 - **Teste/evidência:** build e teste mínimo de configuração.
-- **Commit:** `chore: add app and test dependencies`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `chore: adicionar dependencias de aplicacao e testes`.
+- **Evidência:** build ok; 1 teste de setup passou com Vitest + jsdom
+- **Status:** ✅ Concluída.
 
 ### T-008 — Criar estrutura de diretórios e aliases
 - **Objetivo:** organizar pastas por responsabilidade.
@@ -479,6 +480,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-17 | T-003 | Concluída | DP-01 a DP-07 resolvidas no PRD §12 e TECH §18 | `docs: approve product decisions` |
 | 2026-11-17 | T-004 | Concluída | plano revisado; ordem T-001→T-048 mantida | `docs: approve implementation task plan` |
 | 2026-11-21 | T-006 | Concluída | git status limpo; typecheck, lint e build executados sem erro | `chore: configure project tooling` |
+| 2026-11-21 | T-007 | Concluída | build ok; 1 teste de setup passou com Vitest + jsdom | `chore: adicionar dependencias de aplicacao e testes` |
 
 ## Definition of Done global
 
