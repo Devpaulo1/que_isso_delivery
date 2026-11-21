@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { CartIcon } from '@/components/icons'
+import { ProductImage } from '@/components/ProductImage'
 import { QuantityInput } from '@/components/QuantityInput'
 import { MIN_QUANTITY } from '@/config/constants'
 import type { Coffee } from '@/types/coffee'
@@ -19,7 +20,7 @@ const Card = styled.article`
   box-shadow: ${({ theme }) => theme.shadows.card};
 `
 
-const Image = styled.img`
+const Image = styled(ProductImage)`
   width: 7.5rem;
   height: 7.5rem;
   margin-top: -${({ theme }) => theme.space[5]};
@@ -127,7 +128,7 @@ export function CoffeeCard({ coffee, onAddToCart }: CoffeeCardProps) {
 
   return (
     <Card aria-labelledby={titleId}>
-      <Image src={coffee.image} alt={`Xícara de ${coffee.name}`} width={120} height={120} loading="lazy" />
+      <Image src={coffee.image} alt={`Xícara de ${coffee.name}`} size={120} loading="lazy" />
       <Tags aria-label="Categorias">
         {coffee.tags.map((tag) => (
           <li key={tag}>{tag}</li>

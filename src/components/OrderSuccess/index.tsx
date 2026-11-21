@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import styled, { type DefaultTheme } from 'styled-components'
 import { CartSummary } from '@/components/CartSummary'
 import { DollarIcon, MapPinIcon, TimerIcon } from '@/components/icons'
+import { ProductImage } from '@/components/ProductImage'
+import { findCoffeeById } from '@/data/coffees'
 import { ROUTES } from '@/routes/paths'
 import { PAYMENT_METHOD_LABELS } from '@/types/checkout'
 import type { Order } from '@/types/order'
@@ -199,7 +201,8 @@ export function OrderSuccess({ order }: OrderSuccessProps) {
           <ItemList aria-label="Itens do pedido confirmado">
             {order.items.map((item) => (
               <li key={item.coffeeId}>
-                <img src={item.image} alt="" width={40} height={40} />
+                {/* Imagem atual do catálogo quando existir (paths mudam entre builds); senão a do snapshot. */}
+                <ProductImage src={findCoffeeById(item.coffeeId)?.image ?? item.image} size={40} />
                 <span>
                   {item.quantity} × {item.name}
                 </span>

@@ -92,7 +92,7 @@ export function Header() {
         <Brand to={ROUTES.home} aria-label="QuE IssO — página inicial">
           <img src={themeName === 'dark' ? logoDark : logoLight} alt="" width={40} height={40} />
           <span>
-            Coffee
+            QuE IssO
             <small>Delivery</small>
           </span>
         </Brand>

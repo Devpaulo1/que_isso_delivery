@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { TrashIcon } from '@/components/icons'
+import { ProductImage } from '@/components/ProductImage'
 import { QuantityInput } from '@/components/QuantityInput'
 import type { ResolvedCartItem } from '@/types/cart'
 import { formatCurrency } from '@/utils/currency'
@@ -78,7 +79,7 @@ export function CartItem({ item, onIncrement, onDecrement, onRemove }: CartItemP
 
   return (
     <Row aria-label={`${coffee.name}, ${quantity} ${quantity === 1 ? 'unidade' : 'unidades'}`}>
-      <img src={coffee.image} alt="" width={64} height={64} />
+      <ProductImage src={coffee.image} size={64} />
       <Info>
         <h3>{coffee.name}</h3>
         <Actions>

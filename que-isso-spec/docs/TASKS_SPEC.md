@@ -436,8 +436,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** componentes e páginas afetados.
 - **Critério de pronto:** fluxo completo utilizável sem overflow horizontal.
 - **Teste/evidência:** inspeção em viewports definidos e registro de evidências.
-- **Commit:** `style: refine responsive layouts`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `style: refinar layouts responsivos`.
+- **Evidência:** ProductImage.test + build; header exibe "QuE IssO / Delivery"; grid e cards revisados
+- **Status:** ✅ Concluída.
 
 ### T-042 — Revisar acessibilidade
 - **Objetivo:** validar labels, foco, teclado, contraste e mensagens.
@@ -547,6 +548,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-038 | Concluída | ConfirmOrder.test: snapshot salvo antes de limpar e navegar para sucesso | `feat: confirmar pedido e limpar carrinho com seguranca` |
 | 2026-11-21 | T-039 | Concluída | Success.test: endereço, pagamento, itens e valores lidos do snapshot | `feat: exibir resumo do pedido concluido` |
 | 2026-11-21 | T-040 | Concluída | Success.test + AppRoutes.test: estado vazio sem snapshot e retorno à Home | `fix: tratar ausencia de pedido confirmado` |
+| 2026-11-21 | T-041 | Concluída | ProductImage.test + build; header exibe "QuE IssO / Delivery"; grid e cards revisados | `style: refinar layouts responsivos` |
 
 ## Definition of Done global
 
