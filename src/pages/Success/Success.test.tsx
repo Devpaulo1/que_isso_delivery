@@ -52,3 +52,18 @@ describe('Success page', () => {
     expect(screen.getByRole('link', { name: 'Voltar para a Home' })).toHaveAttribute('href', '/')
   })
 })
+
+describe('Success page without a valid order', () => {
+  it.each([
+    ['no snapshot', null],
+    ['corrupted JSON', '{oops'],
+    ['tampered snapshot', JSON.stringify({ ...order, totalInCents: 1 })],
+  ])('shows an empty state for %s', (_label, raw) => {
+    if (raw) window.localStorage.setItem('que-isso:last-order:v1', raw)
+    renderWithProviders(<AppRoutes />, { route: '/success' })
+
+    expect(screen.getByRole('heading', { level: 1, name: 'Nenhum pedido confirmado' })).toBeInTheDocument()
+    expect(screen.queryByText(/Uhu!/)).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Voltar para a Home' })).toHaveAttribute('href', '/')
+  })
+})

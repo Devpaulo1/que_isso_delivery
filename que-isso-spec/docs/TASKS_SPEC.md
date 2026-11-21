@@ -424,8 +424,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/pages/Success/**`, `src/components/EmptyCart/**`.
 - **Critério de pronto:** não inventa pedido e oferece retorno à Home.
 - **Teste/evidência:** teste de rota sem snapshot.
-- **Commit:** `fix: handle missing order confirmation`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `fix: tratar ausencia de pedido confirmado`.
+- **Evidência:** Success.test + AppRoutes.test: estado vazio sem snapshot e retorno à Home
+- **Status:** ✅ Concluída.
 
 ## Fase 7 — Responsividade, acessibilidade e qualidade
 
@@ -545,6 +546,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-037 | Concluída | order.test: preço/nome/quantidade congelados e independentes do carrinho | `feat: criar snapshot imutavel do pedido` |
 | 2026-11-21 | T-038 | Concluída | ConfirmOrder.test: snapshot salvo antes de limpar e navegar para sucesso | `feat: confirmar pedido e limpar carrinho com seguranca` |
 | 2026-11-21 | T-039 | Concluída | Success.test: endereço, pagamento, itens e valores lidos do snapshot | `feat: exibir resumo do pedido concluido` |
+| 2026-11-21 | T-040 | Concluída | Success.test + AppRoutes.test: estado vazio sem snapshot e retorno à Home | `fix: tratar ausencia de pedido confirmado` |
 
 ## Definition of Done global
 

@@ -11,7 +11,7 @@ describe('AppRoutes', () => {
   it.each([
     ['/', /encontre o café perfeito/i],
     ['/checkout', 'Finalizar pedido'],
-    ['/success', 'Pedido confirmado'],
+    ['/success', 'Nenhum pedido confirmado'],
   ])('renders %s', (path, heading) => {
     renderAt(path)
     expect(screen.getByRole('heading', { level: 1, name: heading })).toBeInTheDocument()
