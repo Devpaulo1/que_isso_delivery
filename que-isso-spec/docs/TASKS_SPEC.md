@@ -116,8 +116,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `docs/PRD_SPEC.md`, `README.md`.
 - **Critério de pronto:** conceito aprovado e documentado.
 - **Teste/evidência:** decisão registrada.
-- **Commit:** `docs: define coffee brand direction`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `docs: registrar direcao de marca do QuE IssO`.
+- **Evidência:** direção registrada no PRD §10.1 e no README
+- **Status:** ✅ Concluída.
 
 ### T-011 — Gerar proposta de logo com IA
 - **Objetivo:** criar pelo menos uma proposta original de logo.
@@ -485,6 +486,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-007 | Concluída | build ok; 1 teste de setup passou com Vitest + jsdom | `chore: adicionar dependencias de aplicacao e testes` |
 | 2026-11-21 | T-008 | Concluída | alias @/ em vite e tsconfig; typecheck, 2 testes e build ok | `chore: organizar estrutura e alias da aplicacao` |
 | 2026-11-21 | T-009 | Concluída | AppRoutes.test: 3 rotas + navegação sem reload (6 testes ok) | `feat: configurar rotas da aplicacao` |
+| 2026-11-21 | T-010 | Concluída | direção registrada no PRD §10.1 e no README | `docs: registrar direcao de marca do QuE IssO` |
 
 ## Definition of Done global
 

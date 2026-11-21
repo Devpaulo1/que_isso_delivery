@@ -218,7 +218,16 @@ Entrega obrigatória:
 6. Verificar legibilidade em tamanhos reduzidos e direitos de uso.
 7. Criar seção “Branding com IA” no README ou documentação.
 
-**Status:** identidade ainda precisa ser criada e aprovada pelo estudante. Não considerar logo existente sem arquivo/evidência.
+**Status:** direção aprovada (T-010); logo integrada a partir dos assets do projeto.
+
+### 10.1 Direção da marca (T-010)
+
+- **Nome:** QuE IssO (nome mantido; logo autoral).
+- **Personalidade:** acolhedora, rápida e confiável — “café quentinho na sua porta”.
+- **Conceito do símbolo:** xícara de café cujo vapor forma um pin de localização, unindo **café** e **entrega**.
+- **Direção visual:** amarelo (energia, café quente) e roxo (sofisticação), herdados da referência; formas arredondadas, cantos suaves e ícones simples.
+- **Tipografia:** Baloo 2 (títulos, peso 700/800) e Roboto (textos, 400/700).
+- **Tom de voz:** direto e amigável, em português, frases curtas.
 
 ## 11. Critérios gerais de aceite
 

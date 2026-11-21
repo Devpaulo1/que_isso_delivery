@@ -19,3 +19,8 @@ npm run preview    # serve o build local
 npm run lint       # oxlint
 npm run typecheck  # tsc sem emitir arquivos
 ```
+
+## Branding com IA
+
+- **Nome da marca:** QuE IssO
+- **Conceito:** xícara de café cujo vapor forma um pin de localização — café quentinho entregue onde você estiver.
