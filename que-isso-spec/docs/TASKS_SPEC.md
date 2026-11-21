@@ -260,8 +260,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/contexts/CartContext/**`, `src/hooks/useCart.ts`.
 - **Critério de pronto:** consumidores acessam API tipada e provider é obrigatório.
 - **Teste/evidência:** teste de contexto.
-- **Commit:** `feat: expose cart state through context`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: expor estado do carrinho por contexto`.
+- **Evidência:** CartContext.test: operações tipadas e provider obrigatório
+- **Status:** ✅ Concluída.
 
 ### T-025 — Implementar cálculos do carrinho
 - **Objetivo:** derivar unidades, subtotal e total em centavos.
@@ -513,6 +514,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-021 | Concluída | CoffeeCatalog.test + layout responsivo com grid mínimo de 17.25rem | `feat: renderizar catalogo de cafes na home` |
 | 2026-11-21 | T-022 | Concluída | Home.test + AppRoutes.test; hero com PNG local e grade responsiva | `feat: finalizar pagina home responsiva` |
 | 2026-11-21 | T-023 | Concluída | cartReducer.test: todas as ações e casos de borda (novos testes ok) | `feat: implementar reducer imutavel do carrinho` |
+| 2026-11-21 | T-024 | Concluída | CartContext.test: operações tipadas e provider obrigatório | `feat: expor estado do carrinho por contexto` |
 
 ## Definition of Done global
 
