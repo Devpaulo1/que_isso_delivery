@@ -446,8 +446,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** componentes interativos e estilos.
 - **Critério de pronto:** controles operáveis por teclado, erros associados e foco visível.
 - **Teste/evidência:** checklist manual e testes de acessibilidade disponíveis.
-- **Commit:** `fix: improve interface accessibility`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `fix: melhorar acessibilidade da interface`.
+- **Evidência:** a11y.test (axe-core) + themes.test: páginas e estados sem violações; contraste AA e foco verificados
+- **Status:** ✅ Concluída.
 
 ### T-043 — Cobrir fluxos principais com testes
 - **Objetivo:** completar testes unitários e integração.
@@ -549,6 +550,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-039 | Concluída | Success.test: endereço, pagamento, itens e valores lidos do snapshot | `feat: exibir resumo do pedido concluido` |
 | 2026-11-21 | T-040 | Concluída | Success.test + AppRoutes.test: estado vazio sem snapshot e retorno à Home | `fix: tratar ausencia de pedido confirmado` |
 | 2026-11-21 | T-041 | Concluída | ProductImage.test + build; header exibe "QuE IssO / Delivery"; grid e cards revisados | `style: refinar layouts responsivos` |
+| 2026-11-21 | T-042 | Concluída | a11y.test (axe-core) + themes.test: páginas e estados sem violações; contraste AA e foco verificados | `fix: melhorar acessibilidade da interface` |
 
 ## Definition of Done global
 

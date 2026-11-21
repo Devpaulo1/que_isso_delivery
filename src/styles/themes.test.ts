@@ -26,6 +26,7 @@ const textPairs: Array<[keyof ThemeColors, keyof ThemeColors]> = [
   ['title', 'surfaceAlt'],
   ['text', 'button'],
   ['onYellow', 'brandYellow'],
+  ['tagText', 'background'],
   ['onBrand', 'brandPurpleDark'],
 ]
 

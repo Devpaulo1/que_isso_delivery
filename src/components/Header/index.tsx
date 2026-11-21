@@ -55,7 +55,8 @@ const Brand = styled(Link)`
   small {
     display: block;
     font-size: ${({ theme }) => theme.fontSizes.md};
-    color: ${({ theme }) => theme.colors.brandYellowDark};
+    /* tagText: amarelo escuro com contraste AA para texto pequeno */
+    color: ${({ theme }) => theme.colors.tagText};
   }
 `
 
@@ -89,12 +90,12 @@ export function Header() {
   return (
     <HeaderBar>
       <HeaderInner>
-        <Brand to={ROUTES.home} aria-label="QuE IssO — página inicial">
+        <Brand to={ROUTES.home}>
           <img src={themeName === 'dark' ? logoDark : logoLight} alt="" width={40} height={40} />
           <span>
-            QuE IssO
-            <small>Delivery</small>
+            QuE IssO <small>Delivery</small>
           </span>
+          <span className="sr-only"> — página inicial</span>
         </Brand>
 
         <Actions aria-label="Ações">
