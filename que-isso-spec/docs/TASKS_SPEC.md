@@ -136,8 +136,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/styles/tokens.ts`, `src/styles/themes.ts`.
 - **Critério de pronto:** tokens documentados e contrastes revisados.
 - **Teste/evidência:** inspeção visual dos dois temas.
-- **Commit:** `style: define design tokens and themes`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `style: definir tokens e temas de design`.
+- **Evidência:** themes.test: 2 temas com mesmas chaves + 28 comparações WCAG AA (30 testes)
+- **Status:** ✅ Concluída.
 
 ### T-013 — Configurar estilos globais e fontes
 - **Objetivo:** configurar reset, tipografia, fundo e estilos base.
@@ -489,6 +490,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-009 | Concluída | AppRoutes.test: 3 rotas + navegação sem reload (6 testes ok) | `feat: configurar rotas da aplicacao` |
 | 2026-11-21 | T-010 | Concluída | direção registrada no PRD §10.1 e no README | `docs: registrar direcao de marca do QuE IssO` |
 | 2026-11-21 | T-011 | Concluída | logo-light/dark.svg em src/assets/Log; prompt e decisão em AI_USAGE (Interação 04) | `feat: integrar assets de marca existentes` |
+| 2026-11-21 | T-012 | Concluída | themes.test: 2 temas com mesmas chaves + 28 comparações WCAG AA (30 testes) | `style: definir tokens e temas de design` |
 
 ## Definition of Done global
 
