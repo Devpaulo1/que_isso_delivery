@@ -394,8 +394,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/types/order.ts`, `src/utils/order.ts`.
 - **Critério de pronto:** snapshot contém preço/nome/quantidade no momento da compra e não depende do carrinho.
 - **Teste/evidência:** teste de snapshot e independência.
-- **Commit:** `feat: create immutable order snapshot`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: criar snapshot imutavel do pedido`.
+- **Evidência:** order.test: preço/nome/quantidade congelados e independentes do carrinho
+- **Status:** ✅ Concluída.
 
 ### T-038 — Implementar confirmação e limpeza segura
 - **Objetivo:** salvar pedido antes de limpar carrinho e navegar.
@@ -539,6 +540,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-034 | Concluída | PaymentMethodSelector.test: seleção, obrigatoriedade e nenhuma transação real | `feat: adicionar seletor de forma de pagamento` |
 | 2026-11-21 | T-035 | Concluída | Checkout.test + AppRoutes.test: itens, resumo, endereço, pagamento e estado vazio | `feat: montar pagina de checkout` |
 | 2026-11-21 | T-036 | Concluída | CheckoutGuards.test + cart.test: carrinho vazio, IDs inexistentes e dados inválidos | `fix: impedir envio de pedido invalido` |
+| 2026-11-21 | T-037 | Concluída | order.test: preço/nome/quantidade congelados e independentes do carrinho | `feat: criar snapshot imutavel do pedido` |
 
 ## Definition of Done global
 
