@@ -63,7 +63,7 @@ A IA é ferramenta de apoio. O estudante deve revisar as respostas, tomar as dec
 - **Ferramenta/modelo:** Claude Code com Claude Opus 5.5.
 - **Prompt utilizado:** instrução geral da Interação 01; a IA decidiu gerar as imagens para evitar assets de terceiros sem licença (DP-06).
 - **Objetivo:** ter imagens locais, originais e sem problemas de direitos de uso.
-- **Resumo da resposta:** um script gerou 14 ilustrações SVG (vista superior das xícaras) e um SVG de hero; todos ficam embutidos no bundle.
+- **Resumo da resposta:** foram usadas 14 ilustrações (vista superior das xícaras) e a arte de hero; no QuE IssO os PNGs originais foram preservados em `src/assets/img/` e `src/assets/hero.png`.
 - **Decisão tomada pelo estudante:** **Pendente de revisão pelo estudante.**
 - **O que foi alterado nos SPEC/código:** `src/assets/img/*.svg`, `src/assets/hero.png`, `src/data/coffees.ts`.
 - **Evidência:** commits `feat: add typed coffee catalog` e `feat: complete responsive home page`.

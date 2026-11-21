@@ -1,7 +1,7 @@
 ---
 title: "QuE IssO — Product Requirements Specification"
 version: "1.0.0"
-status: "Approved"
+status: "Implemented — pending student review"
 owner: "Estudante responsável pelo projeto"
 product: "QuE IssO"
 last_updated: "2026-11-17"
@@ -218,11 +218,11 @@ Entrega obrigatória:
 6. Verificar legibilidade em tamanhos reduzidos e direitos de uso.
 7. Criar seção “Branding com IA” no README ou documentação.
 
-**Status:** direção aprovada (T-010); logo integrada a partir dos assets do projeto.
+**Status:** direção aprovada (T-010); logo gerada em T-011.
 
 ### 10.1 Direção da marca (T-010)
 
-- **Nome:** QuE IssO (nome mantido; logo autoral).
+- **Nome:** QuE IssO (DP-01).
 - **Personalidade:** acolhedora, rápida e confiável — “café quentinho na sua porta”.
 - **Conceito do símbolo:** xícara de café cujo vapor forma um pin de localização, unindo **café** e **entrega**.
 - **Direção visual:** amarelo (energia, café quente) e roxo (sofisticação), herdados da referência; formas arredondadas, cantos suaves e ícones simples.
@@ -247,12 +247,12 @@ Entrega obrigatória:
 
 | ID | Tema | Proposta atual | Estado |
 |---|---|---|---|
-| DP-01 | Nome da marca | QuE IssO (nome mantido; logo autoral) | Aprovado |
-| DP-02 | Taxa de entrega | R$ 5,00 fixa (500 centavos) em `src/config/constants.ts` | Aprovado |
-| DP-03 | Decremento para zero | Remover item ao decrementar de 1 | Aprovado |
-| DP-04 | Estilização | styled-components com ThemeProvider | Aprovado |
-| DP-05 | Logo e identidade | Logo SVG gerada com IA (Claude) e documentada no README | Aprovado |
-| DP-06 | Catálogo e imagens | Dados locais tipados; ilustrações SVG originais criadas no projeto (sem licença de terceiros) | Aprovado |
+| DP-01 | Nome da marca | QuE IssO (nome mantido; logo autoral) | Adotado pela IA — pendente de revisão do estudante |
+| DP-02 | Taxa de entrega | R$ 5,00 fixa (500 centavos) em `src/config/constants.ts` | Adotado pela IA — pendente de revisão do estudante |
+| DP-03 | Decremento para zero | Remover item ao decrementar de 1 | Adotado pela IA — pendente de revisão do estudante |
+| DP-04 | Estilização | styled-components com ThemeProvider | Adotado pela IA — pendente de revisão do estudante |
+| DP-05 | Logo e identidade | Logo SVG gerada com IA (Claude) e documentada no README | Adotado pela IA — pendente de revisão do estudante |
+| DP-06 | Catálogo e imagens | Dados locais tipados; ilustrações PNG originais do projeto em `src/assets/img/` (sem licença de terceiros) | Adotado pela IA — pendente de revisão do estudante |
 | DP-07 | Figma | Figma não acessível ao agente nesta sessão; layout segue a descrição textual da spec (amarelo/roxo, Baloo 2/Roboto, Home → Checkout → Success). Medidas exatas não foram inspecionadas | Mantido como limitação documentada |
 
 ## 13. Referências
@@ -266,7 +266,7 @@ Entrega obrigatória:
 
 ## 14. Registro de revisão do PRD (T-001)
 
-Revisão realizada em 2026-11-17 com apoio de IA (Claude Code) e validada pelo estudante, que pediu a implementação completa a partir desta especificação.
+Revisão realizada em 2026-11-17 pela IA (Claude Code), a pedido do estudante, que solicitou a implementação completa a partir desta especificação. A revisão humana do PRD ainda deve ser feita pelo estudante.
 
 - [x] Escopo (dentro/fora) revisado — sem inclusão de backend, autenticação ou pagamento real.
 - [x] Fluxos FL-01 a FL-06 revisados e mantidos.

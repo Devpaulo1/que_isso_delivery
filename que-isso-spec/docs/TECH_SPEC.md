@@ -1,7 +1,7 @@
 ---
 title: "QuE IssO — Technical Specification"
 version: "1.0.0"
-status: "Approved"
+status: "Implemented — pending student review"
 last_updated: "2026-11-17"
 ---
 
@@ -483,7 +483,7 @@ Antes de definir scripts, verificar dependências instaladas e garantir que os c
 
 - styled-components aprovado (DP-04).
 - Consulta ViaCEP **automática** quando o CEP atinge 8 dígitos, com botão "Buscar CEP" para nova tentativa; em falha, os campos permanecem editáveis para preenchimento manual.
-- Imagens do catálogo: ilustrações SVG originais em `src/assets/img/` (DP-06).
+- Imagens do catálogo: ilustrações PNG originais em `src/assets/img/` (DP-06).
 - Figma não inspecionado (DP-07): breakpoints definidos em tokens (`sm 576px`, `md 768px`, `lg 1120px`) e validados manualmente.
 - Taxa fixa de 500 centavos e remoção ao decrementar de 1 confirmadas (DP-02, DP-03).
 
@@ -499,3 +499,63 @@ Revisão realizada em 2026-11-17.
 - [x] ViaCEP isolado em `services/cep/viaCep.ts`, com `AbortController`.
 - [x] Matriz de rastreabilidade (seção 17) revisada; sem lacunas.
 - [x] MSW não será instalado: os cenários do ViaCEP serão simulados com mock de `fetch` no Vitest (menos dependências, RNF-03).
+
+## 20. Matriz final de aceite (T-048)
+
+Status: ✅ atendido com evidência automatizada · ⚠️ atendido com ressalva · ⛔ pendente.
+
+| Req. | Implementação | Evidência | Status |
+|---|---|---|---|
+| RF-01 | `data/coffees.ts`, `CoffeeCard`, `CoffeeCatalog` | `coffees.test.ts`, `CoffeeCard.test.tsx`, `CoffeeCatalog.test.tsx` | ✅ |
+| RF-02 | `QuantityInput`, `utils/quantity.ts` | `QuantityInput.test.tsx`, `quantity.test.ts` | ✅ |
+| RF-03 | `ADD_ITEM` acumula por `coffeeId` | `cartReducer.test.ts`, `Home.test.tsx` | ✅ |
+| RF-04 | `getTotalUnits`, `CartBadge` | `CartBadge.test.tsx`, `cart.test.ts` | ✅ |
+| RF-05 | `INCREMENT/DECREMENT/REMOVE_ITEM`, `CartItem` | `cartReducer.test.ts`, `CartItem.test.tsx`, `Checkout.test.tsx` | ✅ |
+| RF-06 | `cartStorage.ts` + hidratação preguiçosa | `cartStorage.test.tsx`, `purchaseFlow.test.tsx` | ✅ |
+| RF-07 | `AppRoutes` (React Router) | `AppRoutes.test.tsx` | ✅ |
+| RF-08 | `DeliveryAddressForm`, `services/cep/viaCep.ts`, `checkoutSchema` | `viaCep.test.ts`, `DeliveryAddressForm.test.tsx` | ✅ |
+| RF-09 | `PaymentMethodSelector` | `PaymentMethodSelector.test.tsx` | ✅ |
+| RF-10 | `getCartTotals`, `CartSummary`, `formatCurrency` | `cart.test.ts`, `currency.test.ts`, `CartSummary.test.tsx` | ✅ |
+| RF-11 | Zod + `validateCartForCheckout` | `CheckoutGuards.test.tsx` | ✅ |
+| RF-12 | `OrderSuccess` a partir do snapshot | `Success.test.tsx`, `purchaseFlow.test.tsx` | ✅ |
+| RF-13 | snapshot → salvar → limpar → navegar | `ConfirmOrder.test.tsx` | ✅ |
+| RF-14 | `AppThemeProvider` + `useLocalStorage` | `ThemeToggle.test.tsx`, `purchaseFlow.test.tsx` | ✅ |
+| RF-15 | tokens/breakpoints, layouts responsivos | Chrome headless 320–1280px sem overflow (T-041) | ✅ (verificação manual registrada) |
+| RF-16 | logo SVG, favicon, README | `Header.test.tsx`, README "Branding com IA" | ⚠️ logo gerada pela IA, aprovação do estudante pendente |
+| RN-01 | `isValidQuantity`, decremento de 1 remove | `cartReducer.test.ts`, `CartItem.test.tsx` | ✅ |
+| RN-02 | acúmulo no reducer e no parser de storage | `cartReducer.test.ts`, `cartStorage.test.tsx` | ✅ |
+| RN-03 | `DELIVERY_FEE_IN_CENTS = 500`; taxa só com itens | `cart.test.ts` | ✅ |
+| RN-04 | centavos inteiros; `formatCurrency` rejeita decimais | `currency.test.ts` | ✅ |
+| RN-05 | seleção informativa, sem requisição | `PaymentMethodSelector.test.tsx` | ✅ |
+| RN-06 | snapshot congelado e independente | `order.test.ts` | ✅ |
+| RN-07 | complemento opcional, CEP validado, falhas tratadas | `checkoutSchema.test.ts`, `viaCep.test.ts` | ✅ |
+| RN-08 | catálogo local tipado | `coffees.test.ts` | ✅ |
+| RN-09 | `EmptyCart` no checkout e no success | `Checkout.test.tsx`, `Success.test.tsx` | ✅ |
+| RN-10 | guarda de carrinho e de IDs inexistentes | `CheckoutGuards.test.tsx` | ✅ |
+| RNF-01 | labels, foco, teclado, contraste AA | `a11y.test.tsx`, `themes.test.ts`, axe no Chrome real (0 violações) | ✅ |
+| RNF-02 | sem overflow 320–1280px | T-041 | ✅ |
+| RNF-03 | sem libs de ícones; SVGs embutidos; cálculos memoizados | build ~147 kB gzip | ⚠️ sem code-splitting por rota |
+| RNF-04 | ViaCEP indisponível, JSON inválido, snapshot antes de limpar | `viaCep.test.ts`, `cartStorage.test.tsx`, `ConfirmOrder.test.tsx` | ✅ |
+| RNF-05 | testado em Chrome; Firefox/Safari não testados | — | ⚠️ |
+| RNF-06 | TypeScript strict, lint, cobertura 96.6% | `npm run lint`, `typecheck`, `test:coverage` | ✅ |
+| RNF-07 | só o CEP vai ao ViaCEP; nada é logado | README "Privacidade" | ✅ |
+
+### Pendências explícitas
+
+1. **Revisão humana:** DP-01 a DP-07 e as decisões listadas em `AI_USAGE.md` foram adotadas pela IA e precisam ser revisadas pelo estudante.
+2. **Deploy (T-047):** configuração pronta; falta publicar com a conta do estudante e registrar a URL.
+3. **Figma (DP-07):** não inspecionado; medidas seguem a descrição textual.
+4. **Compatibilidade (RNF-05):** validar manualmente no Firefox e no Safari.
+
+## 21. Divergências em relação à estrutura proposta (§4)
+
+Divergências documentadas, todas mantendo as responsabilidades da seção 3:
+
+- `src/config/constants.ts` centraliza taxa, limites de quantidade e chaves de storage.
+- `src/routes/` (`AppRoutes`, `paths`) separa as rotas do `App`, o que permite testá-las com `MemoryRouter`.
+- Parsers de persistência ficam perto do domínio: `contexts/CartContext/cartStorage.ts`, `contexts/ThemeContext/themeStorage.ts` e `utils/orderStorage.ts`; `utils/storage.ts` contém só o acesso seguro e genérico.
+- Componentes adicionais: `Hero`, `FormField` (TextField acessível), `ProductImage` (fallback de imagem) e `icons` (SVG inline, sem dependência).
+- Hook adicional: `useCepLookup` (estado de carregamento e cancelamento da consulta).
+- Utils adicionais: `catalog.ts`, `postalCode.ts`, `order.ts`, `quantity.ts`.
+- MSW não foi usado: os cenários do ViaCEP são simulados com mock de `fetch`.
+- Dependências de teste adicionais: `axe-core` (acessibilidade) e `@vitest/coverage-v8` (cobertura).

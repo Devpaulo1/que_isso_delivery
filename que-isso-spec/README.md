@@ -33,7 +33,7 @@ Não há backend, autenticação, banco de dados próprio nem pagamento real.
 
 ## Referências
 
-- [Figma — Coffee Delivery Projeto Final React](https://www.figma.com/design/yGPNTA0Yczb183EikXGIiA/Coffee-Delivery-%E2%80%A2-Projeto-Final-React?node-id=217-511&t=ojymzxreqtuCt0uo-0)
+- [Figma — referência visual do projeto](https://www.figma.com/design/yGPNTA0Yczb183EikXGIiA/Coffee-Delivery-%E2%80%A2-Projeto-Final-React?node-id=217-511&t=ojymzxreqtuCt0uo-0)
 - [ViaCEP](https://viacep.com.br/)
 - [React](https://react.dev/)
 - [Vite](https://vite.dev/)
