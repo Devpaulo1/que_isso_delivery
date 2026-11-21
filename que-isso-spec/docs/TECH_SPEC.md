@@ -1,7 +1,7 @@
 ---
 title: "QuE IssO — Technical Specification"
 version: "1.0.0"
-status: "Draft for human approval"
+status: "Approved"
 last_updated: "2026-11-17"
 ---
 
@@ -484,3 +484,16 @@ Antes de definir scripts, verificar dependências instaladas e garantir que os c
 - Definir fonte e licenças das imagens do catálogo.
 - Inspecionar Figma para validar dimensões, estados, breakpoints e componentes.
 - Confirmar taxa fictícia e regra de decremento conforme PRD.
+
+## 19. Registro de revisão técnica (T-002)
+
+Revisão realizada em 2026-11-17.
+
+- [x] Stack confirmada: React 19 + Vite 7 + TypeScript 5.9 (strict), React Router, styled-components, React Hook Form + Zod, Vitest + React Testing Library.
+- [x] Estrutura de diretórios da seção 4 adotada; o projeto vive em `` e a documentação em `que-isso-spec/`.
+- [x] Tipos de domínio (seção 5) adotados como contrato.
+- [x] Estado do carrinho: `CartState { items: CartItem[] }` com ações da seção 6.2.
+- [x] Persistência versionada com as chaves da seção 7.
+- [x] ViaCEP isolado em `services/cep/viaCep.ts`, com `AbortController`.
+- [x] Matriz de rastreabilidade (seção 17) revisada; sem lacunas.
+- [x] MSW não será instalado: os cenários do ViaCEP serão simulados com mock de `fetch` no Vitest (menos dependências, RNF-03).
