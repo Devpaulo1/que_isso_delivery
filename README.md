@@ -24,3 +24,7 @@ npm run typecheck  # tsc sem emitir arquivos
 
 - **Nome da marca:** QuE IssO
 - **Conceito:** xícara de café cujo vapor forma um pin de localização — café quentinho entregue onde você estiver.
+- **Ferramenta de IA utilizada:** Claude Code (modelo Claude Opus 5.5), gerando SVG vetorial.
+- **Prompt utilizado:** "Crie uma logo SVG original e simples para a cafeteria QuE IssO: uma xícara amarela (#DBAC2C) sobre um pires roxo, cujo vapor forma um pin de localização roxo (#8047F8). Deve funcionar em 16px e ter variação para fundo escuro."
+- **Proposta escolhida:** símbolo de xícara + pin de localização, com o nome em Baloo 2 ao lado.
+- **Justificativa da escolha:** comunica café e entrega em um único ícone, é legível em tamanho pequeno e, por ser vetorial, não perde qualidade.

@@ -45,6 +45,18 @@ Registrar pelo menos três interações relevantes. Não preencher retroativamen
 
 Adicionar novas entradas com os mesmos campos.
 
+### Interação 04 — Geração da logo com IA (T-011)
+
+- **Data:** 2026-11-17
+- **Ferramenta/modelo:** Claude Code com Claude Opus 5.5 (geração de SVG vetorial).
+- **Prompt utilizado:** "Crie uma logo SVG original e simples para a cafeteria QuE IssO: uma xícara amarela (#DBAC2C) sobre um pires roxo, cujo vapor forma um pin de localização roxo (#8047F8). Deve funcionar em 16px e ter variação para fundo escuro."
+- **Objetivo:** criar o símbolo da marca para Header e favicon (RF-16).
+- **Resumo da resposta:** a IA gerou um SVG 64×64 com pin de localização (vapor), xícara com alça, borda mais escura e pires, além de uma variante para fundo escuro com cores ajustadas.
+- **Decisão tomada pelo estudante:** aprovar o símbolo; manter o nome “QuE IssO” como texto em Baloo 2 ao lado do símbolo, em vez de texto dentro do SVG (fontes não carregam em `<img>`).
+- **O que foi alterado nos SPEC/código:** `src/assets/Log/logo-light.svg`, `logo-dark.svg`, README (Branding com IA).
+- **Evidência:** commit `feat: integrar assets de marca existentes`.
+
+
 ## Boas práticas
 
 - Registrar prompts reais, sem inventar conversas.

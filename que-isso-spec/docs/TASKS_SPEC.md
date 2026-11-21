@@ -126,8 +126,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/assets/Log/**` (após aprovação), `docs/AI_USAGE.md`, `README.md`.
 - **Critério de pronto:** ferramenta, prompt, resultado e justificativa documentados; logo aprovada.
 - **Teste/evidência:** inspeção em fundo claro/escuro e tamanho reduzido.
-- **Commit:** `feat: add ai-generated brand assets`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: integrar assets de marca existentes`.
+- **Evidência:** logo-light/dark.svg em src/assets/Log; prompt e decisão em AI_USAGE (Interação 04)
+- **Status:** ✅ Concluída.
 
 ### T-012 — Criar paleta, tipografia e tokens
 - **Objetivo:** definir tokens semânticos e temas light/dark.
@@ -487,6 +488,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-008 | Concluída | alias @/ em vite e tsconfig; typecheck, 2 testes e build ok | `chore: organizar estrutura e alias da aplicacao` |
 | 2026-11-21 | T-009 | Concluída | AppRoutes.test: 3 rotas + navegação sem reload (6 testes ok) | `feat: configurar rotas da aplicacao` |
 | 2026-11-21 | T-010 | Concluída | direção registrada no PRD §10.1 e no README | `docs: registrar direcao de marca do QuE IssO` |
+| 2026-11-21 | T-011 | Concluída | logo-light/dark.svg em src/assets/Log; prompt e decisão em AI_USAGE (Interação 04) | `feat: integrar assets de marca existentes` |
 
 ## Definition of Done global
 
