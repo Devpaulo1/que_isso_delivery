@@ -146,8 +146,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/styles/GlobalStyle.ts`, `src/main.tsx`.
 - **Critério de pronto:** estilos globais aplicados sem conflito.
 - **Teste/evidência:** build e inspeção nas rotas.
-- **Commit:** `style: configure global styles`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `style: configurar estilos globais`.
+- **Evidência:** build ok; GlobalStyle com reset, fontes Baloo 2/Roboto, foco visível e reduced-motion
+- **Status:** ✅ Concluída.
 
 ### T-014 — Criar ThemeProvider e ThemeToggle
 - **Objetivo:** alternar tema e persistir preferência.
@@ -491,6 +492,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-010 | Concluída | direção registrada no PRD §10.1 e no README | `docs: registrar direcao de marca do QuE IssO` |
 | 2026-11-21 | T-011 | Concluída | logo-light/dark.svg em src/assets/Log; prompt e decisão em AI_USAGE (Interação 04) | `feat: integrar assets de marca existentes` |
 | 2026-11-21 | T-012 | Concluída | themes.test: 2 temas com mesmas chaves + 28 comparações WCAG AA (30 testes) | `style: definir tokens e temas de design` |
+| 2026-11-21 | T-013 | Concluída | build ok; GlobalStyle com reset, fontes Baloo 2/Roboto, foco visível e reduced-motion | `style: configurar estilos globais` |
 
 ## Definition of Done global
 
