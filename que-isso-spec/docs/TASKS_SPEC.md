@@ -198,8 +198,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/components/Header/**`, `src/components/PageLayout/**`.
 - **Critério de pronto:** marca, navegação e layout aparecem nas páginas.
 - **Teste/evidência:** teste de renderização e navegação por teclado.
-- **Commit:** `feat: build shared header and page layout`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: criar cabecalho e layout compartilhado`.
+- **Evidência:** Header.test (4 testes) + rotas com PageLayout; build e testes ok
+- **Status:** ✅ Concluída.
 
 ### T-019 — Criar QuantityInput
 - **Objetivo:** permitir selecionar quantidade positiva.
@@ -501,6 +502,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-015 | Concluída | build copia favicon.svg para dist; index.html referencia /favicon.svg | `feat: integrar marca e favicon` |
 | 2026-11-21 | T-016 | Concluída | typecheck e build ok; tipos em src/types sem `any` | `feat: definir tipos de dominio` |
 | 2026-11-21 | T-017 | Concluída | coffees.test: 14 produtos válidos e 14 PNGs correspondentes (17 testes novos) | `feat: criar catalogo tipado de cafes` |
+| 2026-11-21 | T-018 | Concluída | Header.test (4 testes) + rotas com PageLayout; build e testes ok | `feat: criar cabecalho e layout compartilhado` |
 
 ## Definition of Done global
 

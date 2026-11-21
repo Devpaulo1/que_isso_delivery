@@ -3,9 +3,9 @@ import { ROUTES } from '@/routes/paths'
 
 export function Checkout() {
   return (
-    <main>
+    <section>
       <h1>Checkout</h1>
       <Link to={ROUTES.success}>Confirmar pedido</Link>
-    </main>
+    </section>
   )
 }

@@ -1,14 +1,10 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { MemoryRouter } from 'react-router-dom'
 import { AppRoutes } from '@/routes/AppRoutes'
+import { renderWithProviders } from '@/tests/helpers/render'
 
 function renderAt(path: string) {
-  return render(
-    <MemoryRouter initialEntries={[path]}>
-      <AppRoutes />
-    </MemoryRouter>,
-  )
+  return renderWithProviders(<AppRoutes />, { route: path })
 }
 
 describe('AppRoutes', () => {

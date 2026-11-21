@@ -3,9 +3,9 @@ import { ROUTES } from '@/routes/paths'
 
 export function Success() {
   return (
-    <main>
+    <section>
       <h1>Pedido confirmado</h1>
       <Link to={ROUTES.home}>Voltar para a Home</Link>
-    </main>
+    </section>
   )
 }
