@@ -8,6 +8,8 @@ export const PAYMENT_METHOD_LABELS: Record<PaymentMethod, string> = {
   cash: 'Dinheiro',
 }
 
+export type { CheckoutFormData, CheckoutFormInput } from '@/schemas/checkoutSchema'
+
 export interface DeliveryAddress {
   /** Somente os 8 dígitos do CEP. */
   postalCode: string
