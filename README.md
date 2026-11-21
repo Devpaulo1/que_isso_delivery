@@ -31,3 +31,4 @@ npm run typecheck  # tsc sem emitir arquivos
 - **Paleta de cores:** amarelo `#DBAC2C` / `#C47F17` / `#F1E9C9` e roxo `#8047F8` / `#4B2995` / `#EBE5F9` no tema claro; o tema escuro usa variações mais claras (`#E5B94A`, `#A98BFA`, `#C9B8FD`) sobre fundo `#15121B`. Tokens em `src/styles/themes.ts`.
 - **Tipografia:** Baloo 2 (títulos) e Roboto (textos), via Google Fonts.
 - **Variações para fundo claro/escuro:** `src/assets/Log/logo-light.svg` e `src/assets/Log/logo-dark.svg`.
+- **Arquivos da logo e favicon:** `src/assets/Log/logo-light.svg`, `src/assets/Log/logo-dark.svg` e `public/favicon.svg` (o favicon troca de cores com `prefers-color-scheme`).

@@ -166,8 +166,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `public/favicon.*`, `src/assets/Log/**`, `index.html`.
 - **Critério de pronto:** favicon e logo carregam sem erro.
 - **Teste/evidência:** inspeção do navegador e rede.
-- **Commit:** `feat: integrate brand and favicon`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: integrar marca e favicon`.
+- **Evidência:** build copia favicon.svg para dist; index.html referencia /favicon.svg
+- **Status:** ✅ Concluída.
 
 ## Fase 3 — Catálogo e Home
 
@@ -495,6 +496,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-012 | Concluída | themes.test: 2 temas com mesmas chaves + 28 comparações WCAG AA (30 testes) | `style: definir tokens e temas de design` |
 | 2026-11-21 | T-013 | Concluída | build ok; GlobalStyle com reset, fontes Baloo 2/Roboto, foco visível e reduced-motion | `style: configurar estilos globais` |
 | 2026-11-21 | T-014 | Concluída | ThemeToggle.test: alternância, persistência e valores inválidos (8 testes novos) | `feat: adicionar temas claro e escuro persistentes` |
+| 2026-11-21 | T-015 | Concluída | build copia favicon.svg para dist; index.html referencia /favicon.svg | `feat: integrar marca e favicon` |
 
 ## Definition of Done global
 

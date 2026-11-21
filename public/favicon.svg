@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .pin { fill: #8047F8; }
+    .hole { fill: #FFFFFF; }
+    .saucer { fill: #4B2995; }
+    @media (prefers-color-scheme: dark) {
+      .pin { fill: #A78BFA; }
+      .hole { fill: #1B1625; }
+      .saucer { fill: #EBE5F9; }
+    }
+  </style>
+  <path class="pin" d="M32 3c-7.2 0-13 5.6-13 12.6C19 25 32 35 32 35s13-10 13-19.4C45 8.6 39.2 3 32 3z"/>
+  <circle class="hole" cx="32" cy="15.5" r="4.6"/>
+  <path fill="none" stroke="#DBAC2C" stroke-width="4" stroke-linecap="round" d="M51 40h2.5a6 6 0 0 1 0 12H50"/>
+  <path fill="#DBAC2C" d="M11 36h41v8.5C52 53.6 44.6 61 35.5 61h-8C18.4 61 11 53.6 11 44.5z"/>
+  <rect x="11" y="34" width="41" height="5" rx="2.5" fill="#C47F17"/>
+  <rect class="saucer" x="5" y="59" width="53" height="4" rx="2"/>
+</svg>
