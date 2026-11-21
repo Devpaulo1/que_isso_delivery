@@ -270,8 +270,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/utils/cart.ts`, `src/utils/currency.ts`, configuração de taxa.
 - **Critério de pronto:** cálculos puros e sem ponto flutuante monetário.
 - **Teste/evidência:** testes para carrinho vazio, múltiplos produtos e quantidades.
-- **Commit:** `feat: add cart totals and currency utilities`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: adicionar totais do carrinho e utilitarios`.
+- **Evidência:** cart.test + currency.test: vazio, múltiplos produtos e quantidades
+- **Status:** ✅ Concluída.
 
 ### T-026 — Criar CartBadge
 - **Objetivo:** mostrar total de unidades no Header.
@@ -515,6 +516,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-022 | Concluída | Home.test + AppRoutes.test; hero com PNG local e grade responsiva | `feat: finalizar pagina home responsiva` |
 | 2026-11-21 | T-023 | Concluída | cartReducer.test: todas as ações e casos de borda (novos testes ok) | `feat: implementar reducer imutavel do carrinho` |
 | 2026-11-21 | T-024 | Concluída | CartContext.test: operações tipadas e provider obrigatório | `feat: expor estado do carrinho por contexto` |
+| 2026-11-21 | T-025 | Concluída | cart.test + currency.test: vazio, múltiplos produtos e quantidades | `feat: adicionar totais do carrinho e utilitarios` |
 
 ## Definition of Done global
 

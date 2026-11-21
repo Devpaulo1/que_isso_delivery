@@ -27,6 +27,16 @@ describe('CartContext', () => {
     expect(result.current.items).toEqual([])
   })
 
+  it('derives units and totals from the catalog', () => {
+    const { result } = renderHook(() => useCart(), { wrapper })
+    act(() => result.current.addItem('expresso-tradicional', 2))
+    act(() => result.current.addItem('latte', 1))
+    expect(result.current.totalUnits).toBe(3)
+    expect(result.current.subtotalInCents).toBe(2 * 990 + 1290)
+    expect(result.current.totalInCents).toBe(2 * 990 + 1290 + 500)
+    expect(result.current.resolvedItems).toHaveLength(2)
+  })
+
   it('keeps operation references stable between renders', () => {
     const { result } = renderHook(() => useCart(), { wrapper })
     const { addItem } = result.current
