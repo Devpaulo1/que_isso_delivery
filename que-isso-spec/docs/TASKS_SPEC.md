@@ -362,8 +362,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/components/PaymentMethodSelector/**`.
 - **Critério de pronto:** uma opção válida é obrigatória e nenhuma transação é disparada.
 - **Teste/evidência:** testes de seleção e validação.
-- **Commit:** `feat: add payment method selector`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: adicionar seletor de forma de pagamento`.
+- **Evidência:** PaymentMethodSelector.test: seleção, obrigatoriedade e nenhuma transação real
+- **Status:** ✅ Concluída.
 
 ### T-035 — Montar página Checkout
 - **Objetivo:** integrar itens, resumo, endereço e pagamento.
@@ -533,6 +534,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-031 | Concluída | checkoutSchema.test: entradas válidas, CEP, UF e complemento opcional | `feat: validar checkout com Zod` |
 | 2026-11-21 | T-032 | Concluída | viaCep.test: CEP inválido, não encontrado, parcial, HTTP/rede e abort | `feat: integrar consulta ao ViaCEP` |
 | 2026-11-21 | T-033 | Concluída | DeliveryAddressForm.test: preenchimento, erros acessíveis e CEP sem sobrescrever número/complemento | `feat: criar formulario de endereco` |
+| 2026-11-21 | T-034 | Concluída | PaymentMethodSelector.test: seleção, obrigatoriedade e nenhuma transação real | `feat: adicionar seletor de forma de pagamento` |
 
 ## Definition of Done global
 
