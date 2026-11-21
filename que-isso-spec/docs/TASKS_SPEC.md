@@ -228,8 +228,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/components/CoffeeCatalog/**`, `src/pages/Home/**`.
 - **Critério de pronto:** todos os produtos aparecem e a Home não concentra a lógica do catálogo.
 - **Teste/evidência:** teste de quantidade de cards e inspeção visual.
-- **Commit:** `feat: render coffee catalog on home`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `feat: renderizar catalogo de cafes na home`.
+- **Evidência:** CoffeeCatalog.test + layout responsivo com grid mínimo de 17.25rem
+- **Status:** ✅ Concluída.
 
 ### T-022 — Finalizar composição da Home
 - **Objetivo:** integrar hero, catálogo, Header e layout conforme Figma validado.
@@ -507,6 +508,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-018 | Concluída | Header.test (4 testes) + rotas com PageLayout; build e testes ok | `feat: criar cabecalho e layout compartilhado` |
 | 2026-11-21 | T-019 | Concluída | QuantityInput.test + quantity.test: limites e interação (novos testes ok) | `feat: adicionar controle de quantidade validado` |
 | 2026-11-21 | T-020 | Concluída | CoffeeCard.test + currency helpers; renderização e interação ok | `feat: criar card de produto` |
+| 2026-11-21 | T-021 | Concluída | CoffeeCatalog.test + layout responsivo com grid mínimo de 17.25rem | `feat: renderizar catalogo de cafes na home` |
 
 ## Definition of Done global
 
