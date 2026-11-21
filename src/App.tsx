@@ -1,9 +1,3 @@
-function App() {
-  return (
-    <main>
-      <h1>Que isso Delivery</h1>
-    </main>
-  )
+export function App() {
+  return <h1>QuE IssO</h1>
 }
-
-export default App
