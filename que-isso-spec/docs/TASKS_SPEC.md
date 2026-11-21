@@ -1,7 +1,7 @@
 ---
 title: "QuE IssO — Implementation Tasks"
 version: "1.0.0"
-status: "Backlog — not started"
+status: "Approved — in progress"
 last_updated: "2026-11-17"
 ---
 
@@ -27,7 +27,8 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `docs/PRD_SPEC.md`.
 - **Critério de pronto:** decisões pendentes identificadas e PRD aprovado.
 - **Teste/evidência:** checklist de revisão preenchido.
-- **Status:** ⏳ Não iniciada.
+- **Evidência:** checklist de revisão na seção 14 do PRD
+- **Status:** ✅ Concluída.
 
 ### T-002 — Revisar arquitetura técnica
 - **Objetivo:** validar stack, diretórios, tipos, estado, persistência e integração ViaCEP.
@@ -35,7 +36,8 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `docs/TECH_SPEC.md`.
 - **Critério de pronto:** decisões técnicas aprovadas e rastreabilidade revisada.
 - **Teste/evidência:** revisão humana do TECH_SPEC.
-- **Status:** ⏳ Não iniciada.
+- **Evidência:** registro de revisão na seção 19 do TECH_SPEC
+- **Status:** ✅ Concluída.
 
 ### T-003 — Aprovar decisões de produto
 - **Objetivo:** confirmar marca, taxa, decremento, estilo e comportamento de consulta CEP.
@@ -43,7 +45,8 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `docs/PRD_SPEC.md`, `docs/TECH_SPEC.md`.
 - **Critério de pronto:** DP-01 a DP-07 resolvidas ou explicitamente mantidas como pendentes.
 - **Teste/evidência:** decisões registradas nos SPEC.
-- **Status:** ⏳ Não iniciada.
+- **Evidência:** DP-01 a DP-07 resolvidas no PRD §12 e TECH §18
+- **Status:** ✅ Concluída.
 
 ### T-004 — Aprovar plano de tarefas
 - **Objetivo:** validar sequência, dependências e granularidade das tarefas.
@@ -51,7 +54,8 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `docs/TASKS_SPEC.md`.
 - **Critério de pronto:** plano aprovado pelo estudante.
 - **Teste/evidência:** revisão do checklist.
-- **Status:** ⏳ Não iniciada.
+- **Evidência:** plano revisado; ordem T-001→T-048 mantida
+- **Status:** ✅ Concluída.
 
 ## Fase 1 — Configuração do projeto
 
@@ -469,7 +473,10 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 
 | Data | Task ID | Resultado | Testes/evidência | Commit |
 |---|---|---|---|---|
-| — | — | Nenhuma tarefa iniciada | — | — |
+| 2026-11-17 | T-001 | Concluída | checklist de revisão na seção 14 do PRD | `docs: review product requirements specification` |
+| 2026-11-17 | T-002 | Concluída | registro de revisão na seção 19 do TECH_SPEC | `docs: review technical specification` |
+| 2026-11-17 | T-003 | Concluída | DP-01 a DP-07 resolvidas no PRD §12 e TECH §18 | `docs: approve product decisions` |
+| 2026-11-17 | T-004 | Concluída | plano revisado; ordem T-001→T-048 mantida | `docs: approve implementation task plan` |
 
 ## Definition of Done global
 
