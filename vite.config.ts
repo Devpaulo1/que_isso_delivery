@@ -17,5 +17,13 @@ export default defineConfig({
     setupFiles: ['./src/tests/setup.ts'],
     css: false,
     restoreMocks: true,
+    // Fluxos de integração com user-event ficam lentos com cobertura ativa.
+    testTimeout: 15000,
+    coverage: {
+      provider: 'v8',
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/**/*.test.{ts,tsx}', 'src/tests/**', 'src/main.tsx', 'src/**/*.d.ts'],
+      reporter: ['text-summary', 'text'],
+    },
   },
 })

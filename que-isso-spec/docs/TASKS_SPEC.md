@@ -456,8 +456,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `src/**/*.test.*`, `src/tests/**`.
 - **Critério de pronto:** testes cobrem reducer, cálculo, schema, CEP, persistência e compra.
 - **Teste/evidência:** `npm run test` concluído com sucesso.
-- **Commit:** `test: cover core shopping flows`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `test: cobrir fluxos principais de compra`.
+- **Evidência:** purchaseFlow.test cobre Home → Checkout → Success com refresh simulado; script test:coverage configurado
+- **Status:** ✅ Concluída.
 
 ### T-044 — Executar revisão de qualidade
 - **Objetivo:** corrigir erros de lint, tipos, build, console e assets.
@@ -551,6 +552,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-040 | Concluída | Success.test + AppRoutes.test: estado vazio sem snapshot e retorno à Home | `fix: tratar ausencia de pedido confirmado` |
 | 2026-11-21 | T-041 | Concluída | ProductImage.test + build; header exibe "QuE IssO / Delivery"; grid e cards revisados | `style: refinar layouts responsivos` |
 | 2026-11-21 | T-042 | Concluída | a11y.test (axe-core) + themes.test: páginas e estados sem violações; contraste AA e foco verificados | `fix: melhorar acessibilidade da interface` |
+| 2026-11-21 | T-043 | Concluída | purchaseFlow.test cobre Home → Checkout → Success com refresh simulado; script test:coverage configurado | `test: cobrir fluxos principais de compra` |
 
 ## Definition of Done global
 
