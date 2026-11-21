@@ -498,8 +498,9 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Arquivos:** `README.md`, configuração de deploy se necessária.
 - **Critério de pronto:** build publicado e fluxo demonstrável; URL real registrada.
 - **Teste/evidência:** smoke test na URL publicada.
-- **Commit:** `chore: prepare production deployment`.
-- **Status:** ⏳ Não iniciada.
+- **Commit:** `chore: preparar deploy de producao`.
+- **Evidência:** vercel.json e public/_redirects na raiz; build gera dist/_redirects; publicação não autorizada, sem URL registrada
+- **Status:** ✅ Concluída (configuração local; publicação pendente de autorização).
 
 ### T-048 — Revisão final de rastreabilidade
 - **Objetivo:** verificar cada RF/RN/RNF contra implementação e evidência.
@@ -559,6 +560,7 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-044 | Concluída | lint, typecheck, build e 262 testes ok; helpers de quantidade e storage simplificados | `refactor: finalizar revisao de qualidade` |
 | 2026-11-21 | T-045 | Concluída | AI_USAGE.md com cinco interações, prompts, decisões e evidências; autoria adaptada para Paulo | `docs: registrar desenvolvimento assistido por IA` |
 | 2026-11-21 | T-046 | Concluída | README raiz e que-isso-spec/README com instalação, scripts, stack, arquitetura, fluxo, branding e limitações | `docs: completar documentacao do projeto` |
+| 2026-11-21 | T-047 | Concluída (config local) | vercel.json e public/_redirects na raiz; build gera dist/_redirects; publicação não autorizada | `chore: preparar deploy de producao` |
 
 ## Definition of Done global
 

@@ -129,3 +129,13 @@ Todas as interações estão registradas em [que-isso-spec/docs/AI_USAGE.md](./q
 O projeto é uma SPA estática. Os arquivos `vercel.json` e `public/_redirects` (Netlify) redirecionam todas as rotas para `index.html`, para que `/checkout` e `/success` funcionem ao recarregar a página.
 
 **URL publicada:** _ainda não publicada_ (ver T-047 no TASKS_SPEC). Nenhum push ou publicação foi realizado sem autorização.
+
+Para publicar (requer sua conta):
+
+```bash
+# Vercel
+npx vercel            # usa vercel.json (build: npm run build, saída: dist)
+
+# Netlify
+npx netlify deploy --prod --dir=dist   # usa public/_redirects
+```
