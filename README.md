@@ -33,7 +33,7 @@ npm run dev        # http://localhost:5173
 | `npm run test:watch` | Testes em modo watch |
 | `npm run test:coverage` | Testes com relatório de cobertura (v8) |
 
-Resultado na última execução: **263 testes passando**, lint e typecheck sem erros. Antes da internacionalização, a cobertura medida foi de 96.59% statements / 91.57% branches.
+Resultado na última execução: **273 testes passando**, lint, typecheck e build sem erros. Cobertura após T-060: **96,59% statements / 90,02% branches / 97,08% functions / 97,64% lines**.
 
 ## Stack (versões efetivas)
 
@@ -120,19 +120,32 @@ O endereço digitado é usado apenas para consultar o ViaCEP (somente o CEP é e
 
 Todas as interações estão registradas em [que-isso-spec/AGENTS.md](./que-isso-spec/AGENTS.md), seção 13, incluindo as decisões que ainda aguardam revisão do estudante.
 
+## Evidências visuais
+
+Capturas reais da aplicação, organizadas em [`que-isso-spec/evidencias/`](./que-isso-spec/evidencias/):
+
+| Tela | Claro | Escuro |
+|---|---|---|
+| Home desktop | [abrir](<./que-isso-spec/evidencias/Home Desktop(Light).png>) | [abrir](<./que-isso-spec/evidencias/Home desktop (dark).png>) |
+| Home mobile | [abrir](<./que-isso-spec/evidencias/Home mobile (Light).png>) | [abrir](<./que-isso-spec/evidencias/Home mobile (Dark).png>) |
+| Checkout desktop | [abrir](<./que-isso-spec/evidencias/Checkout desktop (Light).png>) | — |
+| Checkout mobile | — | [abrir](<./que-isso-spec/evidencias/Checkout mobile (dark).png>) |
+| Sucesso desktop | [abrir](<./que-isso-spec/evidencias/Sucesso desktop (light).png>) | — |
+| Sucesso mobile | — | [abrir](<./que-isso-spec/evidencias/Sucesso Mobile (Dark).png>) |
+
 ## Limitações conhecidas
 
 - O Figma de referência não foi inspecionado diretamente: layout, medidas e breakpoints seguem a descrição textual da spec (DP-07).
-- O bundle é um único chunk (~169 kB gzip após i18n); code-splitting por rota é uma melhoria possível.
+- O bundle é um único chunk (~170 kB gzip após i18n); code-splitting por rota é uma melhoria possível.
 - Deploy: ver seção abaixo.
 
 ## Deploy
 
 O projeto é uma SPA estática. Os arquivos `vercel.json` e `public/_redirects` (Netlify) redirecionam todas as rotas para `index.html`, para que `/checkout` e `/success` funcionem ao recarregar a página.
 
-**URL publicada:** _ainda não publicada_ (ver T-047 no TASKS_SPEC). Nenhum push ou publicação foi realizado sem autorização.
+**URL publicada:** [https://queissodelivery.vercel.app](https://queissodelivery.vercel.app) (Vercel). Push e publicação autorizados e realizados; ver T-047 e T-061 no TASKS_SPEC.
 
-Para publicar (requer sua conta):
+Para republicar em outra conta:
 
 ```bash
 # Vercel

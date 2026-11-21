@@ -227,11 +227,23 @@ Este documento registra o uso de assistentes de IA durante planejamento, impleme
 - **Arquivos:** `src/utils/deliveryLocation.{ts,test.ts}`, `src/components/DeliveryLocationBadge/**`, `src/components/Header/**`, `src/components/DeliveryAddressForm/**`, `src/i18n/locales/{pt,en,es}.ts`.
 - **Evidência:** `fix: exibir selo para qualquer estado e alinhar busca de cep`; lint, typecheck, build e 273 testes ok; no navegador, ViaCEP real devolveu Salvador/BA para `40301155` e o selo exibiu "Entrega em Salvador, BA"; alinhamento medido com `deltaTop = 0` e `deltaBottom = 0`.
 
+### Interação 08 — Evidências visuais e fechamento da entrega (T-061)
+
+- **Data:** 2026-11-21
+- **Ferramenta:** assistente de IA do ambiente de desenvolvimento.
+- **Prompt utilizado:** "coloquei os print das evidencias e agora falta oq?" e, em seguida, "Atualiza ele e da o commit" / "pode da o push".
+- **Objetivo:** conferir o checklist de entrega e fechar a documentação com as capturas fornecidas pelo estudante.
+- **Resumo da resposta:** confirmou que já estavam prontos o repositório público, o push anterior e o deploy; apontou que faltavam versionar as capturas, corrigir README/TASKS e registrar T-061. A IA **não gerou as imagens**: elas foram fornecidas pelo estudante em `que-isso-spec/evidencias/`. Após autorização, atualizou os documentos, criou o commit e fez o push.
+- **Decisão tomada pelo estudante:** forneceu as 8 capturas e autorizou atualização, commit e push.
+- **Arquivos:** `que-isso-spec/evidencias/**`, `README.md`, `que-isso-spec/docs/TASKS_SPEC.md`, `que-isso-spec/AGENTS.md`.
+- **Evidência:** `docs: adicionar evidencias visuais e url de publicacao`; 8 PNGs validados; URL publicada verificada em https://queissodelivery.vercel.app.
+
 ### Como as respostas foram validadas
 
 - `npm run lint`, `npm run typecheck`, `npm run build` e `npm test`: ok, com **33 arquivos e 273 testes passando**.
 - `npm run test:coverage`: **96,59% statements / 90,02% branches / 97,08% functions / 97,64% lines** (após T-060).
 - Testes de contraste entre temas e axe-core: **0 violações**.
+- Evidências visuais: **8 capturas** em `que-isso-spec/evidencias/`, fornecidas pelo estudante; deploy verificado em https://queissodelivery.vercel.app.
 - Resultados resumidos em `docs/TASKS_SPEC.md`; nenhum resultado de teste, cobertura, screenshot ou deploy foi inventado.
 
 ### Boas práticas

@@ -499,8 +499,8 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Critério de pronto:** build publicado e fluxo demonstrável; URL real registrada.
 - **Teste/evidência:** smoke test na URL publicada.
 - **Commit:** `chore: preparar deploy de producao`.
-- **Evidência:** vercel.json e public/_redirects na raiz; build gera dist/_redirects; publicação não autorizada, sem URL registrada
-- **Status:** ✅ Concluída (configuração local; publicação pendente de autorização).
+- **Evidência:** vercel.json e public/_redirects na raiz; build gera dist/_redirects; publicação autorizada e realizada em https://queissodelivery.vercel.app; smoke test na URL ok, sem erro de console.
+- **Status:** ✅ Concluída.
 
 ### T-048 — Revisão final de rastreabilidade
 - **Objetivo:** verificar cada RF/RN/RNF contra implementação e evidência.
@@ -558,6 +558,15 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 - **Evidência:** `deliveryLocation.test.ts`, `DeliveryLocationBadge.test.tsx`, `Header.test.tsx` e `DeliveryAddressForm.test.tsx` (inclui caso Bahia).
 - **Status:** ✅ Concluída.
 
+### T-061 — Fechar entrega com evidências visuais e URL publicada
+- **Objetivo:** versionar as capturas das telas principais (desktop/mobile, claro/escuro) e atualizar a documentação com a URL real da aplicação.
+- **Requisitos:** checklist de entrega da atividade; RF-01 a RF-16 (evidência de funcionamento).
+- **Arquivos:** `que-isso-spec/evidencias/**` (8 PNGs fornecidos pelo estudante), `README.md`, `que-isso-spec/docs/TASKS_SPEC.md`, `que-isso-spec/AGENTS.md`.
+- **Critério de pronto:** 8 capturas versionadas cobrindo Home/Checkout/Sucesso, desktop/mobile e claro/escuro; README com URL publicada e links das evidências; T-047 atualizada; nenhuma dependência nova.
+- **Teste/evidência:** PNGs validados (dimensões conferidas); URL https://queissodelivery.vercel.app responde e abre sem erro de console; README e TASKS revisados.
+- **Commit:** `docs: adicionar evidencias visuais e url de publicacao`.
+- **Status:** ✅ Concluída.
+
 ## Registro de execução
 
 | Data | Task ID | Resultado | Testes/evidência | Commit |
@@ -607,12 +616,13 @@ Status possíveis: `⏳ Não iniciada`, `🚧 Em andamento`, `✅ Concluída`, `
 | 2026-11-21 | T-044 | Concluída | lint, typecheck, build e 262 testes ok; helpers de quantidade e storage simplificados | `refactor: finalizar revisao de qualidade` |
 | 2026-11-21 | T-045 | Concluída | AGENTS.md com cinco interações, prompts, decisões e evidências; autoria adaptada para Paulo | `docs: registrar desenvolvimento assistido por IA` |
 | 2026-11-21 | T-046 | Concluída | README raiz e que-isso-spec/README com instalação, scripts, stack, arquitetura, fluxo, branding e limitações | `docs: completar documentacao do projeto` |
-| 2026-11-21 | T-047 | Concluída (config local) | vercel.json e public/_redirects na raiz; build gera dist/_redirects; publicação não autorizada | `chore: preparar deploy de producao` |
+| 2026-11-21 | T-047 | Concluída | vercel.json e public/_redirects na raiz; build gera dist/_redirects; publicada em https://queissodelivery.vercel.app | `chore: preparar deploy de producao` |
 | 2026-11-21 | T-048 | Concluída | TECH_SPEC §20 com matriz RF/RN/RNF, pendências e divergências; PRD atualizado | `docs: finalizar rastreabilidade das specs` |
 | 2026-11-21 | T-057 | Concluída | Header.test troca pt/en/es e persiste idioma; lint, typecheck, build e 263 testes ok | `feat: adicionar seletor de idioma com i18next` |
 | 2026-11-21 | T-058 | Concluída | AGENTS.md único com seção 13 de uso de IA; referências atualizadas em README, specs e assets | `docs: substituir registro de IA por AGENTS.md` |
 | 2026-11-21 | T-059 | Concluída | selo São Paulo/SP ao lado do idioma; lint, typecheck, build e 270 testes ok | `feat: exibir selo de Sao Paulo no header apos consulta de cep` |
 | 2026-11-21 | T-060 | Concluída | selo para qualquer cidade/UF (CEP 40301-155 → Salvador, BA) e botão alinhado ao input; lint, typecheck, build e 273 testes ok | `fix: exibir selo para qualquer estado e alinhar busca de cep` |
+| 2026-11-21 | T-061 | Concluída | 8 capturas versionadas (desktop/mobile, claro/escuro), README e TASKS atualizados com URL publicada | `docs: adicionar evidencias visuais e url de publicacao` |
 
 ## Definition of Done global
 
